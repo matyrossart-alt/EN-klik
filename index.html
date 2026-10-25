@@ -2833,31 +2833,40 @@ const canSay = "speechSynthesis" in window && "SpeechSynthesisUtterance" in wind
 let voice = null;
 function pickVoice(){ try { const v = speechSynthesis.getVoices(); voice = v.find(x => /en[-_]GB/i.test(x.lang)) || v.find(x => /^en/i.test(x.lang)) || null; } catch(e) {} }
 if (canSay) { pickVoice(); try { speechSynthesis.onvoiceschanged = pickVoice; } catch(e) {} }
-function sayFallback(t){
+function sayFallback(t, code){
   const url = "https://translate.google.com/?sl=en&tl=cs&op=translate&text=" + encodeURIComponent(t.replace(/_{3}/g, "…"));
   let box = document.getElementById("say-box");
   if (!box) { box = document.createElement("div"); box.id = "say-box"; box.className = "say-box"; document.body.appendChild(box); }
   box.innerHTML = `<p>Tenhle prohlížeč neumí číst nahlas. Otevři výslovnost v Google Překladači a klepni tam na reproduktor.</p>
     <div class="actions"><a class="primary" href="${url}" target="_blank" rel="noopener">Otevřít výslovnost</a><button class="ghost" type="button" data-close-say>Zavřít</button></div>
-    <p class="hint">Tip: v Chrome nebo Safari mimo aplikaci Claude funguje čtení přímo tady.</p>`;
+    <p class="hint">Tip: zkontroluj tlačítko ztlumení na boku telefonu a hlasitost. Kód chyby: ${esc(code || "?")}</p>`;
   box.hidden = false;
   box.querySelector("[data-close-say]").onclick = () => { box.hidden = true; };
 }
+function speakOnce(t, opts, onFail){
+  const synth = window.speechSynthesis;
+  const u = new SpeechSynthesisUtterance(t);
+  if (opts.lang) u.lang = opts.lang;
+  if (opts.voice) u.voice = opts.voice;
+  u.rate = 0.85;
+  u.onerror = e => { const code = (e && e.error) || "neznámá"; if (code !== "interrupted" && code !== "canceled") onFail(code); };
+  synth.speak(u);
+}
 function say(t){
-  if (!canSay) { sayFallback(t); return; }
+  if (!canSay) { sayFallback(t, "bez podpory"); return; }
+  const text = t.replace(/_{3}/g, "…");
   try {
     const synth = window.speechSynthesis;
-    if (synth.speaking || synth.pending) synth.cancel(); // na iPhonu cancel před každým čtením řeč zahodí
+    if (synth.speaking || synth.pending) synth.cancel();
     if (synth.paused) synth.resume();
-    const u = new SpeechSynthesisUtterance(t.replace(/_{3}/g, "…"));
-    if (!voice) pickVoice();
-    u.lang = voice ? voice.lang : "en-GB";
-    if (voice) u.voice = voice;
-    u.rate = 0.85;
-    // náhradní cestu nabídneme jen při skutečné chybě, ne při přerušení
-    u.onerror = e => { if (["not-allowed", "synthesis-unavailable", "synthesis-failed", "language-unavailable", "voice-unavailable"].includes(e && e.error)) sayFallback(t); };
-    synth.speak(u);
-  } catch(e) { sayFallback(t); }
+    // 1. pokus: iPhone si vybere hlas sám podle jazyka
+    speakOnce(text, { lang: "en-GB" }, code1 => {
+      // 2. pokus: konkrétní anglický hlas, který je v zařízení
+      if (!voice) pickVoice();
+      if (voice) speakOnce(text, { lang: voice.lang, voice }, code2 => sayFallback(t, code2));
+      else speakOnce(text, { lang: "en-US" }, code2 => sayFallback(t, code1 + " / " + code2));
+    });
+  } catch(e) { sayFallback(t, String(e && e.message || e)); }
 }
 const SPK = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/></svg>';
 const sayBtn = t => `<button class="say" data-act="say" data-t="${esc(t)}" aria-label="Přehrát výslovnost" title="Přehrát">${SPK}</button>`;

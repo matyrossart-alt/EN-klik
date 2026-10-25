@@ -1,5 +1,5 @@
 /* Offline: aplikace se uloží do zařízení při prvním otevření. Při každé změně zvednout verzi V. */
-const V = "2026-10-25-cf1";
+const V = "2026-10-25-cf2";
 const CACHE = "klikacka-" + V;
 const FILES = ["./", "index.html", "manifest.webmanifest", "icon-192.png", "icon-512.png", "icon-maskable-512.png", "apple-touch-icon.png", "favicon-48.png", "fonts/atkinson-hyperlegible-latin-400-italic.woff2", "fonts/atkinson-hyperlegible-latin-400-normal.woff2", "fonts/atkinson-hyperlegible-latin-700-normal.woff2", "fonts/atkinson-hyperlegible-latin-ext-400-italic.woff2", "fonts/atkinson-hyperlegible-latin-ext-400-normal.woff2", "fonts/atkinson-hyperlegible-latin-ext-700-normal.woff2", "fonts/lexend-latin-500-normal.woff2", "fonts/lexend-latin-600-normal.woff2", "fonts/lexend-latin-700-normal.woff2", "fonts/lexend-latin-ext-500-normal.woff2", "fonts/lexend-latin-ext-600-normal.woff2", "fonts/lexend-latin-ext-700-normal.woff2"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting())); });
