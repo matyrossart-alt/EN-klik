@@ -1,0 +1,29 @@
+{
+ "name": "Anglická klikačka",
+ "short_name": "Klikačka",
+ "description": "Procvičování angličtiny s teorií, výslovností a překladem.",
+ "lang": "cs",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#d8eeeb",
+ "theme_color": "#1f7672",
+ "icons": [
+  {
+   "src": "icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "icon-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
