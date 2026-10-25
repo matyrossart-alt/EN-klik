@@ -2763,15 +2763,17 @@ function sayFallback(t){
 function say(t){
   if (!canSay) { sayFallback(t); return; }
   try {
-    speechSynthesis.cancel();
+    const synth = window.speechSynthesis;
+    if (synth.speaking || synth.pending) synth.cancel(); // na iPhonu cancel před každým čtením řeč zahodí
+    if (synth.paused) synth.resume();
     const u = new SpeechSynthesisUtterance(t.replace(/_{3}/g, "…"));
     if (!voice) pickVoice();
-    u.lang = voice ? voice.lang : "en-GB"; if (voice) u.voice = voice; u.rate = 0.85;
-    let started = false;
-    u.onstart = () => { started = true; };
-    u.onerror = () => { if (!started) sayFallback(t); };
-    speechSynthesis.speak(u);
-    setTimeout(() => { if (!started && !speechSynthesis.speaking) sayFallback(t); }, 1800);
+    u.lang = voice ? voice.lang : "en-GB";
+    if (voice) u.voice = voice;
+    u.rate = 0.85;
+    // náhradní cestu nabídneme jen při skutečné chybě, ne při přerušení
+    u.onerror = e => { if (["not-allowed", "synthesis-unavailable", "synthesis-failed", "language-unavailable", "voice-unavailable"].includes(e && e.error)) sayFallback(t); };
+    synth.speak(u);
   } catch(e) { sayFallback(t); }
 }
 const SPK = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/></svg>';
