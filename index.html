@@ -5,16 +5,99 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1f7672">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Klikačka">
 <title>Anglická klikačka</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>/* lexend-latin-500-normal */
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(fonts/lexend-latin-500-normal.woff2) format('woff2');
+}/* lexend-latin-ext-500-normal */
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url(fonts/lexend-latin-ext-500-normal.woff2) format('woff2');
+}/* lexend-latin-600-normal */
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(fonts/lexend-latin-600-normal.woff2) format('woff2');
+}/* lexend-latin-ext-600-normal */
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url(fonts/lexend-latin-ext-600-normal.woff2) format('woff2');
+}/* lexend-latin-700-normal */
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(fonts/lexend-latin-700-normal.woff2) format('woff2');
+}/* lexend-latin-ext-700-normal */
+@font-face {
+  font-family: 'Lexend';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(fonts/lexend-latin-ext-700-normal.woff2) format('woff2');
+}/* atkinson-hyperlegible-latin-400-normal */
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(fonts/atkinson-hyperlegible-latin-400-normal.woff2) format('woff2');
+}/* atkinson-hyperlegible-latin-ext-400-normal */
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(fonts/atkinson-hyperlegible-latin-ext-400-normal.woff2) format('woff2');
+}/* atkinson-hyperlegible-latin-700-normal */
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(fonts/atkinson-hyperlegible-latin-700-normal.woff2) format('woff2');
+}/* atkinson-hyperlegible-latin-ext-700-normal */
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url(fonts/atkinson-hyperlegible-latin-ext-700-normal.woff2) format('woff2');
+}/* atkinson-hyperlegible-latin-400-italic */
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(fonts/atkinson-hyperlegible-latin-400-italic.woff2) format('woff2');
+}/* atkinson-hyperlegible-latin-ext-400-italic */
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url(fonts/atkinson-hyperlegible-latin-ext-400-italic.woff2) format('woff2');
+}</style>
 <style>
 body{margin:0}
 /* Layout: klidný tyrkysový podklad, uprostřed světlý list; téma = teorie nahoře, pod ní filtry částí a karta s úlohou */
@@ -3019,6 +3102,6 @@ document.addEventListener("keydown", e => {
 renderHome();
 </script>
 
-<script>if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js").catch(() => {});</script>
+<script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) navigator.serviceWorker.register("sw.js").catch(() => {});</script>
 </body>
 </html>

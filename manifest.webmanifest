@@ -1,4 +1,5 @@
 {
+ "id": "./",
  "name": "Anglická klikačka",
  "short_name": "Klikačka",
  "description": "Procvičování angličtiny s teorií, výslovností a překladem.",
@@ -9,6 +10,11 @@
  "background_color": "#d8eeeb",
  "theme_color": "#1f7672",
  "icons": [
+  {
+   "src": "favicon-48.png",
+   "sizes": "48x48",
+   "type": "image/png"
+  },
   {
    "src": "icon-192.png",
    "sizes": "192x192",
