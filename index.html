@@ -245,6 +245,16 @@ details.theory[open] summary::before{transform:rotate(90deg)}
   padding:16px max(16px, env(safe-area-inset-right, 0px)) calc(16px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));display:flex;flex-direction:column;gap:10px}
 .say-box p{margin:0;max-width:60ch}
 a.primary{text-decoration:none;display:inline-block}
+.built{min-height:58px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:12px;border:1.5px dashed var(--line);border-radius:14px;background:var(--sheet)}
+.built.ok{border-style:solid;border-color:var(--ok);background:var(--ok-bg)}
+.built.bad{border-style:solid;border-color:var(--bad);background:var(--bad-bg)}
+.pool{display:flex;flex-wrap:wrap;gap:8px}
+.w{border:1.5px solid var(--line);background:var(--sheet);border-radius:10px;padding:9px 14px;font-weight:700;font-size:1.05rem}
+.w:not([disabled]):not(.ghost-w):hover{border-color:var(--accent)}
+.w.on{background:var(--accent-soft);border-color:var(--accent)}
+.w[disabled]{cursor:default}
+.ghost-w{opacity:.25}
+.primary[disabled]{opacity:.5;cursor:default;filter:none}
 .why{margin-top:6px!important;padding:10px 14px;border-radius:12px;background:var(--sheet);border:1px solid var(--line)}
 .actions{display:flex;gap:10px;flex-wrap:wrap}
 .ghost{border:1.5px solid var(--line);background:var(--sheet);border-radius:12px;padding:12px 20px;font-weight:700}
@@ -301,6 +311,9 @@ Object.assign(window.PHON, {"'ll": "l", "2": "tú", "2020": "twenti twenti", "20
 
 /* přibližná výslovnost chybných možností (aby se nepoznaly podle chybějící závorky) */
 Object.assign(window.PHON, {"advices": "ədvajsiz", "agust": "ógəst", "annas'": "enəz", "appril": "ejprəl", "apryl": "ejprəl", "augost": "ógəst", "autum": "ótəm", "babyes": "bejbiiz", "babyies": "bejbiiz", "babys": "bejbiz", "badder": "bedər", "baddest": "bedist", "beautifulest": "bjútiflist", "beautifulier": "bjútifliər", "beautifull": "bjútifl", "beautifuller": "bjútiflər", "beautifuls": "bjútiflz", "beautyful": "bjútifl", "bebi": "bebi", "biger": "bigər", "bigest": "bigist", "boi": "boj", "bookes": "bukiz", "bottle's": "botlz", "bottlees": "botliz", "boughted": "bótd", "boxen": "boksən", "boxies": "boksiz", "boxs": "boksz", "breakfest": "brekfəst", "breat": "brít", "brekfast": "brekfəst", "brights": "brajtz", "bringed": "bringd", "builded": "bildd", "bus's": "basz", "busies": "basiz", "buter": "batər", "calld": "kóld", "callt": "kólt", "camed": "kejmd", "can'ted": "kántd", "catched": "kečt", "chees": "číz", "cheeses": "čízəz", "cheeze": "číz", "chicen": "čikən", "chield": "čajld", "chiken": "čikən", "childes": "čajldiz", "childs'": "čajldz", "cister": "sistər", "citis": "sitiz", "cityes": "sitiiz", "citys": "sitiz", "cleanned": "klínd", "clevar": "klevər", "coffeies": "kofiiz", "comed": "kamd", "cookd": "kukd", "cookt": "kukt", "coulded": "kudd", "countryes": "kantriiz", "countrys": "kantriz", "cousine": "kazn", "cring": "krajing", "dads'": "dedz", "daies": "dejiz", "daugther": "dótər", "decembre": "disembər", "desember": "disembər", "dezember": "disembər", "dids": "didz", "dinnar": "dinər", "doed": "dúd", "doges": "dogiz", "doughter": "dótər", "dress's": "dresz", "dressies": "dresiz", "dresss": "dresz", "drived": "drajvd", "droved": "drouvd", "easyer": "íziər", "easyest": "íziist", "eesy": "ísi", "expensived": "ikspensivd", "expensiver": "ikspensivər", "expensives": "ikspensiviz", "expensivest": "ikspensivist", "expensivier": "ikspensiviər", "februar": "februəri", "febuary": "februəri", "feburary": "februəri", "feets": "fítz", "fich": "fiš", "finded": "fajndd", "fishen": "fišən", "fishes's": "fišəzz", "fishs": "fišz", "footes": "futiz", "foots": "futz", "forgotted": "fərgotd", "fraiday": "frajdej", "frend": "frend", "frendly": "frendli", "fridey": "frajdi", "friendboy": "frendboj", "friendlily": "frendli", "frut": "frút", "fruti": "frúti", "fryday": "frajdej", "funnily": "fanili", "funy": "fani", "furnitures": "fərničəriz", "furnitures's": "fərničər", "gaved": "gejvd", "gerl": "gərl", "getted": "getd", "glassies": "glásiz", "glasss": "glász", "goodest": "gudist", "gos": "gouz", "gotted": "gotd", "grandchildrens": "grenčildrənz", "grandchilds": "grendčajldz", "grandmum": "grenmá", "grandpapa": "grenpá", "grandsun": "grendsan", "gril": "gril", "haded": "hedd", "halp": "help", "handsom": "hensəm", "happyer": "hepiər", "happyest": "hepiist", "haved": "hevd", "helpd": "helpd", "homeworkes": "houmwərkiz", "hospitales": "hospitliz", "hoter": "hotər", "hotest": "hotist", "housband": "hazbənd", "housies": "hausiz", "husbend": "hazbənd", "importantest": "impórtəntist", "interestinger": "intrəstingər", "interestingest": "intrəstingist", "janaury": "dženjuəri", "januar": "dženjuəri", "janury": "dženjuəri", "juce": "džús", "jully": "džali", "kake": "kejk", "keies": "kíiz", "knifes": "najvz", "knifs": "najfs", "knive": "najvz", "lanch": "lónč", "lazzy": "lejzi", "leafes": "lífs", "leaved": "lívd", "leavs": "lívz", "lefted": "leftd", "lieing": "lajing", "livd": "livd", "liveed": "livd", "losed": "lúzd", "lovd": "lavd", "loveed": "lavd", "maded": "mejdd", "maked": "mejkd", "meeted": "mítd", "melk": "melk", "metted": "metd", "mices": "majsiz", "mights": "majtz", "milc": "milk", "mondey": "mandi", "moonday": "mandej", "mouse's": "mausz", "mouses": "mausiz", "musted": "mastd", "musts": "mastz", "naibour": "nejbər", "neighboor": "nejbər", "newses": "njúziz", "nise": "najs", "novembar": "nouvembər", "novembre": "nouvembər", "nowember": "nouvembər", "octobar": "oktoubər", "octobre": "oktoubər", "oktober": "oktoubər", "opend": "oupənd", "openned": "oupənd", "orangies": "orindžiz", "orderd": "órdərd", "parentes": "peərənts", "parents's": "peərəntsz", "payed": "pejd", "personen": "pərsnən", "persons's": "pərsənzz", "petrs": "petrz", "plaied": "plejid", "plaies": "plejiz", "playd": "plejd", "potato's": "pətejtouz", "potatoies": "pətejtouiz", "potatos": "pətejtouz", "prety": "priti", "raice": "rajs", "rainned": "rejnd", "readed": "rídd", "relativs": "relətivz", "ris": "ris", "saided": "sedd", "salat": "selət", "saterday": "setərdej", "satturday": "setərdej", "saturdey": "setərdej", "septembre": "septembər", "septemper": "septembər", "setember": "septembər", "sheepes": "šípiz", "shoulds": "šudz", "shugar": "šugər", "sisteres": "sistəriz", "sleeped": "slípd", "slepted": "sleptd", "slimm": "slim", "slowlier": "slouliiər", "smaler": "smólər", "sonday": "sandej", "soupe": "súp", "speaked": "spíkd", "spoked": "spoukd", "startted": "stártd", "stoped": "stopd", "stopt": "stopt", "strawberry's": "stróberiz", "strawberryes": "stróberiz", "strawberrys": "stróberiz", "studed": "stadid", "studieded": "stadidd", "studyed": "stadid", "studys": "stadiz", "suger": "šugər", "sumer": "samər", "sundey": "sandej", "sunnday": "sandej", "swiming": "swiming", "taked": "tejkd", "teeths": "tíθz", "thinked": "θinkd", "thirsday": "θərzdej", "thoughted": "θótd", "thursdey": "θərzdej", "tiredly": "tajərdli", "tomato's": "təmátouz", "tomatoies": "təmátouiz", "tomorow": "təmorou", "tooked": "tukd", "toothes": "túθiz", "tooths": "túθz", "traveld": "trevəld", "trouseres": "trauzəriz", "tryed": "trajd", "tryied": "trajid", "tuesdey": "tjúzdej", "twosday": "túzdej", "tyred": "tajərd", "uncel": "ankl", "universitys": "júnəvərsətiz", "vegetabels": "vedžtəblz", "vegetable's": "vedžtəblz", "vegetarianly": "vedžəteríənli", "vegtables": "vedžtəblz", "waitor": "wejtər", "wantid": "wóntid", "wantted": "wontd", "watch's": "wočz", "watchd": "wočd", "watchies": "wočiz", "watchs": "wočz", "watcht": "wočt", "wather": "wedər", "wedensday": "wenzdej", "wednesdey": "wenzdej", "wensday": "wenzdej", "wented": "wentd", "wifes": "wajfiz", "wimen": "wimən", "wive": "wajv", "womans": "wumənz", "womens": "wimənz", "workd": "wərkd", "workt": "wərkt", "woter": "wótər", "writeing": "rajting", "wroted": "routd"});
+
+/* Povaha a vzhled */
+Object.assign(window.PHON, {"attractive": "ətrektiv", "bald": "bóld", "ball": "ból", "beard": "biərd", "bird": "bərd", "bits": "bits", "blues": "blúz", "bold": "bould", "bolt": "boult", "chin": "čin", "circles": "sərklz", "clover": "klouvər", "curious": "kjuəriəs", "curly": "kərli", "curry": "kari", "darkly": "dárkli", "disfriendly": "disfrendli", "easily": "ízili", "extra": "ekstrə", "extrovert": "ekstrəvərt", "exvert": "eksvərt", "fair": "feər", "fan": "fen", "fatty": "feti", "friendful": "frendfl", "fringe": "frindž", "general": "dženərəl", "generos": "dženərəs", "generous": "dženərəs", "genius": "džíniəs", "ginger": "džindžər", "giving": "giving", "hard": "hárd", "hardly": "hárdli", "inkind": "inkajnd", "introvert": "intrəvərt", "jokes": "džouks", "kid": "kid", "king": "king", "laughs": "láfs", "man's": "menz", "medium": "mídiəm", "meen": "mín", "moustache": "məstáš", "moustash": "məstáš", "mouth": "mauθ", "mustard": "mastərd", "nofriendly": "noufrendli", "nokind": "noukajnd", "nose": "nouz", "overwait": "ouvərwejt", "overweight": "ouvərwejt", "quick": "kwik", "quietly": "kwajətli", "quit": "kwit", "quite": "kwajt", "rad": "red", "really": "riəli", "series": "siəríz", "serious": "siəriəs", "serius": "siəriəs", "share": "šeər", "shay": "šej", "shine": "šajn", "shy": "šaj", "speaky": "spíki", "straight": "strejt", "strait": "strejt", "stupid": "stjúpid", "stupidly": "stjúpidli", "stupit": "stjúpit", "talkative": "tókətiv", "talkive": "tókiv", "talks": "tóks", "thin": "θin", "unfriend": "anfrend", "unfriendly": "anfrendli", "unkid": "ankid", "unkind": "ankajnd", "wave": "wejv", "waves": "wejvz", "wavy": "wejvi"});
 
 </script>
 <script>
@@ -2360,6 +2373,129 @@ Ještě kousek, prosím.|Another piece, please.|An other piece, please.|Other pi
 
 </script>
 <script>
+/* Řádek začínající # = cvičení „Poskládej větu“: #|anglická věta|česky|proč */
+window.TOPICS = window.TOPICS || [];
+window.TOPICS.push({
+id: "people", en: "Describing people", cz: "Povaha a vzhled", ph: "diskrajbing pípl",
+summary: "Jak popsat člověka. Na <b>vzhled</b> se ptáš <b>What does she look like?</b> {{Jak vypadá?}}, na <b>povahu</b> <b>What's she like?</b> {{Jaká je?}}. Postavu a povahu říkáš slovesem <b>be</b>: She is tall. {{Je vysoká.}} Vlasy a oči slovesem <b>have</b>: She has blue eyes. {{Má modré oči.}}",
+theory: [
+["Vzhled: vlasy, oči, postava", "<ul><li>Vlasy: long {{dlouhé}}, short {{krátké}}, straight {{rovné}}, wavy {{vlnité}}, curly {{kudrnaté}}, dark {{tmavé}}, fair / blonde {{světlé, blond}}, red {{zrzavé}}.</li><li>He's <b>bald</b>. {{Je plešatý.}} He has a <b>beard</b> {{plnovous}} and a <b>moustache</b> {{knír}}.</li><li>Postava: tall {{vysoký}}, short {{malý}}, medium height {{střední výšky}}, thin {{hubený}}, slim {{štíhlý}}, a bit overweight {{trochu při těle}}.</li></ul><b>Hair</b> (vlasy) je v angličtině jednotné číslo: She has long hair. {{Má dlouhé vlasy.}}, ne „hairs“."],
+["Be, nebo have?", "<ul><li><b>be</b> = jaký kdo je: He's tall. {{Je vysoký.}} He's bald. {{Je plešatý.}} She's kind. {{Je laskavá.}}</li><li><b>have</b> = co kdo má: She has curly hair. {{Má kudrnaté vlasy.}} He has a beard. {{Má plnovous.}}</li></ul>"],
+["Pořadí přídavných jmen", "Když dáš dvě nebo tři přídavná jména za sebou (bez and), pořadí je: <b>velikost → tvar → barva</b> + podstatné jméno.<br><i>She has <b>long curly red</b> hair.</i> {{Má dlouhé kudrnaté zrzavé vlasy.}}<br><i>He has <b>big brown</b> eyes.</i> {{Má velké hnědé oči.}}"],
+["Povaha a opaky", "<div class='tbl'><table><tr><th>vlastnost</th><th>opak</th></tr><tr><td>friendly {{přátelský}}</td><td>unfriendly {{nepřátelský}}</td></tr><tr><td>talkative {{upovídaný}}</td><td>quiet {{tichý}}</td></tr><tr><td>generous {{štědrý}}</td><td>mean {{lakomý}}</td></tr><tr><td>kind {{laskavý}}</td><td>unkind {{nelaskavý}}</td></tr><tr><td>lazy {{líný}}</td><td>hard-working {{pracovitý}}</td></tr><tr><td>funny {{vtipný}}</td><td>serious {{vážný}}</td></tr><tr><td>clever {{chytrý}}</td><td>stupid {{hloupý}}</td></tr><tr><td>shy {{stydlivý}}</td><td>extrovert {{společenský}}</td></tr></table></div>Opak často vznikne předponou <b>un-</b>: friendly → unfriendly, kind → unkind."],
+["Na co si dát pozor", "<ul><li><b>slim</b> = štíhlý (hezky), <b>thin</b> = hubený. <b>Fat</b> {{tlustý}} je nezdvořilé, říká se <b>a bit overweight</b>.</li><li><b>nice</b> = milý, nejčastější slovo pro povahu: He's a very nice person. {{Je to moc milý člověk.}}</li><li><b>funny</b> = rozesměje tě. <b>fun</b> = dobře se s ním bavíš.</li><li><b>quite</b> (kwajt) = docela. <b>quiet</b> (kwajət) = tichý. Pletou se!</li><li>Síla: <b>very</b> {{velmi}}, <b>quite</b> {{docela}}, <b>a bit</b> {{trochu}}: He's a bit lazy. {{Je trochu líný.}}</li></ul>"],
+["Jak si to zapamatovat", "<b>LOOK LIKE = co vidí oči</b> (vzhled). <b>BE LIKE = co poznáš, když člověka znáš</b> (povaha).<br>Pořadí slov: <b>velký – kudrnatý – zrzavý</b> = velikost, tvar, barva."]
+],
+subs: [
+["Vzhled", `
+kudrnaté vlasy|curly hair|curry hair|wavy hair|curly hairs|-|Curly = kudrnaté (malé kudrlinky). Wavy = vlnité. Hair je bez -s.
+vlnité vlasy|wavy hair|curly hair|wave hair|wavy hairs|-|Wavy = vlnité. Wave = vlna.
+rovné vlasy|straight hair|strait hair|straight hairs|right hair|-|Straight = rovný. Gh se nečte: strejt.
+zrzavé vlasy|red hair|orange hair|ginger hairs|rad hair|-|Zrzavé vlasy jsou anglicky „červené“: red hair. Hovorově i ginger hair.
+tmavé vlasy|dark hair|black hairs|dark hairs|darkly hair|-|Dark = tmavý. Hair je bez -s.
+světlé vlasy (blond)|fair hair|fire hair|fair hairs|white hair|-|Fair nebo blonde = světlé, blond. White hair = bílé, šedivé.
+plešatý|bald|bold|bolt|ball|-|Bald = plešatý. Bold = odvážný, tučný.
+plnovous|a beard|a bird|a bear|a beer|-|Beard = vousy na bradě. Bird = pták, bear = medvěd, beer = pivo!
+knír|a moustache|a mustard|a mouth|a moustash|-|Moustache = knír. Mouth = ústa, mustard = hořčice.
+velké modré oči|big blue eyes|blue big eyes|big blues eyes|big blue eye|-|Pořadí: velikost (big) před barvou (blue). Přídavné jméno nemá -s.
+vysoký a hubený|tall and thin|high and thin|tall and thing|long and thin|-|U lidí tall. Thin = hubený, thing = věc.
+střední výšky|medium height|middle high|medium tall|half height|-|Střední výška = medium height.
+trochu při těle (zdvořile)|a bit overweight|very fat|a bit overwait|a little fatty|-|Fat (tlustý) je nezdvořilé. Zdvořile: a bit overweight.
+docela štíhlá|quite slim|quite slime|quiet slim|quit slim|-|Quite = docela. Quiet = tichý, quit = skončit. Slime = sliz!
+Má kudrnaté zrzavé vlasy.|She has curly red hair.|She is curly red hair.|She has red curly hair.|She has curly red hairs.|-|Have + vlasy. Pořadí: tvar (curly) před barvou (red).
+Je plešatý.|He's bald.|He has bald.|He's bold.|He has a bald.|-|Plešatý je přídavné jméno: be bald. Vlasy má (has), ale plešatý je (is).
+Má plnovous a knír.|He has a beard and a moustache.|He is a beard and a moustache.|He has beard and moustache.|He has a bird and a moustache.|-|Have + a beard, a moustache.
+Má dlouhé rovné vlasy.|She has long straight hair.|She has straight long hair.|She has long straight hairs.|She is long straight hair.|-|Pořadí: velikost (long) → tvar (straight).
+Je hodně vysoký a hubený.|He's very tall and thin.|He's very high and thin.|He has very tall and thin.|He's very tall and thing.|-|Postava: be + tall, thin.
+Je dost malý a trochu při těle.|He's quite short and a bit overweight.|He's quite small and very fat.|He has quite short and a bit overweight.|He's quiet short and a bit overweight.|-|Malý postavou = short. Quite = dost, docela. Quiet = tichý.`],
+["Povaha a opaky", `
+přátelský|friendly|friend|frendly|friendful|-|Friendly = přátelský. Je to přídavné jméno, i když končí na -ly.
+upovídaný|talkative|talking|talkive|speaky|-|Talkative = upovídaný (talk = mluvit). Čte se tókətiv.
+štědrý|generous|general|genius|generos|-|Generous = štědrý, rád dává. Čte se dženərəs.
+laskavý, hodný|kind|kid|king|kinder|-|Kind = laskavý. Kid = dítě, king = král.
+líný|lazy|crazy|lacy|easy|-|Lazy = líný. Crazy = šílený, easy = snadný.
+vtipný|funny|fun|funy|funnily|-|Funny = vtipný, rozesměje tě. Fun = je s ním legrace, dobře se s ním bavíš.
+chytrý|clever|cleaver|clover|lever|-|Clever = chytrý. Jiné slovo se stejným významem: intelligent.
+stydlivý|shy|sky|shine|shay|-|Shy = stydlivý, plachý. Sky = obloha.
+nepřátelský|unfriendly|nofriendly|disfriendly|unfriend|-|Opak často tvoří předpona un-: unfriendly.
+tichý, málomluvný|quiet|quite|quit|quietly|-|Quiet (kwajət) = tichý. Quite (kwajt) = docela. Pletou se!
+lakomý|mean|mine|meen|man|-|Mean = lakomý (opak generous). Znamená i zlý, nepříjemný.
+nelaskavý, zlý|unkind|unkid|inkind|nokind|-|Un + kind = unkind.
+pracovitý|hard-working|hard-work|hardly working|work-hard|-|Hard-working = pracovitý (opak lazy). Hardly = sotva!
+vážný|serious|series|curious|serius|-|Serious = vážný (opak funny). Series = seriál, curious = zvědavý.
+hloupý|stupid|student|stupidly|stupit|-|Stupid = hloupý (opak clever). Je to dost silné slovo, používej ho opatrně.
+společenský, otevřený|extrovert|extra|introvert|exvert|-|Extrovert = společenský (opak shy). Introvert = uzavřený.
+The opposite of lazy is ___.|hard-working|clever|quiet|serious|Opak slova líný je …|Lazy (líný) × hard-working (pracovitý).
+The opposite of generous is ___.|mean|kind|funny|shy|Opak slova štědrý je …|Generous (štědrý) × mean (lakomý).
+The opposite of funny is ___.|serious|stupid|unkind|quiet|Opak slova vtipný je …|Funny (vtipný) × serious (vážný).
+The opposite of shy is ___.|extrovert|clever|lazy|mean|Opak slova stydlivý je …|Shy (stydlivý) × extrovert (společenský).`],
+["Definice", `
+A person who is open and warm is ___.|friendly|lazy|serious|mean|Člověk, který je otevřený a vřelý, je …|Open and warm = otevřený a vřelý → friendly.
+A person who talks a lot is ___.|talkative|quiet|shy|serious|Člověk, který hodně mluví, je …|Talk a lot = hodně mluvit → talkative.
+A person who likes giving people things is ___.|generous|mean|lazy|clever|Člověk, který lidem rád něco dává, je …|Give = dávat. Kdo rád dává, je generous.
+A person who is friendly and good to other people is ___.|kind|mean|stupid|shy|Člověk, který je milý a hodný na ostatní, je …|Kind = laskavý, hodný.
+A person who doesn't want to work is ___.|lazy|hard-working|generous|kind|Člověk, který nechce pracovat, je …|Lazy = líný.
+A person who makes people laugh is ___.|funny|serious|quiet|mean|Člověk, který lidi rozesměje, je …|Make people laugh = rozesmát lidi → funny.
+A person who is quick at learning and understanding things is ___.|clever|stupid|lazy|shy|Člověk, který se rychle učí a chápe, je …|Clever = chytrý, intelligent.
+A person who can't talk easily to people he doesn't know is ___.|shy|talkative|extrovert|funny|Člověk, který nedokáže snadno mluvit s lidmi, které nezná, je …|Shy = stydlivý.
+A person who doesn't talk much is ___.|quiet|talkative|funny|kind|Člověk, který moc nemluví, je …|Quiet = tichý, málomluvný.
+A person who doesn't like giving things is ___.|mean|generous|friendly|clever|Člověk, který nerad něco dává, je …|Mean = lakomý.
+A person who works a lot is ___.|hard-working|lazy|mean|shy|Člověk, který hodně pracuje, je …|Hard-working = pracovitý.
+A person who never laughs or makes jokes is ___.|serious|funny|talkative|kind|Člověk, který se nesměje a nevtipkuje, je …|Serious = vážný.
+A person who loves meeting new people is ___.|extrovert|shy|quiet|mean|Člověk, který rád poznává nové lidi, je …|Extrovert = společenský.
+A person who has no hair is ___.|bald|curly|slim|tall|Člověk, který nemá vlasy, je …|Bald = plešatý.
+Hair which is not straight but has big waves is ___.|wavy|straight|bald|short|Vlasy, které nejsou rovné, ale mají velké vlny, jsou …|Wave = vlna → wavy = vlnité.
+Hair with lots of small circles is ___.|curly|straight|bald|fair|Vlasy s malými kudrlinkami jsou …|Curly = kudrnaté.
+Hair on a man's chin is a ___.|beard|moustache|bird|hat|Vlasy na bradě muže jsou …|Beard = plnovous, vousy na bradě. Moustache je jen nad pusou.
+Hair between a man's nose and mouth is a ___.|moustache|beard|fringe|bald|Vlasy mezi nosem a pusou muže jsou …|Moustache = knír. Fringe = ofina.
+A person who is not tall and not short is ___ height.|medium|middle|half|quite|Člověk, který není vysoký ani malý, je … výšky.|Střední výška = medium height.
+A person who is thin in an attractive way is ___.|slim|fat|bald|overweight|Člověk, který je hubený a vypadá hezky, je …|Slim = štíhlý (hezky). Thin = hubený.`],
+["Slož větu", `
+#|She has long curly red hair.|Má dlouhé kudrnaté zrzavé vlasy.|Pořadí: velikost (long) → tvar (curly) → barva (red).
+#|He has big brown eyes.|Má velké hnědé oči.|Velikost (big) jde před barvu (brown).
+#|My sister has short dark hair.|Moje sestra má krátké tmavé vlasy.|Have + velikost (short) + barva (dark) + hair.
+#|He's tall and thin.|Je vysoký a hubený.|Postava se říká slovesem be: he's tall.
+#|What does she look like?|Jak vypadá?|Otázka na vzhled: What does … look like?
+#|What's he like?|Jaký je? (povahou)|Otázka na povahu: What's … like?
+#|She's very kind and generous.|Je velmi laskavá a štědrá.|Povaha: be + very + přídavná jména.
+#|My dad is quite shy.|Můj táta je docela stydlivý.|Quite (docela) stojí před přídavným jménem.
+#|He has a beard and a moustache.|Má plnovous a knír.|Have + a beard + and + a moustache.
+#|She has long straight fair hair.|Má dlouhé rovné světlé vlasy.|Velikost (long) → tvar (straight) → barva (fair).
+#|My brother is a bit lazy.|Můj bratr je trochu líný.|A bit (trochu) stojí před přídavným jménem.
+#|She's medium height and quite slim.|Je střední výšky a docela štíhlá.|Postava: be + medium height, quite slim.
+#|He isn't very talkative.|Není moc upovídaný.|Isn't very = není moc. Zní to jemněji než he's quiet.
+#|Is your teacher funny?|Je tvůj učitel vtipný?|Otázka s be: is jde na začátek.
+#|She has beautiful green eyes.|Má krásné zelené oči.|Názor (beautiful) jde před barvu (green).
+#|My grandpa is bald.|Můj děda je plešatý.|Plešatý: be bald.
+#|They are very friendly people.|Jsou to velmi přátelští lidé.|Very + friendly + people.
+#|He's clever but a bit lazy.|Je chytrý, ale trochu líný.|But = ale.
+#|Does she have curly hair?|Má kudrnaté vlasy?|Otázka s have: does + she + have.
+#|My best friend is very funny.|Můj nejlepší kamarád je moc vtipný.|Kdo + is + very + funny.`],
+["Rozhovor", `
+What does your sister ___ like? (vzhled)|look|be|looks|is|Jak vypadá tvoje sestra?|Vzhled = look like. Po does je look bez -s.
+What ___ your sister like? (povaha)|is|does|looks|has|Jaká je tvoje sestra? (povahou)|Povaha = What is … like?
+She ___ quite tall.|is|has|have|does|Je docela vysoká.|Postava: be.
+She ___ short dark hair.|has|is|have|are|Má krátké tmavé vlasy.|Vlasy: have, u she has.
+He ___ bald.|is|has|have|does|Je plešatý.|Bald je přídavné jméno: is.
+He ___ a beard.|has|is|have|does|Má plnovous.|Beard je věc, kterou má: has.
+My parents ___ very kind.|are|is|has|have|Moji rodiče jsou velmi laskaví.|Parents = they: are.
+Jak vypadá tvůj bratr?|What does your brother look like?|What is your brother like?|How does your brother look like?|What does your brother looks like?|-|Vzhled: What does … look like? What is he like? je otázka na povahu.
+Jaký je tvůj šéf? (povahou)|What's your boss like?|What does your boss look like?|How is your boss like?|What's like your boss?|-|Povaha: What's … like?
+Je moc milý.|He's very nice.|He's very nicely.|He has very nice.|He's very fan.|-|Nice = milý. Je to nejčastější slovo pro povahu.
+Dobře se s ní bavíš. (je zábavná)|She's fun.|She's funny.|She has fun.|She's fan.|-|Fun = dobře se s ním bavíš. Funny = rozesměje tě.
+Rozesměje mě. Je vtipný.|He makes me laugh. He's funny.|He makes me laugh. He's fun.|He makes me to laugh. He's funny.|He makes me laughing. He's funny.|-|Funny = rozesměje. Po make je sloveso bez to.
+He's ___ tall. (velmi)|very|quite|a bit|much|Je velmi vysoký.|Very = velmi.
+She's ___ slim. (docela)|quite|quiet|very|a lot|Je docela štíhlá.|Quite = docela. Quiet = tichý.
+He's ___ overweight. (trochu)|a bit|a lot of|quite a|bits|Má trochu nadváhu.|A bit = trochu. Je to zdvořilejší než fat.
+Má velké modré oči.|She has big blue eyes.|She has blue big eyes.|She is big blue eyes.|She has big blue eye.|-|Have + velikost (big) + barva (blue) + eyes.
+Moje máma je malá a má kudrnaté vlasy.|My mum is short and she has curly hair.|My mum is short and she is curly hair.|My mum has short and she has curly hair.|My mum is short and she has curly hairs.|-|Postava: is. Vlasy: has.
+Není moc upovídaná, je spíš tichá.|She isn't very talkative, she's quite quiet.|She isn't very talkative, she's quite quite.|She doesn't very talkative, she's quite quiet.|She isn't very talking, she's quite quiet.|-|Quite quiet = docela tichá. Pozor: quite (kwajt) × quiet (kwajət).
+Kdo je ta žena s dlouhými rovnými vlasy?|Who is the woman with long straight hair?|Who is the woman with straight long hair?|Who is the woman has long straight hair?|Who is the woman with long straight hairs?|-|S + popis = with long straight hair.
+Je to laskavý a pracovitý člověk.|He's a kind and hard-working person.|He's a kind and hard-work person.|He's kind and hard-working person.|He's a kind and hardly working person.|-|A + přídavná jména + person.`]
+]});
+
+</script>
+<script>
 /* Příkladové věty k odpovědím, které jsou jen slovo nebo krátké spojení. Formát: téma|zadání přesně jako v datech|anglická věta|český překlad */
 window.EXAMPLES = `
 verbs|být|I am happy.|Jsem šťastný.
@@ -2784,14 +2920,51 @@ food|obchod|The shop opens at eight.|Obchod otevírá v osm.
 
 </script>
 <script>
+/* Příkladové věty pro téma Povaha a vzhled */
+window.EXAMPLES = (window.EXAMPLES || "") + `
+people|kudrnaté vlasy|My daughter has curly hair.|Moje dcera má kudrnaté vlasy.
+people|vlnité vlasy|She has long wavy hair.|Má dlouhé vlnité vlasy.
+people|rovné vlasy|I have straight hair.|Mám rovné vlasy.
+people|zrzavé vlasy|The boy has red hair.|Ten kluk má zrzavé vlasy.
+people|tmavé vlasy|My husband has dark hair.|Můj manžel má tmavé vlasy.
+people|světlé vlasy (blond)|Her children have fair hair.|Její děti mají světlé vlasy.
+people|plešatý|My uncle is bald.|Můj strýc je plešatý.
+people|plnovous|My grandpa has a white beard.|Můj děda má bílý plnovous.
+people|knír|He has a big moustache.|Má velký knír.
+people|velké modré oči|The baby has big blue eyes.|Miminko má velké modré oči.
+people|vysoký a hubený|My son is tall and thin.|Můj syn je vysoký a hubený.
+people|střední výšky|She's medium height.|Je střední výšky.
+people|trochu při těle (zdvořile)|My dad is a bit overweight.|Můj táta je trochu při těle.
+people|docela štíhlá|My sister is quite slim.|Moje sestra je docela štíhlá.
+people|přátelský|Our neighbours are very friendly.|Naši sousedé jsou velmi přátelští.
+people|upovídaný|My friend is very talkative.|Moje kamarádka je hodně upovídaná.
+people|štědrý|My grandma is very generous.|Moje babička je moc štědrá.
+people|laskavý, hodný|Thank you, you're very kind.|Děkuju, jsi moc hodná.
+people|líný|My cat is fat and lazy.|Moje kočka je tlustá a líná.
+people|vtipný|The film is really funny.|Ten film je opravdu vtipný.
+people|chytrý|She's a clever girl.|Je to chytrá holka.
+people|stydlivý|He's shy with new people.|S novými lidmi je stydlivý.
+people|nepřátelský|The waiter was unfriendly.|Číšník byl nepříjemný.
+people|tichý, málomluvný|My brother is quiet.|Můj bratr je tichý.
+people|lakomý|Don't be mean, share it!|Nebuď lakomý, rozděl se!
+people|nelaskavý, zlý|That was very unkind.|To bylo moc nehezké.
+people|pracovitý|My mum is very hard-working.|Moje máma je velmi pracovitá.
+people|vážný|Why are you so serious?|Proč jsi tak vážný?
+people|hloupý|It was a stupid mistake.|Byla to hloupá chyba.
+people|společenský, otevřený|My sister is an extrovert.|Moje sestra je společenská.
+`;
+
+</script>
+<script>
 const SOON = [];
-const GROUPS = [["Základy", ["verbs","numbers","pronouns","prepositions","articles","plurals","adjectives","quantity","there"]], ["Časy a způsobová slovesa", ["present","past","future","modals"]], ["Slovíčka do života", ["time","family","food"]]];
-const KIND = {"Slovíčka":"Přelož do angličtiny","Slovní spojení a fráze":"Vyber správné spojení","Otázky":"Vyber správnou otázku","Zápory":"Vyber správný zápor","Být, moct, smět":"Vyber správný tvar","Běžné věty":"Přelož celou větu"};
+const GROUPS = [["Základy", ["verbs","numbers","pronouns","prepositions","articles","plurals","adjectives","quantity","there"]], ["Časy a způsobová slovesa", ["present","past","future","modals"]], ["Slovíčka do života", ["time","family","people","food"]]];
+const KIND = {"Slovíčka":"Přelož do angličtiny","Slovní spojení a fráze":"Vyber správné spojení","Otázky":"Vyber správnou otázku","Zápory":"Vyber správný zápor","Být, moct, smět":"Vyber správný tvar","Běžné věty":"Přelož celou větu","Slož větu":"Poskládej větu","Vzhled":"Přelož do angličtiny","Povaha a opaky":"Přelož do angličtiny","Rozhovor":"Vyber správnou odpověď"};
 
 const CZ = h => String(h).replace(/\{\{(.*?)\}\}/g, "<span class='cz'>($1)</span>");
 const TOPICS = (window.TOPICS || []).map(t => ({...t, summary: CZ(t.summary), theory: t.theory.map(([h, b]) => [h, CZ(b)]), subs: t.subs.map(([name, text], si) => ({
   name, key: t.id + "-" + si,
   items: text.trim().split("\n").map(l => { const p = l.split("|").map(s => s.trim());
+    if (p[0] === "#") return { tid: t.id, type: "order", full: "#" + p[1], main: p[2], note: "", a: p[1], w: [], words: p[1].replace(/[.?!]$/, "").split(/\s+/), cz: "", why: p[3] || "", part: name };
     const m = p[0].match(/^(.*?)\s*(?:\(([^)]*)\))?$/);
     return { tid: t.id, full: p[0], main: m[1], note: m[2] || "", a: p[1], w: p.slice(2, 5), cz: p[5] === "-" ? "" : p[5], why: p[6] || "", part: name }; })
 }))}));
@@ -2963,7 +3136,7 @@ function startSet(items, retry){
   Q = { list, i: 0, score: 0, answered: false, chosen: null, typed: "", showTr: false, wrong: [], done: false, retry: !!retry };
   if (list.length) nextOpts();
 }
-function nextOpts(){ const it = Q.list[Q.i]; Q.opts = shuffle([it.a, ...shuffle(it.w).slice(0, 2)]); Q.answered = false; Q.chosen = null; Q.typed = ""; Q.showTr = false; }
+function nextOpts(){ const it = Q.list[Q.i]; if (it.type === "order") { let o; do { o = shuffle(it.words.map((_, i) => i)); } while (it.words.length > 2 && o.every((v, i) => v === i)); Q.order = o; Q.picked = []; } Q.opts = it.type === "order" ? [] : shuffle([it.a, ...shuffle(it.w).slice(0, 2)]); Q.answered = false; Q.chosen = null; Q.typed = ""; Q.showTr = false; }
 
 function render(){
   const modeSeg = `<div class="seg" role="group" aria-label="Způsob odpovídání">
@@ -3010,6 +3183,12 @@ function questionHTML(){
         autocapitalize="off" autocorrect="off" spellcheck="false" ${Q.answered ? "disabled" : ""} aria-label="Tvoje odpověď">
       ${Q.answered ? "" : `<div class="actions"><button class="primary" type="submit">Zkontrolovat</button><button class="ghost" type="button" data-act="dunno">Nevím</button></div>`}
     </form>`;
+  } else if (it.type === "order") {
+    ask = "Poskládej větu. Klepni na slova ve správném pořadí.";
+    const built = Q.picked.map((wi, j) => `<button class="w on" data-act="unpick" data-j="${j}" ${Q.answered ? "disabled" : ""}>${esc(it.words[wi])}</button>`).join("");
+    const pool = Q.order.map(wi => Q.picked.includes(wi) ? `<span class="w ghost-w" aria-hidden="true">${esc(it.words[wi])}</span>` : `<button class="w" data-act="wpick" data-w="${wi}">${esc(it.words[wi])}</button>`).join("");
+    answerArea = `<div class="built ${Q.answered ? (right ? "ok" : "bad") : ""}">${built || '<span class="hint">Sem se skládá věta…</span>'}</div>
+      ${Q.answered ? "" : `<div class="pool">${pool}</div><div class="actions"><button class="primary" data-act="ocheck" ${Q.picked.length === it.words.length ? "" : "disabled"}>Zkontrolovat</button><button class="ghost" data-act="oclear">Začít znovu</button><button class="ghost" data-act="dunno">Nevím</button></div>`}`;
   } else {
     ask = "Vyber správnou možnost.";
     answerArea = `<div class="opts">${Q.opts.map((o, i) => {
@@ -3038,7 +3217,7 @@ function questionHTML(){
   <div class="card"><div class="kind">${label}${inM && !Q.answered ? ` <span class="badge">opakuješ</span>` : ""}</div>
   <div class="prompt">${prompt}</div>${note}<div class="ask">${ask}</div>${tr}
   ${answerArea}${fb}</div>
-  <div class="hint">${MODE === "type" ? "Tip: Enter = zkontrolovat a pak pokračovat. Velká písmena a tečky nevadí, „don't“ i „do not“ platí obojí." : "Tip: odpovídat můžeš klávesami 1–3, Enterem pokračuješ."}</div>`;
+  <div class="hint">${it.type === "order" && MODE !== "type" ? "Tip: klepnutím na slovo ve větě ho vrátíš zpátky." : MODE === "type" ? "Tip: Enter = zkontrolovat a pak pokračovat. Velká písmena a tečky nevadí, „don't“ i „do not“ platí obojí." : "Tip: odpovídat můžeš klávesami 1–3, Enterem pokračuješ."}</div>`;
 }
 
 function resultHTML(){
@@ -3096,6 +3275,10 @@ app.addEventListener("click", e => {
   else if (a === "say") say(b.dataset.t);
   else if (a === "pick") answer(Q.opts[+b.dataset.k], null);
   else if (a === "dunno") answer(null, "");
+  else if (a === "wpick") { Q.picked.push(+b.dataset.w); render(); }
+  else if (a === "unpick") { Q.picked.splice(+b.dataset.j, 1); render(); }
+  else if (a === "oclear") { Q.picked = []; render(); }
+  else if (a === "ocheck") { const it = Q.list[Q.i]; answer(null, Q.picked.map(i => it.words[i]).join(" ")); }
   else if (a === "closeth") { T.theoryOpen = false; const d = document.getElementById("theory"); d.open = false; d.scrollIntoView({block: "nearest"}); }
   else if (a === "tr") { if (MODE === "type" && !Q.answered) Q.typed = document.getElementById("ans")?.value || ""; Q.showTr = !Q.showTr; render(); }
   else if (a === "next") next();
@@ -3105,7 +3288,7 @@ app.addEventListener("click", e => {
 document.addEventListener("keydown", e => {
   if (view !== "topic" || !Q || Q.done || !Q.list.length) return;
   if (e.target.closest && e.target.closest("summary, input")) return;
-  if (!Q.answered && MODE === "click" && ["1","2","3"].includes(e.key)) answer(Q.opts[+e.key - 1], null);
+  if (!Q.answered && MODE === "click" && Q.list[Q.i].type !== "order" && ["1","2","3"].includes(e.key)) answer(Q.opts[+e.key - 1], null);
   else if (Q.answered && e.key === "Enter") { e.preventDefault(); next(); }
 });
 renderHome();
