@@ -11,6 +11,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Klikačka">
+<script>window.KLIK_AUDIO = true; window.KLIK_VER = "2026-11-07-zvuky2";</script>
 <title>Anglická klikačka</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <style>/* lexend-latin-500-normal */
@@ -297,6 +298,8 @@ a.primary{text-decoration:none;display:inline-block}
 .tfb.dim{opacity:.45}
 .tok{border:1.5px solid transparent;background:var(--accent-soft);border-radius:8px;padding:2px 8px;font:inherit;font-weight:700;line-height:1.7}
 .tok:hover{border-color:var(--accent)}
+[hidden]{display:none!important}
+.verline{font-size:.78rem;color:var(--muted);text-align:center}
 .why{margin-top:6px!important;padding:10px 14px;border-radius:12px;background:var(--sheet);border:1px solid var(--line)}
 .actions{display:flex;gap:10px;flex-wrap:wrap}
 .ghost{border:1.5px solid var(--line);background:var(--sheet);border-radius:12px;padding:12px 20px;font-weight:700}
@@ -3769,8 +3772,8 @@ function sayFallback(t, code){
   box.innerHTML = `<p>Tenhle prohlížeč neumí číst nahlas. Otevři výslovnost v Google Překladači a klepni tam na reproduktor.</p>
     <div class="actions"><a class="primary" href="${url}" target="_blank" rel="noopener">Otevřít výslovnost</a><button class="ghost" type="button" data-close-say>Zavřít</button></div>
     <p class="hint">Tip: zkontroluj tlačítko ztlumení na boku telefonu a hlasitost. Kód chyby: ${esc(code || "?")}</p>`;
-  box.hidden = false;
-  box.querySelector("[data-close-say]").onclick = () => { box.hidden = true; };
+  box.hidden = false; box.style.display = "";
+  box.querySelector("[data-close-say]").onclick = () => { box.hidden = true; box.style.display = "none"; };
 }
 function speakOnce(t, opts, onFail){
   const synth = window.speechSynthesis;
@@ -3787,19 +3790,20 @@ let curAudio = null;
 function say(t){
   if (window.KLIK_AUDIO) {
     let done = false;
-    const fb = () => { if (!done) { done = true; speakTTS(t); } };
+    const fb = why => { if (!done) { done = true; speakTTS(t, why); } };
     try {
       if (curAudio) { curAudio.pause(); curAudio = null; }
       const a = new Audio("a/" + fnv(t) + ".mp3");
-      curAudio = a; a.onerror = () => { if (curAudio === a) fb(); };
-      const pr = a.play(); if (pr && pr.catch) pr.then(() => { done = true; }).catch(e => { if (e && e.name === "AbortError") { done = true; return; } fb(); });
+      curAudio = a; a.preload = "auto";
+      a.onerror = () => { if (curAudio === a) fb("zvuk se nenačetl (" + ((a.error && a.error.code) || "?") + ")"); };
+      const pr = a.play(); if (pr && pr.catch) pr.then(() => { done = true; }).catch(e => { if (e && e.name === "AbortError") { done = true; return; } fb("přehrání odmítnuto: " + ((e && e.name) || "?")); });
       return;
-    } catch(e) { fb(); return; }
+    } catch(e) { fb("chyba: " + ((e && e.name) || e)); return; }
   }
   speakTTS(t);
 }
-function speakTTS(t){
-  if (!canSay) { sayFallback(t, "bez podpory"); return; }
+function speakTTS(t, why){
+  if (!canSay) { sayFallback(t, (why ? why + ", " : "") + "čtení nahlas není podporováno"); return; }
   const text = t.replace(/_{3}/g, "…");
   try {
     const synth = window.speechSynthesis;
@@ -3887,7 +3891,8 @@ function renderHome(){
   <div class="rev"><div><h2>Moje chyby</h2><p>${nm ? `Máš <b>${nm}</b> ${nm === 1 ? "úkol" : nm < 5 ? "úkoly" : "úkolů"} k opakování. Každý zmizí, až ho třikrát za sebou zodpovíš správně.` : "Zatím žádné. Úkoly, ve kterých chybuješ, se sem uloží samy."}</p></div>
     ${nm ? `<button class="primary" data-act="review">Procvičit chyby (${nm})</button>` : ""}</div>
   <div class="legend"><b>Jak číst výslovnost v závorce:</b> čti česky, ale <b>ə</b> je krátký neurčitý zvuk mezi e a a (jako v „ehm“). <b>θ</b> je šišlavé s, jazyk lehce mezi zuby: think (θink) = myslet. Písmeno <b>d</b> ve slovech the, this, they vyslov také s jazykem u zubů. Slabika s čárkou (í, ó, á) je dlouhá. Ikonou reproduktoru si slovo nebo větu pustíš nahlas.</div>
-  ${groups}`;
+  ${groups}
+  <p class="verline">Verze ${esc(window.KLIK_VER || "náhled")}${window.KLIK_AUDIO ? " · nahrané zvuky" : ""}</p>`;
 }
 
 /* ---------- sady úkolů ---------- */
@@ -4272,7 +4277,6 @@ document.addEventListener("keydown", e => {
 renderHome();
 </script>
 
-<script>window.KLIK_AUDIO = true;</script>
 <script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) navigator.serviceWorker.register("sw.js").catch(() => {});</script>
 </body>
 </html>
