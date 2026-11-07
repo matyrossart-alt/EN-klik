@@ -11,7 +11,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Klikačka">
-<script>window.KLIK_AUDIO = true; window.KLIK_VER = "2026-11-07-zvuky2";</script>
+<script>window.KLIK_AUDIO = true; window.KLIK_VER = "2026-11-07-zvuky3";</script>
 <title>Anglická klikačka</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <style>/* lexend-latin-500-normal */
@@ -3788,7 +3788,8 @@ function speakOnce(t, opts, onFail){
 const fnv = str => { let h = 0x811c9dc5; for (const b of new TextEncoder().encode(str)) { h = (h ^ b) >>> 0; h = Math.imul(h, 0x01000193) >>> 0; } return h.toString(16).padStart(8, "0"); };
 let curAudio = null;
 function say(t){
-  if (window.KLIK_AUDIO) {
+  // na počítači hlas z prohlížeče (zní lépe), na mobilu nahrané zvuky
+  if (window.KLIK_AUDIO && !(PLAT === "desktop" && canSay)) {
     let done = false;
     const fb = why => { if (!done) { done = true; speakTTS(t, why); } };
     try {
