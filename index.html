@@ -255,6 +255,48 @@ a.primary{text-decoration:none;display:inline-block}
 .w[disabled]{cursor:default}
 .ghost-w{opacity:.25}
 .primary[disabled]{opacity:.5;cursor:default;filter:none}
+.pattern{font-family:var(--head);font-size:1.35rem;font-weight:600;letter-spacing:.06em;color:var(--accent);overflow-wrap:anywhere}
+.pattern .pgap{display:inline-block;width:1.2em}
+.mgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.mcol{display:flex;flex-direction:column;gap:8px;min-width:0}
+.m{text-align:left;border:1.5px solid var(--line);background:var(--sheet);border-radius:12px;padding:11px 12px;font-weight:700;font-size:1rem;min-height:52px;overflow-wrap:anywhere;transition:background .15s}
+.m:not([disabled]):hover{border-color:var(--accent)}
+.m.sel{border-color:var(--accent);background:var(--accent-soft)}
+.m.ok{border-color:var(--ok);background:var(--ok-bg);color:var(--ok);cursor:default}
+.m.bad{border-color:var(--bad);background:var(--bad-bg)}
+.pairs{margin:4px 0 0;padding-left:1.1em;display:flex;flex-direction:column;gap:4px}
+.arrow{color:var(--muted)}
+.ctext{font-size:1.12rem;line-height:2.3;background:var(--sheet);border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+.gap-e{display:inline-block;min-width:3.4em;text-align:center;border-bottom:2.5px solid var(--accent);color:var(--muted);font-size:.8rem;line-height:1.4}
+.gap-f{display:inline-block;border:1.5px solid var(--line);border-radius:9px;padding:1px 9px;font-weight:700;line-height:1.6;background:var(--sheet)}
+.gap-f.on{border-color:var(--accent);background:var(--accent-soft)}
+.gap-f.ok{border-color:var(--ok);background:var(--ok-bg);color:var(--ok)}
+.gap-f.bad{border-color:var(--bad);background:var(--bad-bg)}
+.gap-f s{color:var(--bad);font-weight:400}
+.gap-in{font:inherit;font-weight:700;border:0;border-bottom:2.5px solid var(--accent);background:var(--accent-soft);color:var(--ink);border-radius:6px 6px 0 0;padding:0 6px;max-width:100%}
+.gap-in:focus{outline:2px solid var(--accent)}
+@media (max-width:560px){ .mgrid{gap:8px} .m{padding:10px;font-size:.95rem} }
+.w.l{min-width:2.4em;text-align:center;font-family:var(--head);font-size:1.15rem}
+.bins{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.bin{border:1.5px dashed var(--line);border-radius:14px;background:var(--sheet);display:flex;flex-direction:column;overflow:hidden}
+.bin.ready{border-color:var(--accent);border-style:solid}
+.bin-h{border:0;background:var(--accent-soft);color:var(--accent);font-family:var(--head);font-weight:700;font-size:1.05rem;padding:10px 12px;text-align:left}
+.bin.ready .bin-h{background:var(--accent);color:var(--accent-ink)}
+.bin-h[disabled]{cursor:default}
+.bin-w{display:flex;flex-wrap:wrap;gap:6px;padding:10px;min-height:52px}
+.bin-w small{font-weight:400}
+.tfs{display:flex;flex-direction:column;gap:8px}
+.tf{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 12px;background:var(--sheet);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.tf-s{min-width:0;flex:1 1 220px;font-weight:700}
+.tf-b{display:flex;gap:6px}
+.tfb{border:1.5px solid var(--line);background:var(--sheet);border-radius:10px;padding:8px 12px;font-weight:700;font-size:.92rem}
+.tfb:not([disabled]):hover{border-color:var(--accent)}
+.tfb.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.tfb.ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.tfb.bad{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.tfb.dim{opacity:.45}
+.tok{border:1.5px solid transparent;background:var(--accent-soft);border-radius:8px;padding:2px 8px;font:inherit;font-weight:700;line-height:1.7}
+.tok:hover{border-color:var(--accent)}
 .why{margin-top:6px!important;padding:10px 14px;border-radius:12px;background:var(--sheet);border:1px solid var(--line)}
 .actions{display:flex;gap:10px;flex-wrap:wrap}
 .ghost{border:1.5px solid var(--line);background:var(--sheet);border-radius:12px;padding:12px 20px;font-weight:700}
@@ -314,6 +356,14 @@ Object.assign(window.PHON, {"advices": "ədvajsiz", "agust": "ógəst", "annas'"
 
 /* Povaha a vzhled */
 Object.assign(window.PHON, {"attractive": "ətrektiv", "bald": "bóld", "ball": "ból", "beard": "biərd", "bird": "bərd", "bits": "bits", "blues": "blúz", "bold": "bould", "bolt": "boult", "chin": "čin", "circles": "sərklz", "clover": "klouvər", "curious": "kjuəriəs", "curly": "kərli", "curry": "kari", "darkly": "dárkli", "disfriendly": "disfrendli", "easily": "ízili", "extra": "ekstrə", "extrovert": "ekstrəvərt", "exvert": "eksvərt", "fair": "feər", "fan": "fen", "fatty": "feti", "friendful": "frendfl", "fringe": "frindž", "general": "dženərəl", "generos": "dženərəs", "generous": "dženərəs", "genius": "džíniəs", "ginger": "džindžər", "giving": "giving", "hard": "hárd", "hardly": "hárdli", "inkind": "inkajnd", "introvert": "intrəvərt", "jokes": "džouks", "kid": "kid", "king": "king", "laughs": "láfs", "man's": "menz", "medium": "mídiəm", "meen": "mín", "moustache": "məstáš", "moustash": "məstáš", "mouth": "mauθ", "mustard": "mastərd", "nofriendly": "noufrendli", "nokind": "noukajnd", "nose": "nouz", "overwait": "ouvərwejt", "overweight": "ouvərwejt", "quick": "kwik", "quietly": "kwajətli", "quit": "kwit", "quite": "kwajt", "rad": "red", "really": "riəli", "series": "siəríz", "serious": "siəriəs", "serius": "siəriəs", "share": "šeər", "shay": "šej", "shine": "šajn", "shy": "šaj", "speaky": "spíki", "straight": "strejt", "strait": "strejt", "stupid": "stjúpid", "stupidly": "stjúpidli", "stupit": "stjúpit", "talkative": "tókətiv", "talkive": "tókiv", "talks": "tóks", "thin": "θin", "unfriend": "anfrend", "unfriendly": "anfrendli", "unkid": "ankid", "unkind": "ankajnd", "wave": "wejv", "waves": "wejvz", "wavy": "wejvi"});
+
+/* Denní činnosti a nové typy úloh */
+Object.assign(window.PHON, {"alarm": "əlárm", "andy's": "endiz", "awake": "əwejk", "bath": "báθ", "because": "bikoz", "bicycle": "bajsikl", "birthdays": "bərθdejz", "blog": "blog", "blond": "blond", "blonde": "blond", "brushes": "brašiz", "centre": "sentər", "clothes": "kloudz", "comfortable": "kamftəbl", "concerts": "konsəts", "cream": "krím", "dish": "diš", "divide": "divajd", "dressed": "drest", "earn": "ərn", "earns": "ərnz", "eva": "eva", "everyday": "evridej", "favourite": "fejvərit", "finishes": "finišiz", "flies": "flajz", "forgets": "fəgets", "grey": "grej", "intelligent": "intelidžənt", "jana": "jana", "longer": "longər", "lucy": "lúsi", "mark": "márk", "martin": "mártin", "museum": "mjúzíəm", "names": "nejmz", "nervous": "nərvəs", "ofter": "oftər", "parties": "pártiz", "paul": "pól", "polite": "pəlajt", "prefer": "prifər", "prefere": "prifər", "prefers": "prifərz", "preffer": "prifər", "restaurants": "restronts", "shares": "šeərz", "sometime": "samtajm", "sometimes": "samtajmz", "spend": "spend", "spending": "spending", "synonym": "sinənim", "teaches": "tíčiz", "theater": "θiətər", "theatre": "θiətər", "thrice": "θrajs", "travels": "trevlz", "tries": "trajz", "usual": "júžuəl", "walks": "wóks", "weekdays": "wíkdejz", "word": "wərd"});
+
+Object.assign(window.PHON, {"sue":"sú","where's":"weərz"});
+
+/* Seznámení, have got, tázací slova, záliby */
+Object.assign(window.PHON, {"'s": "z", "'ve": "v", "actor": "ektər", "architect": "árkitekt", "artist": "ártist", "ben": "ben", "bet": "bet", "book's": "buks", "bookshop": "bukšop", "boss's": "bosiz", "bosses": "bosiz", "brothers'": "bradərz", "bye": "baj", "cabbage": "kebidž", "car's": "kárz", "centre's": "sentərz", "cock": "kok", "colour": "kalər", "computer": "kəmpjútər", "cooker": "kukər", "dancer": "dánsər", "daniel": "denjəl", "dentis": "dentis", "design": "dizajn", "designer": "dizajnər", "docter": "doktər", "doctorer": "doktərər", "draw": "dró", "drew": "drú", "drives": "drajvz", "ema": "ema", "eva's": "evaz", "eva's's": "evaziz", "evas": "evaz", "excellent": "eksələnt", "face": "fejs", "families": "femiliz", "fashion": "fešn", "fashioner": "fešnər", "film's": "filmz", "fine": "fajn", "fines": "fajnz", "fridays": "frajdejz", "friends's": "frendziz", "garage": "geráž", "goodbye": "gudbaj", "gray": "grej", "greens": "grínz", "habit": "hebit", "hamburger": "hembərgər", "hammer": "hemər", "hamstar": "hemstár", "hamster": "hemstər", "hates": "hejts", "he've": "hív", "hi": "haj", "hobbies": "hobiz", "hobby": "hobi", "hobbys": "hobiz", "horak": "horak", "horse": "hórs", "jakub": "jakub", "john": "džon", "journal": "džərnl", "journalism": "džərnəlizm", "journalist": "džərnəlist", "journey": "džərni", "kate": "kejt", "kelly": "keli", "large": "lárdž", "learner": "lərnər", "listens": "lisnz", "lovely": "lavli", "lucie": "lucie", "mala": "mala", "manager": "menidžər", "managing": "menidžing", "manchester": "menčestər", "max": "meks", "menager": "menidžər", "micka": "micka", "miss": "mis", "mr": "mistər", "mrs": "misiz", "ms": "məz", "muesli": "mjúzli", "name's": "nejmz", "nearly": "niəli", "novak": "novák", "novel": "novl", "novels": "novlz", "novák's": "nováks", "nováks": "nováks", "nováks's": "novákiz", "nurser": "nərsər", "nursing": "nərsing", "olivia": "əliviə", "ostrava": "ostrava", "painter": "pejntər", "paints": "pejnts", "pat": "pet", "pavel": "pavel", "pet": "pet", "peter": "pítər", "peter's": "pítərz", "peters": "pítərz", "petra": "petra", "pets": "pets", "photograph's": "foutəgráfs", "photographs": "foutəgráfs", "photography": "fətogrəfi", "pink": "pink", "pit": "pit", "popular": "popjulər", "prague's": "prágz", "purple": "pərpl", "rabbit": "rebit", "rabbits": "rebits", "rabit": "rebit", "robot": "roubot", "romans": "roumənz", "sam": "sem", "secret": "síkrit", "secretarian": "sekrəteəriən", "secretary": "sekrətri", "secretery": "sekrətri", "she've": "šív", "shirt": "šərt", "singer": "singər", "sixteen": "sikstín", "surgery": "sərdžəri", "surname": "sərnejm", "t": "tí", "teaching": "tíčing", "tereza": "tereza", "tereza's": "terezaz", "thanks": "θenks", "they's": "dejz", "they've": "dejv", "tim": "tim", "tom's": "tomz", "toms": "tomz", "tour": "tuər", "trouble": "trabl", "upstairs": "apsteəz", "useful": "júsfl", "vet": "vet", "vets": "vets", "waitres": "wejtris", "waitress": "wejtris", "wants": "wonts", "we's": "wíz", "welcome": "welkəm", "wet": "wet", "white's": "wajts", "witch": "wič", "wives": "wajvz", "worker": "wərkər", "writer": "rajtər", "writter": "rajtər", "you've": "júv"});
 
 </script>
 <script>
@@ -634,7 +684,20 @@ Vypila jsem dva šálky kávy.|I drank two cups of coffee.|I drinked two cups of
 Čekali jsme hodinu.|We waited for an hour.|We waited for a hour.|We waited for one hours.|We waits for an hour.|-|Hour začíná samohláskou (h se nečte), proto an hour.
 Snědl půlku pizzy.|He ate half of the pizza.|He eated half of the pizza.|He ate half from the pizza.|He ate halve of the pizza.|-|Eat → ate. Půlka = half of.
 Byla jsem tam jen jednou.|I was there only once.|I was there only ones.|I was there only one.|I were there only once.|-|Jednou = once. Minulost be u I: was.
-Je to druhé auto zleva.|It's the second car from the left.|It's the two car from the left.|It's the second car of the left.|It's second car from left.|-|Pořadí = the + second. Zleva = from the left.`]
+Je to druhé auto zleva.|It's the second car from the left.|It's the two car from the left.|It's the second car of the left.|It's second car from left.|-|Pořadí = the + second. Zleva = from the left.`],
+["Přesmyčky", `
+%|8|eight|Eight = 8. Písmena gh se nečtou.
+%|14|fourteen|Fourteen = 14. Four + teen.
+%|12|twelve|Twelve = 12.
+%|13|thirteen|Thirteen = 13. Pozor, ne threeteen.
+%|3|three|Three = 3.
+%|40|forty|Forty = 40, bez u.
+%|50|fifty|Fifty = 50.
+%|7|seven|Seven = 7.
+%|11|eleven|Eleven = 11.
+%|100|hundred|Hundred = sto.
+%|1000|thousand|Thousand = tisíc.
+%|20|twenty|Twenty = 20.`]
 ]});
 
 </script>
@@ -781,7 +844,22 @@ Ten muž, který tu pracuje, je milý.|The man who works here is nice.|The man w
 Sedni si vedle mě.|Sit next to me.|Sit next to I.|Sit next to my.|Sit next me.|-|Po předložce: me.
 Tenhle je lepší než tamten.|This one is better than that one.|This one is better then that one.|This one is more good than that one.|These one is better than that one.|-|Než = than. Then = potom.
 Můžeš mi to ukázat?|Can you show me?|Can you show to me?|Can you show I?|Can you to show me?|-|Show + komu (me) bez předložky.
-Je to tvoje chyba, ne moje.|It's your fault, not mine.|It's your fault, not my.|It's yours fault, not mine.|It's you're fault, not mine.|-|Před podstatným jménem your, samostatně mine.`]
+Je to tvoje chyba, ne moje.|It's your fault, not mine.|It's your fault, not my.|It's yours fault, not mine.|It's you're fault, not mine.|-|Před podstatným jménem your, samostatně mine.`],
+["Roztřiď", `
+>|Řekl(a) bys he, she, nebo it?|he~Tom,Peter,Mr Black,my brother;she~Anna,Lucy,Mrs White,my mum;it~Brno,house,book,car|Muži he, ženy she. Věci a města it. Angličtina nemá rod u věcí: škola i dům jsou it.
+>|Které zájmeno patří?|we~my brother and I,you and I,Anna and I;they~my parents,Tom and Anna,the children;it~my car,our school,the city|Já + někdo další = we. Víc lidí bez tebe = they. Věc = it.
+>|Osobní, nebo přivlastňovací zájmeno?|osobní (kdo)~I,he,she,they,we;přivlastňovací (čí)~my,his,its,their,our|I, he, she, they, we = kdo. My, his, its, their, our = čí.`],
+["Najdi chybu", `
+!|This is my sister. [His>Her] name is Kate.|Tohle je moje sestra. Jmenuje se Kate.|Sestra = ona, proto her.
+!|[Me>I] am from Prague.|Jsem z Prahy.|Kdo něco dělá: I.
+!|Is this [you>your] bag?|Je to tvoje taška?|Tvoje = your.
+!|My parents love [there>their] house.|Moji rodiče milují svůj dům.|Their = jejich. Angličtina nemá „svůj“.
+!|I love [mine>my] job.|Miluji svou práci.|Před podstatným jménem: my.
+!|London is big. [She>It] is very old.|Londýn je velký. Je velmi starý.|Město = it.
+!|[He>She] is my mum.|Je to moje máma.|Máma = she.
+!|We like [ours>our] teacher.|Máme rádi naši učitelku.|Před podstatným jménem: our.
+!|The dog is happy. [It's>Its] name is Max.|Pes je šťastný. Jmenuje se Max.|Its = jeho (u zvířat a věcí). It's = it is.
+!|They [is>are] my friends.|Jsou to moji přátelé.|They: are.`]
 ]});
 
 </script>
@@ -1048,7 +1126,23 @@ Hraju fotbal každou sobotu.|I play football every Saturday.|I play the football
 Byla to krásná dovolená.|It was a beautiful holiday.|It was beautiful holiday.|It was an beautiful holiday.|It were a beautiful holiday.|-|Jedna dovolená: a. Beautiful začíná souhláskou.
 Zvoní telefon.|The phone is ringing.|Phone is ringing.|The phone ringing.|The phone are ringing.|-|Telefon doma oba známe: the phone.
 Mám dvě kočky a psa.|I have two cats and a dog.|I have two cats and dog.|I have two cat and a dog.|I have a two cats and a dog.|-|Jeden pes poprvé: a dog. Před číslem člen není.
-Ráno jsem viděl lišku. Ta liška byla rychlá.|I saw a fox this morning. The fox was fast.|I saw the fox this morning. A fox was fast.|I saw fox this morning. Fox was fast.|I saw a fox this morning. A fox was fast.|-|Poprvé a fox, podruhé the fox.`]
+Ráno jsem viděl lišku. Ta liška byla rychlá.|I saw a fox this morning. The fox was fast.|I saw the fox this morning. A fox was fast.|I saw fox this morning. Fox was fast.|I saw a fox this morning. A fox was fast.|-|Poprvé a fox, podruhé the fox.`],
+["Roztřiď a / an", `
+>|Roztřiď podle členu.|a~house,cup,university,brother;an~apple,evening,architect,old house|Rozhoduje první zvuk. University zní „ju“, proto a. Old house začíná samohláskou, proto an.
+>|Roztřiď podle členu.|a~dog,car,useful book,big egg;an~egg,hour,orange,umbrella|Hour začíná samohláskou, protože h se nečte. Useful zní „ju“, proto a. Big egg: rozhoduje big, proto a.
+>|Roztřiď povolání podle členu.|a~teacher,doctor,nurse,student;an~engineer,actor,artist,office worker|Před samohláskou je an.
+>|Potřebuje to slovo člen a?|a~cup of tea,nice house,secretary,good writer;bez členu~English,nice,London,our school|Samotné přídavné jméno (She is nice), město a slovo se zájmenem (our school) člen nemají.`],
+["Najdi chybu", `
+!|It's [an>a] Czech name.|Je to české jméno.|Czech začíná souhláskou, proto a.
+!|He is [a>an] English writer.|Je to anglický spisovatel.|English začíná samohláskou, proto an.
+!|She is [secretary.>a_secretary.]|Je sekretářka.|Povolání má vždy člen a / an.
+!|What is it? It's [cup>a_cup] of tea.|Co je to? Šálek čaje.|Jeden šálek: a cup.
+!|I've got [a>an] apple.|Mám jablko.|Apple začíná samohláskou: an.
+!|[Sun>The_sun] is hot today.|Slunce dnes hřeje.|Slunce je jen jedno: the sun.
+!|They've got a house. [A>The] house is near a park.|Mají dům. Ten dům je blízko parku.|Podruhé už víme, o kterém domě mluvíme: the.
+!|My dad is in [garden.>the_garden.]|Táta je na zahradě.|Naše zahrada, oba víme kterou: the garden.
+!|We've got [a>an] old car.|Máme staré auto.|Old začíná samohláskou: an.
+!|She's [an>a] university student.|Je studentka univerzity.|University zní „ju“, proto a.`]
 ]});
 
 </script>
@@ -1168,7 +1262,55 @@ Potřebuješ pomoc?|Do you need help?|Are you needing help?|Does you need help?|
 Telefon zvoní, zvedneš to?|The phone is ringing, can you answer it?|The phone rings, can you answer it?|The phone ringing, can you answer it?|The phone is ring, can you answer it?|-|Právě teď: is + -ing.
 Ona nikdy nepije alkohol.|She never drinks alcohol.|She never drink alcohol.|She doesn't never drink alcohol.|She is never drinking alcohol.|-|Never = zápor sám o sobě. She: drinks.
 Na co myslíš?|What are you thinking about?|What do you thinking about?|What you are thinking about?|What are you think about?|-|Teď: are + -ing. About na konci.
-Můj bratr bydlí v Praze, ale teď je v Londýně.|My brother lives in Prague, but now he's in London.|My brother is living in Prague, but now he is in London always.|My brother live in Prague, but now he's in London.|My brother lives in Prague, but now he in London.|-|Trvale bydlí = prostý (lives). Teď je = he's.`]
+Můj bratr bydlí v Praze, ale teď je v Londýně.|My brother lives in Prague, but now he's in London.|My brother is living in Prague, but now he is in London always.|My brother live in Prague, but now he's in London.|My brother lives in Prague, but now he in London.|-|Trvale bydlí = prostý (lives). Teď je = he's.`],
+["Přetvoř větu", `
+#|Martin doesn't play the guitar.|Martin nehraje na kytaru.|U he, she, it je zápor doesn't a sloveso zůstane v základním tvaru: play, ne plays.|don't plays|Martin plays the guitar.|Napiš zápor.
+#|We don't live in a flat.|Nebydlíme v bytě.|U I, you, we, they je zápor don't + základní tvar slovesa.|doesn't lives|We live in a flat.|Napiš zápor.
+#|It doesn't rain a lot here.|Tady moc neprší.|It = 3. osoba, proto doesn't. Rain už je bez -s.|don't rains|It rains a lot here.|Napiš zápor.
+#|My sister doesn't write a blog.|Moje sestra nepíše blog.|Sister = she, proto doesn't + write (bez -s).|don't writes|My sister writes a blog.|Napiš zápor.
+#|They don't go to the gym.|Nechodí do posilovny.|They: don't + go.|doesn't goes|They go to the gym.|Napiš zápor.
+#|He doesn't have a beard.|Nemá plnovous.|Has v záporu zmizí: doesn't have.|don't has|He has a beard.|Napiš zápor.
+#|I don't get up early.|Nevstávám brzy.|I: don't + get up.|doesn't gets|I get up early.|Napiš zápor.
+#|Do you like tea?|Máš rád čaj?|Otázka u you: Do + you + like.|Does likes|You like tea.|Napiš otázku.
+#|Does Lucy live near here?|Bydlí Lucy blízko?|Lucy = she: Does + Lucy + live. Koncovku -s si vezme does.|Do lives|Lucy lives near here.|Napiš otázku.
+#|Do his friends play tennis?|Hrají jeho kamarádi tenis?|Friends = they, proto Do.|Does plays|His friends play tennis.|Napiš otázku.
+#|Does your brother speak English?|Mluví tvůj bratr anglicky?|Brother = he: Does + speak.|Do speaks|Your brother speaks English.|Napiš otázku.
+#|Does Paul often go away?|Jezdí Paul často pryč?|Often zůstává před slovesem i v otázce. Paul = he: does.|Do goes|Paul often goes away.|Napiš otázku.
+#|Where do your parents live?|Kde bydlí tvoji rodiče?|Tázací slovo + do + kdo + sloveso: Where do your parents live?|does lives|Your parents live in Brno.|Zeptej se, kde bydlí.
+#|What time does the shop open?|V kolik otevírá obchod?|What time + does + the shop + open.|do opens|The shop opens at nine.|Zeptej se, v kolik otevírá.
+#|Petr always gets up at six.|Petr vždycky vstává v šest.|Always stojí před slovesem. Petr = he: gets.|get
+#|I never drink coffee in the evening.|Večer nikdy nepiju kávu.|Never stojí před slovesem a je to už zápor, sloveso je kladné.|drinks
+#|My mum usually cooks on Sundays.|Máma obvykle vaří v neděli.|Usually před slovesem. Mum = she: cooks.|cook
+#|We often go to the mountains.|Často jezdíme na hory.|Often před slovesem. We: go.|goes
+#|Children usually love ice cream.|Děti obvykle milují zmrzlinu.|Children = they, proto love bez -s.|loves
+#|Jana sometimes walks to work.|Jana někdy chodí do práce pěšky.|Sometimes před slovesem. Jana = she: walks.|walk|-|-|Poskládej větu.`],
+["Napiš tvar", `
+@|(watch) he ___|watches|1|on se dívá|Po -ch přidáváme -es: watches.
+@|(study) she ___|studies|1|ona studuje|Souhláska + y → -ies: studies.
+@|(fly) it ___|flies|1|ono letí|Souhláska + y → -ies: flies.
+@|(finish) it ___|finishes|1|ono končí|Po -sh přidáváme -es: finishes.
+@|(have) she ___|has|1|ona má|Have je nepravidelné: he, she, it has.
+@|(go) he ___|goes|1|on jde|Go → goes, po -o přidáváme -es.
+@|(play) she ___|plays|1|ona hraje|Samohláska + y → jen -s: plays.
+@|(wash) he ___|washes|1|on myje|Po -sh přidáváme -es: washes.
+@|(do) she ___|does|1|ona dělá|Do → does.
+@|(try) he ___|tries|1|on zkouší|Souhláska + y → -ies: tries.
+@|Paul has a bike, but he ___ it very often. (use)|doesn't use/does not use||Pavel má kolo, ale moc často ho nepoužívá.|Paul = he: doesn't + use.
+@|Anna is married, but she ___ a ring. (wear)|doesn't wear/does not wear||Anna je vdaná, ale nenosí prsten.|Anna = she: doesn't + wear.
+@|I ___ much about football. I'm not interested in it. (know)|don't know/do not know||O fotbale toho moc nevím. Nezajímá mě.|I: don't + know.
+@|My friends love music, but they ___ to concerts very often. (go)|don't go/do not go||Moji přátelé milují hudbu, ale na koncerty moc často nechodí.|They: don't + go.
+@|The bus ___ much. It's cheap. (cost)|doesn't cost/does not cost||Autobus moc nestojí. Je levný.|The bus = it: doesn't + cost.
+@|Mark is a vegetarian. He ___ meat. (eat)|doesn't eat/does not eat||Mark je vegetarián. Nejí maso.|Vegetarián maso nejí: zápor doesn't eat.
+@|Sue is a very quiet person. She ___ very much. (talk)|doesn't talk/does not talk||Sue je velmi tichá. Moc nemluví.|Tichý člověk moc nemluví: doesn't talk.
+@|Tea is Andy's favourite drink. He ___ a lot of it. (drink)|drinks||Čaj je Andyho oblíbený nápoj. Pije ho hodně.|Kladná věta, Andy = he: drinks.
+@|“Where's Martin?” “I'm sorry, I ___.” (know)|don't know/do not know||„Kde je Martin?“ „Promiň, nevím.“|Omlouvám se, nevím = I don't know.
+@|It's a beautiful picture. I ___ it very much. (like)|like||Je to krásný obraz. Moc se mi líbí.|Kladná věta, I: like (bez -s).`],
+["Krátké odpovědi", `
+=|Přiřaď ke každé otázce krátkou odpověď.|Do you watch TV a lot?~No, I don't.;Does it snow here?~Yes, it does.;Does Tom play tennis?~No, he doesn't.;Do your friends cook?~Yes, they do.|Krátká odpověď opakuje pomocné sloveso a zájmeno z otázky: Do you…? → I do / I don't. Does Tom…? → he does / he doesn't.
+=|Přiřaď ke každé otázce krátkou odpověď.|Does your mum drive?~Yes, she does.;Do you like cats?~Yes, I do.;Does the shop open on Sundays?~No, it doesn't.;Do they live here?~No, they don't.|Mum = she, the shop = it, they = they. Pomocné sloveso z otázky se v odpovědi zopakuje.
+=|Přiřaď ke každé otázce krátkou odpověď.|Are you tired?~Yes, I am.;Is she a teacher?~No, she isn't.;Can you swim?~Yes, I can.;Do you work?~No, I don't.|Odpovídáš stejným slovesem, jaké je v otázce: Are → am, Is → isn't, Can → can, Do → don't.
+=|Přiřaď ke každé otázce krátkou odpověď.|Does he speak English?~Yes, he does.;Is it expensive?~No, it isn't.;Do we need milk?~Yes, we do.;Can she drive?~No, she can't.|Does → does, Is → isn't, Do → do, Can → can't.
+=|Přiřaď ke každé otázce krátkou odpověď.|Is your brother married?~Yes, he is.;Does your brother smoke?~No, he doesn't.;Are your parents at home?~No, they aren't.;Do your parents travel a lot?~Yes, they do.|Is → he is, Does → he doesn't, Are → they aren't, Do → they do.`]
 ]});
 
 </script>
@@ -1768,7 +1910,11 @@ Dej mi dvě sklenice vody.|Give me two glasses of water.|Give me two glass of wa
 Mám dvě kočky.|I have two cats.|I have two cat.|I have two cates.|I have a two cats.|-|Po čísle -s.
 Je tady hodně myší.|There are a lot of mice here.|There are a lot of mouses here.|There is a lot of mice here.|There are a lot mices here.|-|Mouse → mice.
 Kupuju dárky pro děti.|I'm buying presents for the children.|I'm buying presents for the childs.|I'm buying present for the children.|I'm buying presents for the childrens.|-|Presents (více dárků), children.
-Ty ovce jsou na kopci.|The sheep are on the hill.|The sheeps are on the hill.|The sheep is on the hill.|The sheepes are on the hill.|-|Sheep má stejný tvar. Více ovcí: are.`]
+Ty ovce jsou na kopci.|The sheep are on the hill.|The sheeps are on the hill.|The sheep is on the hill.|The sheepes are on the hill.|-|Sheep má stejný tvar. Více ovcí: are.`],
+["Roztřiď", `
+>|Jak se tvoří množné číslo?|-s~day,boy,cat,writer;-es~bus,box,watch,boss;-ies~family,baby,city,hobby|Po s, x, ch, sh: -es. Souhláska + y: -ies. Samohláska + y (day, boy): jen -s.
+>|Pravidelné, nebo nepravidelné množné číslo?|pravidelné~cars,families,days,students;nepravidelné~men,children,wives,women|Man → men, child → children, wife → wives, woman → women se učí zpaměti.
+>|Jak zní koncovka množného čísla?|[s]~cups,pets,books,cats;[z]~friends,days,dogs,brothers;[iz]~bosses,houses,languages,boxes|Po p, t, k zní [s]. Po znělé hlásce [z]. Po sykavkách (s, z, š, č, dž) [iz].`]
 ]});
 
 </script>
@@ -2491,7 +2637,520 @@ Má velké modré oči.|She has big blue eyes.|She has blue big eyes.|She is big
 Moje máma je malá a má kudrnaté vlasy.|My mum is short and she has curly hair.|My mum is short and she is curly hair.|My mum has short and she has curly hair.|My mum is short and she has curly hairs.|-|Postava: is. Vlasy: has.
 Není moc upovídaná, je spíš tichá.|She isn't very talkative, she's quite quiet.|She isn't very talkative, she's quite quite.|She doesn't very talkative, she's quite quiet.|She isn't very talking, she's quite quiet.|-|Quite quiet = docela tichá. Pozor: quite (kwajt) × quiet (kwajət).
 Kdo je ta žena s dlouhými rovnými vlasy?|Who is the woman with long straight hair?|Who is the woman with straight long hair?|Who is the woman has long straight hair?|Who is the woman with long straight hairs?|-|S + popis = with long straight hair.
-Je to laskavý a pracovitý člověk.|He's a kind and hard-working person.|He's a kind and hard-work person.|He's kind and hard-working person.|He's a kind and hardly working person.|-|A + přídavná jména + person.`]
+Je to laskavý a pracovitý člověk.|He's a kind and hard-working person.|He's a kind and hard-work person.|He's kind and hard-working person.|He's a kind and hardly working person.|-|A + přídavná jména + person.`],
+["Napiš slovo", `
+@|He has no hair. He's ___.|bald|1|Nemá vlasy. Je plešatý.|Bald = plešatý. Pozor, bold znamená odvážný.
+@|the opposite of straight hair|curly|1|opak rovných vlasů|Curly = kudrnaté. Wavy = vlnité.
+@|thin and attractive|slim|1|hubený a hezký|Slim = štíhlý (hezky). Thin = hubený.
+@|hair on a man's chin|beard|1|vlasy na bradě muže|Beard = plnovous. Pozor: bird = pták.
+@|hair between a man's nose and mouth|moustache|1|vlasy mezi nosem a pusou muže|Moustache = knír. Píše se m-o-u-s-t-a-c-h-e.
+@|not tall and not short|medium height|1|ani vysoký, ani malý|Medium height = střední výška.
+@|another word for fair hair (for a woman)|blonde/blond|1|jiné slovo pro světlé vlasy (u ženy)|Blonde = blond. U žen se píše obvykle s -e.
+@|a polite way to say fat|overweight|1|zdvořilý způsob, jak říct tlustý|Overweight = při těle. Fat je nezdvořilé.
+@|a synonym of intelligent|clever|1|jiné slovo pro inteligentní|Clever = chytrý.
+@|the opposite of lazy|hard-working|1|opak slova líný|Hard-working = pracovitý.
+@|a person who makes other people laugh|funny|1|člověk, který rozesměje ostatní|Funny = vtipný.
+@|the opposite of light (hair)|dark|1|opak světlých (vlasů)|Dark = tmavý. Pozor, nezaměnit s hard (tvrdý).
+@|somebody who doesn't talk a lot|quiet|1|někdo, kdo moc nemluví|Quiet (kwajət) = tichý. Quite (kwajt) = docela.
+@|a person who doesn't like spending money|mean|1|člověk, který nerad utrácí peníze|Mean = lakomý.
+@|a person who likes giving presents|generous|1|člověk, který rád dává dárky|Generous = štědrý.
+@|a person who talks a lot|talkative|1|člověk, který hodně mluví|Talkative = upovídaný.
+@|a person who loves parties and meeting new people|extrovert|1|člověk, který miluje večírky a nové lidi|Extrovert = společenský.
+@|the opposite of friendly|unfriendly|2|opak slova přátelský|Un + friendly = unfriendly.
+@|the opposite of clever|stupid|1|opak slova chytrý|Stupid = hloupý.
+@|a person who is nervous with people he doesn't know|shy|1|člověk, který je nervózní z lidí, které nezná|Shy = stydlivý.`],
+["Přiřaď", `
+=|Přiřaď opaky.|talkative~quiet;generous~mean;lazy~hard-working;shy~extrovert|Talkative × quiet, generous × mean, lazy × hard-working, shy × extrovert.
+=|Přiřaď opaky.|friendly~unfriendly;kind~unkind;funny~serious;clever~stupid|Opak často tvoří předpona un-: unfriendly, unkind.
+=|Přiřaď k otázce odpověď.|What does your husband look like?~He has short dark hair and a beard.;What's your boss like?~She's very kind and hard-working.;What did you look like as a child?~I had long curly hair.;What were you like at school?~I was very talkative.|Look like = vzhled (vlasy, postava). Be like = povaha. Did / were = minulost, does / is = teď.
+=|Přiřaď anglická slova k českým.|curly hair~kudrnaté vlasy;wavy hair~vlnité vlasy;straight hair~rovné vlasy;bald~plešatý;beard~plnovous|Curly = kudrnaté, wavy = vlnité, straight = rovné.
+=|Přiřaď anglická slova k českým.|generous~štědrý;mean~lakomý;kind~laskavý;shy~stydlivý;lazy~líný|Učit se slova v páru s opakem pomáhá si je zapamatovat.
+=|Přiřaď slova, která se snadno pletou.|quite~docela;quiet~tichý;funny~vtipný;fun~zábavný (je s ním legrace);slim~štíhlý;thin~hubený|Quite × quiet se liší výslovností. Funny = rozesměje, fun = je s ním legrace. Slim je hezčí slovo než thin.`]
+]});
+
+</script>
+<script>
+window.TOPICS = window.TOPICS || [];
+window.TOPICS.push({
+id: "daily", en: "Daily routine", cz: "Denní činnosti", ph: "dejli rútín",
+summary: "Slova a věty o tom, co děláš každý den: get up {{vstávat}}, have a shower {{sprchovat se}}, go to work {{jít do práce}}. O zvycích mluvíš <b>přítomným časem prostým</b>: I get up at seven. {{Vstávám v sedm.}} Jak často, říkají slova <b>always, usually, often, sometimes, never</b>.",
+theory: [
+["Můj den", "get up {{vstávat}} · wake up {{probudit se}} · have a shower {{sprchovat se}} · have a bath {{vykoupat se}} · brush my teeth {{vyčistit si zuby}} · get dressed {{obléct se}} · have breakfast {{snídat}} · go to work {{jít do práce}} · start work {{začít pracovat}} · have lunch {{obědvat}} · finish work {{skončit v práci}} · come home {{vrátit se domů}} · cook dinner {{uvařit večeři}} · watch TV {{dívat se na televizi}} · go to bed {{jít spát}}.<br>Jídla a sprcha se pojí se slovesem <b>have</b>: have breakfast, have a shower."],
+["Jak často: always, usually, often, sometimes, never", "<div class='tbl'><table><tr><th>anglicky</th><th>česky</th><th>kolik</th></tr><tr><td>always</td><td>vždycky</td><td>100 %</td></tr><tr><td>usually</td><td>obvykle</td><td>90 %</td></tr><tr><td>often</td><td>často</td><td>70 %</td></tr><tr><td>sometimes</td><td>někdy</td><td>30 %</td></tr><tr><td>never</td><td>nikdy</td><td>0 %</td></tr></table></div><ul><li>Stojí <b>před běžným slovesem</b>: I <b>often go</b> to the cinema. {{Často chodím do kina.}}</li><li>Ale <b>za slovesem be</b>: She <b>is always</b> late. {{Vždycky přijde pozdě.}}</li><li><b>Never</b> už je zápor, sloveso zůstane kladné: I never eat meat. {{Nikdy nejím maso.}}</li><li>Moc často ne: I don't watch TV <b>very often</b>. {{Moc často se nedívám na televizi.}}</li></ul>"],
+["Kolikrát: once, twice, every", "once a week {{jednou týdně}} · twice a month {{dvakrát měsíčně}} · three times a year {{třikrát ročně}} · every day {{každý den}} · every morning {{každé ráno}}.<br>Tyhle výrazy stojí obvykle <b>na konci věty</b>: I go swimming twice a week. {{Plavat chodím dvakrát týdně.}}<br>Otázka: <b>How often</b> do you…? {{Jak často…?}}"],
+["Užitečná slovesa", "earn money {{vydělávat peníze}} · spend time {{trávit čas}} · share a flat {{sdílet byt}} · wear a ring {{nosit prsten}} · use a car {{používat auto}} · get on well {{dobře spolu vycházet}} · prefer {{mít raději}} · teach {{učit někoho}} · wash {{mýt}} · boil {{vařit (vodu)}} · cost {{stát (o ceně)}}.<br>Pozor: <b>wear</b> = nosit na sobě (oblečení, brýle, prsten), <b>carry</b> = nést v ruce."],
+["Jak si to zapamatovat", "<b>Jak často = před slovesem. Kolikrát = na konec věty.</b><br>I <b>usually</b> go swimming <b>twice a week</b>. {{Obvykle chodím plavat dvakrát týdně.}}"]
+],
+subs: [
+["Slovíčka", `
+vstávat (z postele)|get up|wake up|stand up|go up|-|Get up = vstát z postele. Wake up = probudit se.
+probudit se|wake up|get up|wake on|awake on|-|Wake up = probudit se. Pak teprve get up = vstát.
+osprchovat se|have a shower|make a shower|do a shower|have shower|-|Have a shower (britsky) nebo take a shower. Make je chyba.
+vykoupat se (ve vaně)|have a bath|make a bath|do a bath|have bath|-|Bath = vana, koupel. Have a bath.
+vyčistit si zuby|brush my teeth|brush my tooths|clean my tooth|wash my tooth|-|Zuby = teeth. Čistit kartáčkem = brush.
+obléct se|get dressed|get clothes|dress on|put dressed|-|Obléct se = get dressed.
+snídat|have breakfast|have a breakfast|eat the breakfast|make a breakfast|-|Jídla dne bez členu: have breakfast.
+jít do práce|go to work|go to the work|go at work|go in work|-|Go to work, bez the.
+začít pracovat (v práci)|start work|start the work|start at work|start to the work|-|Start work = začít v práci, bez the.
+skončit v práci|finish work|finish the work|end at work|finish at the work|-|Finish work = skončit v práci.
+obědvat|have lunch|have a lunch|make the lunch|eat a lunch|-|Have lunch, bez a.
+vrátit se domů|come home|come to home|come at home|go to the home|-|Domů = home, bez předložky.
+umýt nádobí|wash the dishes|wash the dish|clean the dishes up|make the dishes|-|Nádobí = the dishes. Britové říkají i do the washing-up.
+dívat se na televizi|watch TV|look TV|see TV|watch at TV|-|Na televizi se díváš = watch TV. Look at = podívat se na něco.
+jít spát|go to bed|go to the bed|go in bed|go sleep bed|-|Go to bed, bez the.
+jezdit na kole|ride a bike|drive a bike|go a bike|ride on bike|-|Na kole, koni, motorce = ride. Auto = drive.
+jít do divadla|go to the theatre|go to theatre the|go in the theatre|go at the theatre|-|Go to the theatre. Britové píšou theatre, Američané theater.
+cestovat vlakem|travel by train|travel with train|travel by the train|travel on train|-|Způsob dopravy: by train, bez the.
+vydělávat peníze|earn money|win money|earn a money|earn moneys|-|Earn = vydělat prací. Win = vyhrát.
+bydlet v bytě s kamarády (sdílet byt)|share a flat|divide a flat|part a flat|share flat|-|Share = sdílet, dělit se.
+trávit čas|spend time|spend a time|spend times|lose a time|-|Spend time = trávit čas. Spend money = utrácet peníze.
+nosit (oblečení, prsten)|wear|carry|dress|bear|-|Wear = mít na sobě. Carry = nést v ruce.
+používat|use|wear|need|spend|-|Use = používat.
+dobře spolu vycházet|get on well|go on well|get in well|come on well|-|Get on well = dobře spolu vycházet.
+mít raději|prefer|prefere|preffer|prefers it|-|Prefer = mít raději, dávat přednost.`],
+["Jak často", `
+I ___ eat breakfast. (nikdy)|never|ever|not|no|Nikdy nesnídám.|Never = nikdy. Je to už zápor, sloveso zůstane kladné.
+She ___ gets up at six. (vždycky)|always|ever|all|usually|Vždycky vstává v šest.|Always = vždycky.
+We ___ go to the cinema. (často)|often|ofter|much|many|Často chodíme do kina.|Often = často.
+He ___ walks to work. (někdy)|sometimes|sometime|some times|once|Někdy chodí do práce pěšky.|Sometimes = někdy. Píše se dohromady a s -s.
+They ___ have dinner at seven. (obvykle)|usually|usual|use|always|Obvykle večeří v sedm.|Usually = obvykle.
+Často jezdím vlakem.|I often travel by train.|I travel often by train.|I often travels by train.|I often travel by the train.|-|Often stojí před slovesem.
+jednou týdně|once a week|one a week|once in week|one time week|-|Jednou = once. Týdně = a week.
+dvakrát měsíčně|twice a month|two a month|twice in month|double a month|-|Dvakrát = twice.
+každý den|every day|all the day|everyday days|each days|-|Každý den = every day (dvě slova).
+třikrát ročně|three times a year|three time a year|three times in year|thrice in the year|-|Třikrát = three times (s -s).
+How ___ do you go swimming?|often|much|many|long|Jak často chodíš plavat?|Jak často = how often.
+Nikdy nepiju kávu.|I never drink coffee.|I don't never drink coffee.|I never don't drink coffee.|I drink never coffee.|-|Never stojí před slovesem a stačí jako zápor.
+Moc často se nedívám na televizi.|I don't watch TV very often.|I very often don't watch TV.|I don't very often watch TV.|I watch not TV very often.|-|Very often patří na konec věty.
+Je vždycky unavená.|She's always tired.|She always is tired.|She always tired.|Always she tired is.|-|U slovesa be stojí always až za ním: she is always.
+Obvykle jsem doma v osm.|I'm usually at home at eight.|I usually at home at eight.|I'm at home usually usually.|Usually I at home at eight.|-|U be: I am usually.
+Někdy chodím pěšky.|I sometimes walk.|I sometimes walks.|I sometime walk.|I sometimes am walk.|-|Sometimes + walk. U I bez -s.
+Plavat chodím dvakrát týdně.|I go swimming twice a week.|I go swimming twice week.|I twice a week go swimming.|I go swim twice a week.|-|Kolikrát stojí na konci věty.
+Jak často jezdíš na kole?|How often do you ride a bike?|How often you ride a bike?|How often does you ride a bike?|How much do you ride a bike?|-|How often + do + you + ride.
+Moje máma vaří každý den.|My mum cooks every day.|My mum cook every day.|My mum cooks everyday day.|My mum every day cooks always.|-|Mum = she: cooks. Every day na konec.
+Nikdy nechodíme pozdě.|We are never late.|We never are late.|We don't never late.|We are never not late.|-|U be: are never.`],
+["Napiš slovo", `
+@|snídaně|breakfast|1|-|Breakfast = snídaně.
+@|oběd|lunch|1|-|Lunch = oběd.
+@|večeře|dinner|1|-|Dinner = večeře.
+@|sprcha|shower|1|-|Shower = sprcha. Have a shower = osprchovat se.
+@|vana, koupel|bath|1|-|Bath = vana. Have a bath = vykoupat se.
+@|postel|bed|1|-|Bed = postel. Go to bed = jít spát.
+@|jízdní kolo|bike/bicycle|1|-|Bike nebo bicycle = kolo.
+@|divadlo|theatre/theater|1|-|Theatre (britsky) nebo theater (americky).
+@|vydělávat|earn|1|-|Earn = vydělávat prací.
+@|sdílet, dělit se|share|1|-|Share = sdílet.
+@|trávit (čas), utrácet (peníze)|spend|1|-|Spend time, spend money.
+@|nosit na sobě (oblečení)|wear|1|-|Wear = mít na sobě.
+@|používat|use|1|-|Use = používat.
+@|vařit (vodu)|boil|1|-|Boil = vařit, vřít (voda).
+@|učit (někoho)|teach|1|-|Teach = učit někoho. Learn = učit se.
+@|mýt|wash|1|-|Wash = mýt.
+@|stát (o ceně)|cost|1|-|Cost = stát. It costs ten euros.
+@|zapomínat|forget|1|-|Forget = zapomenout.
+@|nikdy|never|1|-|Never = nikdy.
+@|obvykle|usually|1|-|Usually = obvykle.`],
+["Přiřaď", `
+=|Přiřaď anglická slova k českým.|get up~vstávat;wake up~probudit se;get dressed~obléct se;go to bed~jít spát|Wake up = probudit se, get up = vstát z postele.
+=|Přiřaď anglická slova k českým.|have breakfast~snídat;have lunch~obědvat;have dinner~večeřet;have a shower~sprchovat se|Jídla a sprcha se pojí se slovesem have.
+=|Přiřaď anglická slova k českým.|always~vždycky;usually~obvykle;often~často;sometimes~někdy;never~nikdy|Od 100 % (always) po 0 % (never).
+=|Přiřaď anglická slova k českým.|once a week~jednou týdně;twice a month~dvakrát měsíčně;every day~každý den;three times a year~třikrát ročně|Once = jednou, twice = dvakrát, three times = třikrát.
+=|Přiřaď, co k sobě patří.|ride~a bike;play~the piano;watch~TV;brush~your teeth|Ride a bike, play the piano, watch TV, brush your teeth.
+=|Přiřaď, co k sobě patří.|earn~money;spend~time;share~a flat;wear~a ring|Earn money, spend time, share a flat, wear a ring.
+=|Přiřaď, co k sobě patří.|boil~an egg;teach~maths;wash~your hands;cost~ten euros|Boil an egg (uvařit vajíčko), teach maths, wash your hands, cost ten euros.
+=|Přiřaď ke každé otázce krátkou odpověď.|Do you get up early?~Yes, I do.;Does she cook?~No, she doesn't.;Do they eat meat?~No, they don't.;Does it start at six?~Yes, it does.|Do you…? → I do. Does she…? → she doesn't. Do they…? → they don't. Does it…? → it does.
+=|Přiřaď opaky.|start~finish;get up~go to bed;open~close;come home~go to work|Start × finish, get up × go to bed, open × close.
+=|Přiřaď k otázce odpověď.|What time do you get up?~At half past six.;How do you get to work?~By bus.;How often do you go swimming?~Twice a week.;What do you do?~I'm a nurse.|What time = v kolik, how = jak, how often = jak často, What do you do? = čím se živíš.`],
+["Slož větu", `
+#|I usually get up at seven.|Obvykle vstávám v sedm.|Usually stojí před slovesem.|gets
+#|She never eats breakfast.|Nikdy nesnídá.|Never před slovesem. She: eats.|eat
+#|We often go to the theatre.|Často chodíme do divadla.|Often před slovesem. We: go.|goes
+#|My dad always washes the car on Saturdays.|Táta vždycky v sobotu myje auto.|Dad = he: washes. Always před slovesem.|wash
+#|Do you often ride a bike?|Jezdíš často na kole?|Do + you + often + ride.|Does
+#|How often do you travel by train?|Jak často jezdíš vlakem?|How often + do + you + travel.|does
+#|I don't watch TV very often.|Moc často se nedívám na televizi.|Very often patří na konec věty.|doesn't
+#|He doesn't wear a ring.|Nenosí prsten.|Doesn't + wear (bez -s).|wears
+#|They share a flat in the city centre.|Sdílí byt v centru města.|They: share (bez -s).|shares
+#|She earns a lot of money.|Vydělává hodně peněz.|She: earns.|earn
+#|What time does the film start?|V kolik začíná film?|What time + does + the film + start.|starts
+#|I have a shower every morning.|Každé ráno se sprchuju.|Every morning na konec věty.|has
+#|We usually have dinner at half past six.|Obvykle večeříme v půl sedmé.|Usually před slovesem, čas na konec.|has
+#|My brother sometimes cooks for us.|Bratr nám někdy vaří.|Brother = he: cooks.|cook
+#|Does your sister work from home?|Pracuje tvoje sestra z domova?|Sister = she: Does + work.|Do
+#|I go to bed at eleven.|Chodím spát v jedenáct.|Go to bed, bez the.|the
+#|They are always late.|Vždycky chodí pozdě.|U be stojí always za slovesem: are always.|-
+#|He brushes his teeth twice a day.|Čistí si zuby dvakrát denně.|He: brushes (po -sh -es).|brush
+#|How do you get to work?|Jak se dostaneš do práce?|How + do + you + get.|does
+#|I never eat in restaurants.|Nikdy nejím v restauracích.|Never stačí jako zápor, don't se nepřidává.|don't`],
+["Doplň text", `
+_|Doplň slovesa.|My name is Eva. I {work} in a bank in Brno. I {get} up at six and I {have} a shower. My husband {works} from home.|gets has|Jmenuji se Eva. Pracuji v bance v Brně. Vstávám v šest a sprchuji se. Můj manžel pracuje z domova.|I: work, get, have. Husband = he: works.
+_|Doplň don't / doesn't.|I {don't} like coffee, so I drink tea. My sister {doesn't} drink tea, she likes juice. Our parents {don't} drink juice.|isn't aren't|Nemám rád kávu, tak piju čaj. Moje sestra nepije čaj, má ráda džus. Naši rodiče džus nepijí.|I, they: don't. Sister = she: doesn't.
+_|Doplň slova o tom, jak často.|I go swimming {twice} a week. I {never} eat meat because I'm a vegetarian. I {usually} get up at seven, but on Sundays I sleep longer.|often ever|Plavat chodím dvakrát týdně. Nikdy nejím maso, protože jsem vegetarián. Obvykle vstávám v sedm, ale v neděli spím déle.|Twice = dvakrát, never = nikdy, usually = obvykle.
+_|Doplň do / does.|Where {do} you live? What {does} your brother do? Where {do} your parents work?|is are|Kde bydlíš? Co dělá tvůj bratr? Kde pracují tvoji rodiče?|You, they: do. Brother = he: does.
+_|Doplň slovesa.|Tom is a teacher. He {teaches} maths. He {starts} work at eight and {finishes} at three. In the evening he {watches} TV.|teach watch|Tom je učitel. Učí matematiku. Začíná v osm a končí ve tři. Večer se dívá na televizi.|He: -s nebo -es. Po -ch a -sh je -es: teaches, finishes, watches.
+_|Doplň slovesa.|Anna and Petr {share} a flat in Prague. They {get} on really well. Anna {earns} more money, but Petr {cooks} every day.|shares earn|Anna a Petr spolu bydlí v bytě v Praze. Moc dobře spolu vycházejí. Anna vydělává víc peněz, ale Petr každý den vaří.|They: share, get. Anna = she: earns. Petr = he: cooks.
+_|Doplň krátké odpovědi.|Do you like cats? Yes, I {do}. Does your mum drive? No, she {doesn't}. Do your friends play tennis? Yes, they {do}.|does don't|Máš rád kočky? Ano. Řídí tvoje máma? Ne. Hrají tvoji kamarádi tenis? Ano.|Krátká odpověď zopakuje do nebo does z otázky.
+_|Doplň slova.|In the morning I have {breakfast} at seven. I have {lunch} at work at twelve and in the evening we have {dinner} together.|bed bath|Ráno snídám v sedm. V poledne obědvám v práci a večer spolu večeříme.|Breakfast = snídaně, lunch = oběd, dinner = večeře.
+_|Doplň slovesa ve správném tvaru.|Water {boils} at 100 degrees. The museum {opens} at nine and {closes} at five. Shoes {cost} a lot of money.|boil costs|Voda vře při 100 stupních. Muzeum otevírá v devět a zavírá v pět. Boty stojí hodně peněz.|Water, museum = it: -s. Shoes = they: cost bez -s.
+_|Doplň slova.|My best friend is very {generous}. She {likes} giving presents and she {never} forgets birthdays.|mean like always|Moje nejlepší kamarádka je moc štědrá. Ráda dává dárky a nikdy nezapomene na narozeniny.|Generous = štědrý. Friend = she: likes. Never = nikdy.`]
+]});
+
+</script>
+<script>
+window.TOPICS = window.TOPICS || [];
+window.TOPICS.push({
+id: "greet", en: "Greetings", cz: "Seznámení a pozdravy", ph: "grítingz",
+summary: "Jak pozdravit, představit se a rozloučit. Hello {{dobrý den, ahoj}}, My name is… {{jmenuji se…}}, I'm from… {{jsem z…}}, Nice to meet you. {{Těší mě.}} Angličtina nemá tykání a vykání: <b>you</b> je ty i vy.",
+theory: [
+["Pozdravy při setkání a loučení", "<ul><li>Setkání: Hello {{dobrý den, ahoj}}, Hi {{ahoj}}, Good morning {{dobré ráno}}, Good afternoon {{dobré odpoledne}}, Good evening {{dobrý večer}}.</li><li>Loučení: Goodbye {{na shledanou}}, Bye {{ahoj, čau}}, See you {{uvidíme se}}, Bye for now {{zatím ahoj}}, Good night {{dobrou noc}}.</li></ul><b>Good night</b> se říká jen na rozloučenou nebo před spaním. Když večer přicházíš, řekneš <b>Good evening</b>."],
+["Představení: jméno, odkud, kolik let", "<ul><li>What's your name? {{Jak se jmenuješ?}} → My name is Eva. / I'm Eva. {{Jmenuji se Eva.}}</li><li>Where are you from? {{Odkud jsi?}} → I'm from Brno. {{Jsem z Brna.}}</li><li>How old are you? {{Kolik ti je let?}} → I'm thirty. {{Je mi třicet.}}</li></ul>Věk se říká slovesem <b>be</b>, nikdy „I have 30 years“."],
+["How are you? a zdvořilé fráze", "How are you? {{Jak se máš?}} je hlavně pozdrav. Odpovídá se krátce: Fine, thanks. And you? {{Dobře, díky. A ty?}}<br><b>Nice to meet you</b> {{těší mě}} říkáš při prvním seznámení. <b>Nice to see you</b> {{rád tě vidím}} říkáš někomu, koho už znáš.<br>Thank you {{děkuji}}, Thanks {{díky}}, Happy birthday! {{Všechno nejlepší k narozeninám!}}"],
+["Mr, Mrs, Ms, Miss", "Píšou se jen <b>před jméno</b>, nikdy samostatně: Mr Novák {{pan Novák}}.<ul><li><b>Mr</b> = pan</li><li><b>Mrs</b> = paní (vdaná)</li><li><b>Ms</b> = paní (nevíme, jestli je vdaná, nebo to sama preferuje)</li><li><b>Miss</b> = slečna</li></ul>Nejde říct „Mr Doctor“ nebo „Good morning, Mr“. Řekneš jen Good morning, Doctor Smith, nebo prostě Good morning."],
+["Sloveso be v kostce", "I <b>am</b> (I'm) {{jsem}} · you <b>are</b> (you're) {{jsi, jste}} · he / she / it <b>is</b> (he's, she's, it's) {{je}} · we / they <b>are</b> (we're, they're) {{jsme, jsou}}.<br>Zápor: I'm not, he isn't, they aren't. Otázka: <b>Are</b> you…? <b>Is</b> she…?<br>Krátká odpověď: Yes, I am. / No, I'm not. V kladné krátké odpovědi se nestahuje: ne „Yes, I'm“."],
+["Jak si to zapamatovat", "<b>MEET = poprvé</b> (seznámit se). <b>SEE = už se známe</b>.<br><b>Good night = dobrou noc</b>, ne „dobrý večer“."]
+],
+subs: [
+["Pozdravy a fráze", `
+Dobré ráno.|Good morning.|Good night.|Good evening.|Nice morning.|-|Do poledne: good morning.
+Dobré odpoledne.|Good afternoon.|Good after noon.|Good evening.|Nice afternoon.|-|Po poledni: good afternoon.
+Dobrý večer. (při příchodu)|Good evening.|Good night.|Good afternoon.|Nice evening.|-|Při příchodu večer: good evening. Good night je jen na rozloučenou.
+Dobrou noc.|Good night.|Good evening.|Nice night.|Good nights.|-|Good night = dobrou noc, na rozloučenou nebo před spaním.
+Na shledanou.|Goodbye.|Good buy.|See me.|Hello.|-|Goodbye. Hovorově bye.
+Ahoj. (při setkání)|Hi!|Bye!|See you!|Goodbye!|-|Hi = ahoj při setkání. Bye = ahoj při loučení.
+Ahoj. (při loučení)|Bye!|Hi!|Hello!|Good morning!|-|Bye = ahoj, čau při loučení.
+Uvidíme se.|See you!|See me!|Look you!|Watch you!|-|See you = uvidíme se.
+Zatím ahoj.|Bye for now!|Bye at now!|Hi for now!|Bye now for!|-|Bye for now = zatím ahoj.
+Těší mě. (při seznámení)|Nice to meet you.|Nice to see you.|Nice meet you.|Nice to meeting you.|-|Meet = seznámit se. Při prvním setkání: nice to meet you.
+Rád tě vidím. (známého)|Nice to see you.|Nice to meet you.|Nice see you.|Nice to seeing you.|-|Někoho, koho už znáš: nice to see you.
+Jak se máš?|How are you?|How you are?|How is you?|What are you?|-|How are you? Sloveso are jde před you.
+Mám se dobře.|I'm fine.|I have fine.|I'm fines.|I fine.|-|Fine = v pořádku. Sloveso be: I'm fine.
+Dobře, díky. A ty?|Fine, thanks. And you?|Fine, thanks. And your?|Fine, thank. And you?|Fine, thanks you. And you?|-|And you? = a ty?
+Děkuji.|Thank you.|Thanks you.|Thank.|Thank your.|-|Thank you nebo thanks, ale nikdy thanks you.
+Všechno nejlepší k narozeninám!|Happy birthday!|Happy birthdays!|Nice birthday!|Good birthday!|-|Happy birthday!
+Jak se jmenuješ?|What's your name?|How is your name?|What's you name?|How are you called?|-|Anglicky se ptáš „Co je tvoje jméno?“: What's your name?
+Jmenuji se Eva.|My name is Eva.|My name are Eva.|I name is Eva.|Me name is Eva.|-|My name is… nebo jen I'm Eva.
+Odkud jsi?|Where are you from?|From where you are?|Where you are from?|Where do you from?|-|Where na začátek, from na konec.
+Jsem z Brna.|I'm from Brno.|I'm of Brno.|I'm in Brno from.|I from Brno.|-|Odkud = from.
+Kolik ti je let?|How old are you?|How many years have you?|How old do you have?|How much old are you?|-|Věk: how old + be.
+Je mi třicet.|I'm thirty.|I have thirty.|I have thirty years.|I'm thirty years.|-|Věk se říká slovesem be. Celé spojení je thirty years old.
+A co ty?|What about you?|And what you?|What about your?|How about your?|-|What about you? = A co ty?`],
+["Pravda, nebo nepravda", `
+?|Přečti si, co o sobě říká Tereza.|Hi! My name is Tereza and my surname is Mala. I'm from Ostrava, but I live in Prague. I'm twenty-five and I'm a nurse. My best friend is Jana. She's a teacher.|Tereza is from Prague.~F;Tereza is twenty-five.~T;Tereza is a teacher.~F;Jana is Tereza's best friend.~T|Ahoj! Jmenuji se Tereza a mé příjmení je Malá. Jsem z Ostravy, ale bydlím v Praze. Je mi dvacet pět a jsem zdravotní sestra. Moje nejlepší kamarádka je Jana. Je učitelka.|Be from = pocházet z. Live in = bydlet v. Tereza je z Ostravy, v Praze jen bydlí.
+?|Přečti si rozhovor.|Mr Black: Good morning, Mrs White. How are you? Mrs White: I'm fine, thank you. And you? Mr Black: Very well, thanks. This is my son, Tom. Mrs White: Nice to meet you, Tom.|It's the morning.~T;Mrs White is fine.~T;Tom is Mrs White's son.~F;Mrs White knows Tom.~F|Pan Black: Dobré ráno, paní Whiteová. Jak se máte? Paní Whiteová: Dobře, děkuji. A vy? Pan Black: Velmi dobře, díky. Tohle je můj syn Tom. Paní Whiteová: Těší mě, Tome.|Good morning = ráno. Nice to meet you znamená, že se s Tomem vidí poprvé.
+?|Přečti si text o Danielovi.|This is Daniel. He's thirty-two and he's from Manchester. He's a writer. His wife is Czech. Her name is Lucie. They live in Brno with their dog, Max.|Daniel is English.~T;Lucie is from Manchester.~F;Max is their son.~F;They live in the Czech Republic.~T|Tohle je Daniel. Je mu třicet dva a je z Manchesteru. Je spisovatel. Jeho žena je Češka. Jmenuje se Lucie. Bydlí v Brně se svým psem Maxem.|Manchester je v Anglii. Max je jejich pes (dog), ne syn.
+?|Přečti si, co říká Pavel.|Hello, I'm Pavel. I'm not a student, I'm a vet. I'm forty. My brother Jakub is a student. He's nineteen. Our parents are in Spain on holiday.|Pavel is a student.~F;Jakub is nineteen.~T;Pavel is older than Jakub.~T;Their parents are at home.~F|Ahoj, já jsem Pavel. Nejsem student, jsem veterinář. Je mi čtyřicet. Můj bratr Jakub je student. Je mu devatenáct. Naši rodiče jsou ve Španělsku na dovolené.|I'm not a student = nejsem student. Rodiče jsou ve Španělsku.
+?|Přečti si rozhovor.|Anna: Happy birthday, Petra! Petra: Thank you! Anna: How old are you today? Petra: I'm twenty-one. Anna: A cup of tea? Petra: Oh yes, lovely, thank you.|It's Anna's birthday.~F;Petra is twenty-one.~T;Petra wants a cup of tea.~T|Anna: Všechno nejlepší, Petro! Petra: Děkuju! Anna: Kolik ti je dnes? Petra: Je mi dvacet jedna. Anna: Šálek čaje? Petra: Ano, to by bylo prima, děkuju.|Narozeniny má Petra. Oh yes, lovely = ano, to by bylo prima.
+?|Přečti si rozhovor.|Sam: Good night, Mum! Mum: Good night, Sam. See you in the morning.|Sam is going to bed.~T;It's the morning.~F;Sam is talking to his dad.~F|Sam: Dobrou noc, mami! Máma: Dobrou noc, Same. Uvidíme se ráno.|Good night = dobrou noc, jde se spát. Mum = máma.`],
+["Přiřaď", `
+=|Přiřaď pozdravy k českým.|Good morning!~Dobré ráno!;Good afternoon!~Dobré odpoledne!;Good evening!~Dobrý večer!;Good night!~Dobrou noc!|Morning = ráno, afternoon = odpoledne, evening = večer, night = noc.
+=|Přiřaď k otázce odpověď.|What's your name?~I'm Eva.;Where are you from?~I'm from Brno.;How old are you?~I'm thirty.;How are you?~Fine, thanks.|Name → jméno, where from → odkud, how old → věk, how are you → jak se máš.
+=|Přiřaď oslovení.|Mr~pan;Mrs~paní (vdaná);Ms~paní (nevíme, jestli je vdaná);Miss~slečna|Píšou se jen před jméno: Mr Novák, Mrs Nováková.
+=|Přiřaď fráze k českým.|Nice to meet you.~Těší mě.;Nice to see you.~Rád tě vidím.;See you!~Uvidíme se!;Bye for now!~Zatím ahoj!|Meet = poprvé, see = už se známe.
+=|Přiřaď krátkou odpověď.|Is your name Tom?~Yes, it is.;Are you from London?~No, I'm not.;Is she a teacher?~Yes, she is.;Are they at home?~No, they aren't.|Odpovídáš stejným slovesem: Is → is / isn't, Are you → I am / I'm not, Are they → they are / aren't.`],
+["Najdi chybu", `
+!|I [have>am] thirty years old.|Je mi třicet let.|Věk se říká slovesem be: I am thirty.
+!|My name [are>is] Eva.|Jmenuji se Eva.|Name = it, proto is.
+!|How [is>are] you?|Jak se máš?|U you je vždy are.
+!|Where are you [of>from]?|Odkud jsi?|Odkud = where … from.
+!|Nice to [see>meet] you, I'm Tom.|Těší mě, já jsem Tom.|Při prvním seznámení: nice to meet you.
+!|[Good_night>Good_evening]! Welcome to our party.|Dobrý večer! Vítejte na naší oslavě.|Při příchodu: good evening. Good night je jen na rozloučenou.
+!|Thank [your>you] very much.|Děkuji mockrát.|Thank you.
+!|Petr is my brother. [She>He] is a student.|Petr je můj bratr. Je student.|Bratr = he.
+!|They [is>are] from London.|Jsou z Londýna.|They: are.
+!|I [is>am] from Prague.|Jsem z Prahy.|I: am.
+!|This is my friend. [His>Her] name is Jana.|Tohle je moje kamarádka. Jmenuje se Jana.|Jana = ona, proto her (její).
+!|Happy [birthdays>birthday], Petr!|Všechno nejlepší k narozeninám, Petře!|Happy birthday, v jednotném čísle.
+!|Mr Novak is [a>an] English teacher.|Pan Novák je učitel angličtiny.|English začíná samohláskou, proto an.
+!|We [am>are] Czech.|Jsme Češi.|We: are.
+!|What's [you>your] surname?|Jaké je tvoje příjmení?|Tvoje = your.`],
+["Přesmyčky", `
+%|ahoj, dobrý den|hello|Hello = ahoj, dobrý den.
+%|jméno|name|Name = jméno.
+%|příjmení|surname|Surname = příjmení. First name = křestní jméno.
+%|ráno|morning|Morning = ráno, dopoledne.
+%|večer|evening|Evening = večer.
+%|kamarád|friend|Friend = kamarád. Píše se i před e: fr-i-e-nd.
+%|narozeniny|birthday|Birthday = narozeniny.
+%|díky|thanks|Thanks = díky.
+%|na shledanou|goodbye|Goodbye = na shledanou.
+%|v pořádku, dobře|fine|Fine = v pořádku: I'm fine.
+%|student|student|Student = student i studentka.
+%|spisovatel|writer|Writer = spisovatel. W na začátku se nečte.
+%|sekretářka|secretary|Secretary = sekretářka.
+%|anglický, angličtina|English|English se píše velkým písmenem.
+%|český, čeština|Czech|Czech se píše velkým písmenem.`]
+]});
+
+</script>
+<script>
+window.TOPICS = window.TOPICS || [];
+window.TOPICS.push({
+id: "havegot", en: "Have got and 's", cz: "Have got a přivlastňovací pád", ph: "hev got",
+summary: "<b>Have got</b> znamená mít, vlastnit. Je typické pro britskou angličtinu: I've got a dog. {{Mám psa.}} She's got blue eyes. {{Má modré oči.}} Komu co patří, řekneš pomocí <b>'s</b>: Petr's car {{Petrovo auto}}.",
+theory: [
+["Have got: tvary", "<div class='tbl'><table><tr><th></th><th>kladně</th><th>zápor</th></tr><tr><td>I, you, we, they</td><td>have got ('ve got)</td><td>haven't got</td></tr><tr><td>he, she, it</td><td>has got ('s got)</td><td>hasn't got</td></tr></table></div>I've got a car. {{Mám auto.}} He hasn't got a job. {{Nemá práci.}}"],
+["Otázky a krátké odpovědi", "<b>Have</b> nebo <b>has</b> jde na začátek: <b>Have</b> you got a garden? {{Máte zahradu?}} <b>Has</b> she got brown hair? {{Má hnědé vlasy?}}<br>Krátká odpověď je <b>bez got</b>: Yes, I have. / No, she hasn't."],
+["Pozor na 's", "<b>he's</b> může znamenat he is i he has:<ul><li>He's got a dog. = He <b>has</b> got a dog. {{Má psa.}} Za ním je got.</li><li>He's tall. = He <b>is</b> tall. {{Je vysoký.}}</li></ul>Have got a have + do znamenají totéž: I've got a car = I have a car. Nemíchej je: ne „Do you have got“."],
+["Přivlastňovací pád: 's", "<ul><li>Jedna osoba: <b>'s</b>: Petr's dog {{Petrův pes}}, my mum's car {{mámino auto}}.</li><li>Množné číslo na -s: jen <b>'</b>: my parents' house {{dům mých rodičů}}.</li><li>Nepravidelné množné číslo: <b>'s</b>: the children's room {{pokoj dětí}}.</li><li>U věcí většinou <b>of</b>: the name of the book {{jméno té knihy}}, the centre of Prague {{centrum Prahy}}.</li></ul>Celá rodina: the Nováks {{Novákovi}}, bez apostrofu."],
+["Jak si to zapamatovat", "<b>Have got = mám (vlastním). Has got jen u he, she, it.</b><br>V krátké odpovědi got vypadne: Have you got a cat? – Yes, I have."]
+],
+subs: [
+["Have got", `
+I ___ a dog.|'ve got|'s got|has got|got have|Mám psa.|I: have got, zkráceně I've got.
+She ___ two brothers.|has got|have got|'ve got|got has|Má dva bratry.|She: has got.
+They ___ a nice house.|have got|has got|is got|got|Mají hezký dům.|They: have got.
+My sister ___ long hair.|has got|have got|is got|got has|Moje sestra má dlouhé vlasy.|Sister = she: has got.
+We ___ a car.|'ve got|'s got|are got|has got|Máme auto.|We: have got = we've got.
+Tim ___ a hamster.|has got|have got|is got|got|Tim má křečka.|Tim = he: has got.
+Our town ___ a big park.|has got|have got|is got|are got|Naše město má velký park.|Town = it: has got.
+Mám dvě děti.|I've got two children.|I've got two childs.|I'm got two children.|I has got two children.|-|I've got. Child → children.
+Má modré oči.|She's got blue eyes.|She've got blue eyes.|She is blue eyes.|She got has blue eyes.|-|She's got = she has got.
+Máme zahradu.|We've got a garden.|We's got a garden.|We are got a garden.|We got have a garden.|-|We've got = we have got.
+Mají tři kočky.|They've got three cats.|They's got three cats.|They have got three cat.|They are got three cats.|-|They've got + množné číslo cats.
+Má nové auto.|He's got a new car.|He've got a new car.|He is got a new car.|He has a new car got.|-|He's got = he has got.
+He's got a dog. (He's = ?)|he has|he is|he was|he does|Má psa.|Za he's je got, proto he's = he has.
+He's tall. (He's = ?)|he is|he has|he was|he does|Je vysoký.|Bez got je he's = he is.
+Have you got a computer? Yes, I ___.|have|have got|got|am|Máš počítač? Ano.|Krátká odpověď je bez got: Yes, I have.
+Has she got a car? No, she ___.|hasn't|hasn't got|doesn't|isn't|Má auto? Ne.|No, she hasn't.
+___ your brother got a job?|Has|Have|Does|Is|Má tvůj bratr práci?|Brother = he: Has … got?
+___ you got any pets?|Have|Has|Do|Are|Máš nějaká domácí zvířata?|You: Have … got?
+Do you have a car? Yes, I ___.|do|have|have got|am|Máš auto? Ano.|Otázka s do → odpověď s do.
+Nemám čas.|I haven't got time.|I haven't time got.|I don't have got time.|I'm not got time.|-|Zápor: haven't got.`],
+["Přetvoř větu", `
+#|I haven't got a hamster.|Nemám křečka.|Zápor u I: haven't got.|hasn't don't|I've got a hamster.|Napiš zápor.
+#|Tim hasn't got a dog.|Tim nemá psa.|Tim = he: hasn't got.|haven't doesn't|Tim has got a dog.|Napiš zápor.
+#|They haven't got a garden.|Nemají zahradu.|They: haven't got.|hasn't don't|They've got a garden.|Napiš zápor.
+#|She hasn't got dark hair.|Nemá tmavé vlasy.|She: hasn't got.|haven't isn't|She's got dark hair.|Napiš zápor.
+#|Our family hasn't got two cars.|Naše rodina nemá dvě auta.|Family = it: hasn't got.|haven't don't|Our family has got two cars.|Napiš zápor.
+#|Have you got a computer?|Máš počítač?|Have + you + got.|Has Do|You've got a computer.|Napiš otázku.
+#|Has Mr Black got a car?|Má pan Black auto?|Mr Black = he: Has.|Have Does|Mr Black has got a car.|Napiš otázku.
+#|Has your teacher got fair hair?|Má tvoje učitelka světlé vlasy?|Teacher = he nebo she: Has.|Have Is|Your teacher has got fair hair.|Napiš otázku.
+#|Have they got a little sister?|Mají malou sestru?|They: Have.|Has Do|They've got a little sister.|Napiš otázku.
+#|Has Tim got a dog?|Má Tim psa?|Tim = he: Has.|Have Does|Tim has got a dog.|Napiš otázku.
+#|What have you got in your bag?|Co máš v tašce?|What + have + you + got.|has do
+#|Who has got my keys?|Kdo má moje klíče?|Who je tu podmět (kdo), proto has got bez obracení.|have`],
+["Krátké odpovědi", `
+=|Přiřaď ke každé otázce krátkou odpověď.|Have you got a car?~Yes, I have.;Has she got a dog?~No, she hasn't.;Have they got children?~Yes, they have.;Has it got a garden?~No, it hasn't.|Krátká odpověď bez got: Yes, I have. No, she hasn't.
+=|Přiřaď ke každé otázce krátkou odpověď.|Has your brother got a job?~Yes, he has.;Have we got milk?~No, we haven't.;Is he your brother?~Yes, he is.;Does he like cats?~No, he doesn't.|Odpovídáš slovesem z otázky: has → has, have → haven't, is → is, does → doesn't.
+=|Přiřaď ke každé otázce krátkou odpověď.|Have you got time?~No, I haven't.;Are you busy?~Yes, I am.;Do you work today?~Yes, I do.;Can you help?~No, I can't.|Have → haven't, are → am, do → do, can → can't.
+=|Přiřaď ke každé otázce krátkou odpověď.|Has she got blue eyes?~Yes, she has.;Is she tall?~No, she isn't.;Has he got a beard?~No, he hasn't.;Is he married?~Yes, he is.|Has → has / hasn't, is → is / isn't.`],
+["Přivlastňovací pád", `
+Petrův pes|Petr's dog|Petrs dog|Petr dog's|dog of Petr's|-|Osoba + 's: Petr's.
+mámino auto|my mum's car|my mums car|my mum car's|the car my mum|-|Mum + 's: my mum's car.
+dům mých rodičů|my parents' house|my parent's house|my parents's house|my parents house|-|Množné číslo na -s: jen apostrof za s.
+pokoj dětí|the children's room|the childrens' room|the childs' room|the children room|-|Children nekončí na -s, proto children's.
+jméno té knihy|the name of the book|the book's of name|the books name|the name the book|-|U věcí se většinou používá of.
+centrum Prahy|the centre of Prague|Prague's of centre|the centre Prague|the Prague centre's|-|U míst a věcí: the centre of Prague.
+konec filmu|the end of the film|the film's of end|the end the film|the films end|-|U věcí: the end of the film.
+šéf mé sestry|my sister's boss|my sisters boss|my sister boss's|the boss my sister|-|Sister + 's.
+kamarádi mého bratra|my brother's friends|my brothers friends|my brother friends's|the friends my brother|-|Jeden bratr: brother's.
+Je to Annina taška.|It's Anna's bag.|It's Annas bag.|It's Anna bag.|It's the bag Anna.|-|Anna + 's.
+Kde je Tomova škola?|Where is Tom's school?|Where is Toms school?|Where is Tom school?|Where is school of Tom's?|-|Tom + 's.
+jméno toho psa|the dog's name|the dogs name|the dog name's|the name dog|-|U zvířat se používá 's.
+auta mých rodičů|my parents' cars|my parent's cars|my parents's cars|my parents car's|-|Rodiče = parents, apostrof až za s.
+To jsou Novákovi.|They're the Nováks.|They're Nováks the.|They're the Novák's.|They're the Nováks's.|-|Celá rodina: the + příjmení + s, bez apostrofu.
+Whose bag is it? It's ___. (Evina)|Eva's|Evas|Eva|Eva's's|Čí je ta taška? Je Evina.|Whose = čí. Odpověď: Eva's.
+This is my ___ car. (bratrovo)|brother's|brothers|brother|brothers'|Tohle je auto mého bratra.|Jeden bratr: brother's.
+Peterova kočka se jmenuje Micka.|Peter's cat is called Micka.|Peters cat is called Micka.|Peter cat's is called Micka.|The cat Peter is called Micka.|-|Peter + 's.`],
+["Najdi chybu", `
+!|She [have>has] got a cat.|Má kočku.|She: has got.
+!|I [has>have] got two brothers.|Mám dva bratry.|I: have got.
+!|Have you [get>got] a car?|Máš auto?|Have got, ne get.
+!|Has he got a dog? Yes, he [got>has].|Má psa? Ano.|Krátká odpověď: Yes, he has.
+!|We [hasn't>haven't] got a garden.|Nemáme zahradu.|We: haven't got.
+!|This is [Petrs>Petr's] house.|Tohle je Petrův dům.|Komu patří: Petr's.
+!|My [parent's>parents'] house is big.|Dům mých rodičů je velký.|Dva rodiče: parents'.
+!|The [childrens>children's] room is upstairs.|Pokoj dětí je nahoře.|Children's.
+!|[Do>Have] you got any pets?|Máš nějaká domácí zvířata?|S got: Have you got…?
+!|My sister [haves>has] got blue eyes.|Moje sestra má modré oči.|She: has.
+!|Has your mum [get>got] a job?|Má tvoje máma práci?|Has … got.
+!|Our teacher [have>has] got fair hair.|Naše učitelka má světlé vlasy.|Teacher = she: has got.`],
+["Doplň text", `
+_|Doplň have / has / haven't / hasn't.|My brother loves animals. He {has} got a dog and two cats. My sister hates animals. She {hasn't} got any pets. We {haven't} got a garden, so we walk the dog in the park.|is are|Můj bratr miluje zvířata. Má psa a dvě kočky. Moje sestra zvířata nesnáší. Nemá žádné domácí zvíře. Nemáme zahradu, tak psa venčíme v parku.|He, she: has / hasn't. We: haven't.
+_|Doplň slova.|Kelly {has} got two brothers. Her {brothers'} names are Ben and Tom. Ben {is} sixteen and Tom is twelve.|have are brother's|Kelly má dva bratry. Jmenují se Ben a Tom. Benovi je šestnáct a Tomovi dvanáct.|Kelly = she: has. Jména dvou bratrů: brothers'. Věk: is.
+_|Doplň otázky a odpovědi.|{Have} you got a car? No, I {haven't}. {Has} your wife got a car? Yes, she {has}.|Do does|Máš auto? Ne. Má tvoje žena auto? Ano.|You: have / haven't. Wife = she: has.
+_|Doplň slova.|We've got a large house, but {the} garden is very small. My {mum's} car is in the garage. {She} drives it to work every day.|a mums he|Máme velký dům, ale zahrada je velmi malá. Mámino auto je v garáži. Každý den s ním jezdí do práce.|The garden = zahrada toho domu. Mum's = mámino. Mum = she.`]
+]});
+
+</script>
+<script>
+window.TOPICS = window.TOPICS || [];
+window.TOPICS.push({
+id: "qwords", en: "Question words", cz: "Tázací slova", ph: "kwesčn wərdz",
+summary: "Otázka na informaci začíná tázacím slovem: <b>who</b> {{kdo}}, <b>whose</b> {{čí}}, <b>what</b> {{co, jaký}}, <b>where</b> {{kde, kam}}, <b>when</b> {{kdy}}, <b>why</b> {{proč}}, <b>how</b> {{jak}}. Pak následuje stejné pořadí jako v otázce ano/ne: Where <b>do you</b> live? {{Kde bydlíš?}}",
+theory: [
+["Tázací slova", "<div class='tbl'><table><tr><th>anglicky</th><th>česky</th><th>příklad</th></tr><tr><td>who</td><td>kdo</td><td>Who is it? {{Kdo je to?}}</td></tr><tr><td>whose</td><td>čí</td><td>Whose bag is this? {{Čí je ta taška?}}</td></tr><tr><td>what</td><td>co, jaký</td><td>What do you like? {{Co máš rád?}}</td></tr><tr><td>where</td><td>kde, kam</td><td>Where do you live? {{Kde bydlíš?}}</td></tr><tr><td>when</td><td>kdy</td><td>When does he play tennis? {{Kdy hraje tenis?}}</td></tr><tr><td>why</td><td>proč</td><td>Why are you sad? {{Proč jsi smutný?}}</td></tr><tr><td>how</td><td>jak</td><td>How are you? {{Jak se máš?}}</td></tr><tr><td>which</td><td>který</td><td>Which one? {{Který?}}</td></tr></table></div>"],
+["Spojení s how a what", "how old {{kolik let}} · how many {{kolik (kusů)}} · how much {{kolik (peněz, nepočitatelné)}} · how often {{jak často}} · what time {{v kolik}} · what colour {{jakou barvu}}."],
+["Pořadí slov v otázce", "<b>tázací slovo + pomocné sloveso + kdo + sloveso</b><ul><li>Where <b>do</b> your parents <b>live</b>? {{Kde bydlí tvoji rodiče?}}</li><li>What time <b>does</b> the film <b>start</b>? {{V kolik začíná film?}}</li><li>Se slovesem be: Where <b>are</b> you from? {{Odkud jsi?}}</li></ul>Výjimka: když se ptáš <b>kdo</b> něco dělá, do / does se nepoužívá: <b>Who lives</b> here? {{Kdo tady bydlí?}}"],
+["Whose, nebo who's?", "<b>whose</b> = čí: Whose car is this? {{Čí je to auto?}}<br><b>who's</b> = who is: Who's that? {{Kdo je to?}} Znějí stejně, ale píšou se jinak."],
+["Jak si to zapamatovat", "Skoro všechna tázací slova začínají na <b>wh-</b>. Jediná výjimka je <b>how</b> (jak)."]
+],
+subs: [
+["Slovíčka", `
+kdo|who|whose|what|how|-|Who = kdo.
+čí|whose|who's|who|which|-|Whose = čí. Who's = who is.
+co|what|which|who|where|-|What = co.
+kde, kam|where|when|were|what|-|Where = kde. Were je minulost od be.
+kdy|when|where|then|what|-|When = kdy. Then = potom.
+proč|why|how|who|what|-|Why = proč. Odpověď začíná because (protože).
+jak|how|who|why|what|-|How = jak.
+který (z několika)|which|what|who|witch|-|Which = který. Witch = čarodějnice!
+kolik let|how old|how many|how much|how age|-|Věk: how old.
+v kolik (hodin)|what time|how time|when time|what hour|-|V kolik = what time.
+kolik (kusů)|how many|how much|how old|how lot|-|Spočitatelné: how many.
+kolik (peněz)|how much|how many|how money|what much|-|Peníze a nespočitatelné: how much.`],
+["Doplň tázací slovo", `
+___ is your name?|What|Who|Where|How|Jak se jmenuješ?|Ptáš se, co je tvoje jméno: what.
+___ do you live? I live in Brno.|Where|When|What|Who|Kde bydlíš? Bydlím v Brně.|Místo: where.
+___ is that? – My sister.|Who|What|Whose|Where|Kdo je to? – Moje sestra.|Na člověka: who.
+___ bag is this? – It's Anna's.|Whose|Who|Who's|What|Čí je to taška? – Annina.|Čí = whose.
+___ are you? – Fine, thanks.|How|What|Who|Where|Jak se máš? – Dobře, díky.|How are you?
+___ is your birthday? – In May.|When|Where|What|Who|Kdy máš narozeniny? – V květnu.|Čas: when.
+___ are you sad? – Because I'm tired.|Why|What|How|When|Proč jsi smutný? – Protože jsem unavený.|Because = protože, otázka why.
+___ old are you?|How|What|Who|Which|Kolik ti je let?|How old.
+___ time is it?|What|How|When|Which|Kolik je hodin?|What time.
+___ brothers have you got? – Two.|How many|How much|How old|What|Kolik máš bratrů? – Dva.|Bratry spočítáš: how many.
+___ is this T-shirt? – Ten pounds.|How much|How many|What|How old|Kolik stojí to tričko? – Deset liber.|Cena: how much.
+___ do you go on Fridays? – To the gym.|Where|When|Who|Why|Kam chodíš v pátek? – Do posilovny.|Kam = where.
+___ does he play tennis? – On Sundays.|When|Where|Why|Who|Kdy hraje tenis? – V neděli.|Kdy = when.
+___ colour is your car? – Blue.|What|Who|How|Where|Jakou barvu má tvoje auto? – Modrou.|What colour = jaká barva.
+___ do you want, tea or coffee?|Which|Who|Where|How|Co si dáš, čaj, nebo kávu?|Výběr ze dvou možností: which.
+___ car is this? – My dad's.|Whose|Who's|Who|Where|Čí je to auto? – Tátovo.|Čí = whose.
+___ doesn't he listen to music? – He hasn't got time.|Why|What|Where|Who|Proč neposlouchá hudbu? – Nemá čas.|Proč = why.
+___ lives in this house? – My grandma.|Who|Whose|What|Where|Kdo bydlí v tomhle domě? – Moje babička.|Kdo = who.
+___ do you get to work? – By bus.|How|What|Where|Why|Jak se dostaneš do práce? – Autobusem.|Jak = how.
+___ is that? – It's a hamster.|What|Who|Whose|How|Co je to? – Křeček.|Na věc nebo zvíře: what.`],
+["Přiřaď", `
+=|Přiřaď k otázce odpověď.|Who is it?~It's John.;Where is Dad?~In the garden.;When is the party?~On Saturday.;Why are you late?~Because the bus was slow.|Who → osoba, where → místo, when → čas, why → because.
+=|Přiřaď k otázce odpověď.|What's your job?~I'm a vet.;How old is she?~She's nine.;Whose car is this?~It's my mum's.;What time is it?~It's six o'clock.|Job → povolání, how old → věk, whose → čí, what time → kolik je hodin.
+=|Přiřaď k otázce odpověď.|How are you?~Fine, thanks.;How many children have you got?~Three.;How much is it?~Five pounds.;Which one do you want?~The red one.|How many → počet, how much → cena, which → výběr.
+=|Přiřaď tázací slova k českým.|who~kdo;whose~čí;what~co;where~kde;when~kdy|Všechna začínají na wh-.
+=|Přiřaď tázací slova k českým.|why~proč;how~jak;which~který;how many~kolik (kusů);how much~kolik (peněz)|How je jediné tázací slovo bez wh-.`],
+["Slož otázku", `
+#|Where do your parents live?|Kde bydlí tvoji rodiče?|Where + do + kdo + sloveso.|does
+#|What time does the film start?|V kolik začíná film?|The film = it: does.|do
+#|Why don't you like coffee?|Proč nemáš rád kávu?|Why + don't + you + like.|doesn't
+#|When does he play tennis?|Kdy hraje tenis?|He: does + play.|do
+#|Whose house is this?|Čí je tohle dům?|Whose + podstatné jméno + is.|Who's
+#|How old is your sister?|Kolik je tvé sestře let?|How old + is + kdo.|does
+#|What do you do?|Čím se živíš?|První do je pomocné, druhé znamená dělat.|does
+#|How many languages do you speak?|Kolika jazyky mluvíš?|Jazyky spočítáš: how many.|much
+#|Where are you from?|Odkud jsi?|Se slovesem be: Where + are + you + from.|do
+#|Who is your best friend?|Kdo je tvůj nejlepší kamarád?|Kdo = who.|Whose
+#|What colour is your car?|Jakou barvu má tvoje auto?|What colour = jaká barva.|How
+#|How much is this book?|Kolik stojí tahle kniha?|Cena: how much.|many
+#|Why is she happy?|Proč je šťastná?|Se slovesem be: Why + is + she.|does
+#|Which bus goes to the centre?|Který autobus jede do centra?|Which = který z několika. Bus = it: goes.|go
+#|Who lives here?|Kdo tady bydlí?|Ptáš se, kdo to dělá, proto bez does: Who lives.|does`],
+["Najdi chybu", `
+!|Where [does>do] you live?|Kde bydlíš?|You: do.
+!|[Who's>Whose] bag is this?|Čí je to taška?|Čí = whose. Who's = who is.
+!|What time [do>does] the shop open?|V kolik otevírá obchod?|The shop = it: does.
+!|How [much>many] brothers have you got?|Kolik máš bratrů?|Bratry spočítáš: how many.
+!|How [many>much] is it?|Kolik to stojí?|Cena: how much.
+!|Who [does_live>lives] here?|Kdo tady bydlí?|Ptáš se na podmět (kdo): Who lives.
+!|Why [is>are] you sad?|Proč jsi smutný?|You: are.
+!|How old [have>are] you?|Kolik ti je let?|Věk: be.
+!|[When>Where] are you from?|Odkud jsi?|Odkud = where … from.
+!|What [does>do] they do?|Co dělají? (Čím se živí?)|They: do.`]
+]});
+
+</script>
+<script>
+window.TOPICS = window.TOPICS || [];
+window.TOPICS.push({
+id: "hobbies", en: "Colours, jobs and hobbies", cz: "Barvy, povolání a záliby", ph: "kaləz, džobz end hobiz",
+summary: "Barvy, domácí zvířata, povolání a koníčky. U povolání nezapomeň na <b>a / an</b>: She's <b>a</b> vet. {{Je veterinářka.}} He's <b>an</b> architect. {{Je architekt.}} Co máš rád dělat: I like <b>cooking</b>. {{Rád vařím.}}",
+theory: [
+["Barvy", "red {{červená}} · blue {{modrá}} · green {{zelená}} · yellow {{žlutá}} · orange {{oranžová}} · pink {{růžová}} · purple {{fialová}} · brown {{hnědá}} · black {{černá}} · white {{bílá}} · grey {{šedá}}.<br>Barva se nemění: a red car, red cars. Otázka: What colour is it? {{Jakou to má barvu?}}"],
+["Povolání", "vet {{veterinář}} · dentist {{zubař}} · waitress {{servírka}} · manager {{vedoucí}} · journalist {{novinář}} · singer {{zpěvák}} · fashion designer {{módní návrhář}} · cook {{kuchař}} · writer {{spisovatel}} · secretary {{sekretářka}} · teacher {{učitel}} · nurse {{zdravotní sestra}}.<br>Vždy s <b>a / an</b>: I'm <b>a</b> student. {{Jsem student.}} She's <b>an</b> engineer. {{Je inženýrka.}}<br>What's your job? {{Jaké máš zaměstnání?}} I've got a weekend job. {{Mám víkendovou brigádu.}}"],
+["Domácí zvířata a záliby", "pet {{domácí zvířátko}} · hamster {{křeček}} · rabbit {{králík}} · cat {{kočka}} · fish {{ryba}}.<br>hobby {{koníček}}, množné číslo hobbies · paint {{malovat}} · draw {{kreslit}} · take photographs {{fotografovat}} · listen to music {{poslouchat hudbu}} · read novels {{číst romány}} · go for walks {{chodit na procházky}} · travel {{cestovat}} · free time {{volný čas}}.<br>My hobbies are… {{Moje koníčky jsou…}} What are your hobbies? {{Jaké máš koníčky?}}"],
+["Like + -ing a předložky", "Co rád děláš: <b>like + sloveso s -ing</b>: I like reading. {{Rád čtu.}}<br>Pozor: Ta barva se mi líbí = I like the colour. V angličtině je podmětem ten, komu se něco líbí.<br>Předložky: at home {{doma}}, at school {{ve škole}}, at university {{na vysoké škole}}, at the weekend {{o víkendu}}, in the garden {{na zahradě}}, in the park {{v parku}}, in the centre {{v centru}}, in the country {{na venkově}}."],
+["Small, nebo little?", "Obě znamenají malý. <b>small</b> je neutrální: Their house is very small. {{Jejich dům je hodně malý.}} <b>little</b> je citově zabarvené: little Tom {{Tomík}}, our little house {{náš domeček}}, little brother {{mladší bratr}}."],
+["Jak si to zapamatovat", "Povolání = vždy <b>a / an</b>. Před samohláskou an: an architect, an engineer, an artist."]
+],
+subs: [
+["Barvy", `
+%|zelená|green|Green = zelená.
+%|oranžová|orange|Orange = oranžová i pomeranč.
+%|růžová|pink|Pink = růžová.
+%|černá|black|Black = černá.
+%|bílá|white|White = bílá. W a h se čte jako w.
+%|šedá|grey|Grey = šedá. Americky gray.
+%|hnědá|brown|Brown = hnědá.
+%|žlutá|yellow|Yellow = žlutá.
+%|fialová|purple|Purple = fialová.
+%|modrá|blue|Blue = modrá.
+%|červená|red|Red = červená. Zrzavé vlasy = red hair.
+%|barva|colour|Colour = barva. Americky color.`],
+["Povolání", `
+veterinář|vet|bet|wet|vets|-|Vet = veterinář(ka). Celé slovo veterinarian.
+zubař|dentist|doctor|dancer|dentis|-|Dentist = zubař(ka).
+servírka|waitress|waiter|waitres|waiting|-|Waitress = servírka. Waiter = číšník.
+vedoucí, manažer|manager|boss|managing|menager|-|Manager = vedoucí, manažer.
+novinář|journalist|journey|journal|journalism|-|Journalist = novinář. Čte se džərnəlist.
+zpěvák|singer|song|singing|sing|-|Singer = zpěvák, zpěvačka.
+módní návrhář|fashion designer|fashion design|fashioner|design fashion|-|Fashion designer = módní návrhář.
+kuchař|cook|cooker|cooking|cock|-|Cook = kuchař i vařit. Cooker = sporák!
+spisovatel|writer|write|writing|writter|-|Writer = spisovatel.
+sekretářka|secretary|secret|secretery|secretarian|-|Secretary = sekretářka.
+učitel|teacher|teaching|teach|learner|-|Teacher = učitel(ka).
+zdravotní sestra|nurse|nurser|sister|nursing|-|Nurse = zdravotní sestra.
+lékař|doctor|dentist|docter|doctorer|-|Doctor = lékař.
+Je veterinářka.|She's a vet.|She's vet.|She's an vet.|She vet.|-|Povolání má vždy a / an.
+Je architekt.|He's an architect.|He's a architect.|He's architect.|He an architect.|-|Architect začíná samohláskou: an.
+Jaké máš zaměstnání?|What's your job?|What's your work job?|How is your job?|Which is you job?|-|What's your job? = Jaké máš zaměstnání?`],
+["Zvířata a záliby", `
+křeček|hamster|hammer|hamburger|hamstar|-|Hamster = křeček.
+králík|rabbit|robot|rabit|habit|-|Rabbit = králík. Píše se se dvěma b.
+domácí zvířátko|pet|pat|put|pit|-|Pet = domácí zvířátko.
+koníček|hobby|hobbies|horse|happy|-|Hobby = koníček. Množné číslo hobbies.
+malovat (barvami)|paint|draw|point|painter|-|Paint = malovat barvami. Draw = kreslit.
+kreslit|draw|paint|drive|drew|-|Draw = kreslit.
+fotografovat|take photographs|make photographs|do photographs|take photograph's|-|Fotky se „berou“: take photographs.
+poslouchat hudbu|listen to music|listen music|hear to music|listen at music|-|Listen má vždy to.
+číst romány|read novels|read romans|read novel|reading novels it|-|Novel = román. Romans = Římané!
+cestovat|travel|trouble|tour|travelling to|-|Travel = cestovat.
+vaření|cooking|cooker|cook|kitchen|-|Cooking = vaření. Kitchen = kuchyně.
+volný čas|free time|free times|empty time|freedom time|-|Free time = volný čas.
+Moje koníčky jsou čtení a fotografování.|My hobbies are reading and photography.|My hobbys are reading and photography.|My hobbies is reading and photography.|My hobby are reading and photography.|-|Hobby → hobbies, proto are.
+Rád vařím.|I like cooking.|I like cook.|I'm like cooking.|I likes cooking.|-|Like + sloveso s -ing.
+Ta barva se mi líbí.|I like the colour.|The colour likes me.|The colour is like me.|Me like the colour.|-|V angličtině je podmětem ten, komu se to líbí: I like.`],
+["Roztřiď", `
+>|Roztřiď slova do skupin.|Barvy~green,pink,grey,orange;Zvířata~hamster,rabbit,fish,cat;Povolání~vet,dentist,waitress,singer|Barvy, zvířata a povolání z lekce.
+>|Který člen patří k povolání?|a~vet,dentist,singer,journalist;an~architect,engineer,actor,English teacher|Před samohláskou (a, e, i, o, u) je an.
+>|Kterou předložku použiješ?|at~home,school,university,the weekend;in~the garden,the park,the centre,the bedroom|At home, at school, at the weekend. In the garden, in the park.
+>|Roztřiď slova do skupin.|Záliby~painting,cooking,football,travelling;Jídlo~pizza,fruit,cabbage,muesli|Painting, cooking a travelling jsou činnosti. Pizza, fruit, cabbage a muesli se jí.
+>|Roztřiď slova do skupin.|Rodina~mother,father,parents,brother;Místa~bookshop,garage,restaurant,surgery|Bookshop = knihkupectví, garage = garáž, surgery = ordinace.`],
+["Pravda, nebo nepravda", `
+?|Přečti si text o rodině Horákových.|This is the Horak family. Mr Horak is a vet. His surgery is near the park. Mrs Horak is a journalist. They've got two children, Ema and Jakub. Ema is nine and she's got a rabbit. Jakub is nearly thirteen. He's very funny and he's popular at school.|Mr Horak is a dentist.~F;Mrs Horak is a journalist.~T;Ema has got a hamster.~F;Jakub is twelve.~T;Jakub is popular at school.~T|Tohle je rodina Horákových. Pan Horák je veterinář. Jeho ordinace je blízko parku. Paní Horáková je novinářka. Mají dvě děti, Emu a Jakuba. Emě je devět a má králíka. Jakubovi je skoro třináct. Je moc vtipný a ve škole je oblíbený.|Nearly thirteen = skoro třináct, takže mu je dvanáct. Ema má králíka (rabbit).
+?|Přečti si, co říká Lucy.|Hi, I'm Lucy. I'm a student at university and I've got a weekend job in a pizza restaurant. I'm a waitress. My hobbies are painting and photography. I don't like cooking!|Lucy works in a bookshop.~F;Lucy works at the weekend.~T;Lucy likes cooking.~F;Lucy paints.~T|Ahoj, já jsem Lucy. Studuju na univerzitě a o víkendu mám brigádu v pizzerii. Jsem servírka. Moje koníčky jsou malování a fotografování. Vaření nemám ráda!|Weekend job = víkendová brigáda. I don't like cooking = nemám ráda vaření.
+?|Přečti si text o rodičích.|My dad is the manager of a small bookshop in the centre of town. He loves books and he reads a lot of novels. My mum is a dentist. She's an excellent cook too.|The bookshop is big.~F;Dad likes reading.~T;Mum is a cook in a restaurant.~F;Mum cooks very well.~T|Můj táta je vedoucí malého knihkupectví v centru města. Miluje knihy a čte hodně románů. Moje máma je zubařka. Je také výborná kuchařka.|Small = malý. An excellent cook = výborně vaří, ale pracuje jako zubařka.
+?|Přečti si text o Olivii.|Olivia is a fashion designer. She's very busy. In her free time she listens to music and goes for walks with her dog. She doesn't like cabbage.|Olivia has got a lot of free time.~F;Olivia has got a dog.~T;Olivia likes cabbage.~F|Olivia je módní návrhářka. Je velmi zaneprázdněná. Ve volném čase poslouchá hudbu a chodí se psem na procházky. Nemá ráda zelí.|Busy = zaneprázdněná, proto nemá moc volného času.`],
+["Napiš slovo", `
+@|zelená|green|1|-|Green = zelená.
+@|růžová|pink|1|-|Pink = růžová.
+@|šedá|grey/gray|1|-|Grey (britsky), gray (americky).
+@|hnědá|brown|1|-|Brown = hnědá.
+@|křeček|hamster|1|-|Hamster = křeček.
+@|králík|rabbit|1|-|Rabbit = králík, dvě b.
+@|zahrada|garden|1|-|Garden = zahrada. In the garden = na zahradě.
+@|ložnice|bedroom|1|-|Bedroom = ložnice. Bed + room.
+@|zubař|dentist|1|-|Dentist = zubař.
+@|servírka|waitress|1|-|Waitress = servírka. Dvě s na konci.
+@|koníček|hobby|1|-|Hobby = koníček.
+@|obličej, tvář|face|1|-|Face = obličej.`],
+["Najdi chybu", `
+!|She's [a>an] architect.|Je architektka.|Architect začíná samohláskou: an.
+!|He's [an>a] vet.|Je veterinář.|Vet začíná souhláskou: a.
+!|My [hobby>hobbies] are painting and music.|Moje koníčky jsou malování a hudba.|Víc koníčků: hobbies.
+!|I like [cook>cooking].|Ráda vařím.|Like + -ing.
+!|My mum is [dentist.>a_dentist.]|Moje máma je zubařka.|Povolání má vždy a / an.
+!|She's got [greens>green] eyes.|Má zelené oči.|Barva se nemění, nemá množné číslo.
+!|He's popular [in>at] school.|Je oblíbený ve škole.|Ve škole = at school.
+!|We live [at>in] the country.|Bydlíme na venkově.|Na venkově = in the country.
+!|I listen [at>to] music every day.|Každý den poslouchám hudbu.|Listen to.
+!|They've got two [rabbit>rabbits].|Mají dva králíky.|Dva králíci: rabbits.`]
 ]});
 
 </script>
@@ -2956,15 +3615,112 @@ people|společenský, otevřený|My sister is an extrovert.|Moje sestra je spole
 
 </script>
 <script>
+/* Příkladové věty: Denní činnosti a Napiš slovo */
+window.EXAMPLES = (window.EXAMPLES || "") + `
+daily|vstávat (z postele)|I get up at six on weekdays.|Ve všední dny vstávám v šest.
+daily|probudit se|I usually wake up before my alarm.|Obvykle se probudím dřív než budík.
+daily|osprchovat se|I have a shower every morning.|Každé ráno se sprchuju.
+daily|vykoupat se (ve vaně)|The children have a bath in the evening.|Děti se koupou večer.
+daily|vyčistit si zuby|Brush your teeth before bed.|Před spaním si vyčisti zuby.
+daily|obléct se|I get dressed after breakfast.|Oblékám se po snídani.
+daily|snídat|We have breakfast at seven.|Snídáme v sedm.
+daily|jít do práce|I go to work by bus.|Do práce jezdím autobusem.
+daily|začít pracovat (v práci)|I start work at eight.|V práci začínám v osm.
+daily|skončit v práci|She finishes work at four.|V práci končí ve čtyři.
+daily|obědvat|We have lunch at twelve.|Obědváme ve dvanáct.
+daily|vrátit se domů|I come home at five.|Domů přicházím v pět.
+daily|umýt nádobí|My son washes the dishes.|Můj syn myje nádobí.
+daily|dívat se na televizi|We watch TV in the evening.|Večer se díváme na televizi.
+daily|jít spát|I go to bed at ten.|Chodím spát v deset.
+daily|jezdit na kole|I ride a bike in summer.|V létě jezdím na kole.
+daily|jít do divadla|We go to the theatre once a month.|Do divadla chodíme jednou měsíčně.
+daily|cestovat vlakem|I like travelling by train.|Ráda cestuju vlakem.
+daily|vydělávat peníze|He earns good money.|Vydělává dobré peníze.
+daily|bydlet v bytě s kamarády (sdílet byt)|I share a flat with two friends.|Bydlím v bytě se dvěma kamarády.
+daily|trávit čas|I spend a lot of time with my family.|Trávím hodně času s rodinou.
+daily|nosit (oblečení, prsten)|She always wears a hat.|Vždycky nosí klobouk.
+daily|používat|I use my phone every day.|Telefon používám každý den.
+daily|dobře spolu vycházet|My sister and I get on well.|Se sestrou spolu dobře vycházíme.
+daily|mít raději|I prefer tea to coffee.|Mám raději čaj než kávu.
+daily|@snídaně|Breakfast is ready!|Snídaně je hotová!
+daily|@oběd|What's for lunch?|Co je k obědu?
+daily|@večeře|We have dinner together.|Večeříme spolu.
+daily|@sprcha|I'm in the shower.|Jsem ve sprše.
+daily|@vana, koupel|The baby loves her bath.|Miminko miluje koupání.
+daily|@postel|My bed is very comfortable.|Moje postel je moc pohodlná.
+daily|@jízdní kolo|I go to work by bike.|Do práce jezdím na kole.
+daily|@divadlo|The theatre is in the centre.|Divadlo je v centru.
+daily|@vydělávat|How much do you earn?|Kolik vyděláváš?
+daily|@sdílet, dělit se|Let's share the pizza.|Rozdělme se o pizzu.
+daily|@trávit (čas), utrácet (peníze)|I don't spend much money.|Neutrácím moc peněz.
+daily|@nosit na sobě (oblečení)|I don't wear glasses.|Nenosím brýle.
+daily|@používat|Can I use your phone?|Můžu použít tvůj telefon?
+daily|@vařit (vodu)|Boil the water for tea.|Uvař vodu na čaj.
+daily|@učit (někoho)|She teaches English.|Učí angličtinu.
+daily|@mýt|Wash your hands, please.|Umyj si ruce, prosím.
+daily|@stát (o ceně)|How much does it cost?|Kolik to stojí?
+daily|@zapomínat|I often forget names.|Často zapomínám jména.
+daily|@nikdy|I never drink alcohol.|Nikdy nepiju alkohol.
+daily|@obvykle|I usually walk to work.|Do práce obvykle chodím pěšky.
+people|@He has no hair. He's ___.|My grandpa is bald.|Můj děda je plešatý.
+people|@the opposite of straight hair|Her hair is long and curly.|Má dlouhé kudrnaté vlasy.
+people|@thin and attractive|She's tall and slim.|Je vysoká a štíhlá.
+people|@hair on a man's chin|My dad has a grey beard.|Táta má šedivý plnovous.
+people|@hair between a man's nose and mouth|He has a big moustache.|Má velký knír.
+people|@not tall and not short|I'm medium height.|Jsem střední výšky.
+people|@another word for fair hair (for a woman)|She has long blonde hair.|Má dlouhé blond vlasy.
+people|@a polite way to say fat|He's a bit overweight.|Je trochu při těle.
+people|@a synonym of intelligent|My daughter is very clever.|Moje dcera je moc chytrá.
+people|@the opposite of lazy|My mum is very hard-working.|Moje máma je velmi pracovitá.
+people|@a person who makes other people laugh|My uncle is really funny.|Můj strýc je opravdu vtipný.
+people|@the opposite of light (hair)|She has short dark hair.|Má krátké tmavé vlasy.
+people|@somebody who doesn't talk a lot|He's a quiet boy.|Je to tichý kluk.
+people|@a person who doesn't like spending money|Don't be so mean!|Nebuď tak lakomý!
+people|@a person who likes giving presents|Thank you, you're so generous.|Děkuju, jsi tak štědrá.
+people|@a person who talks a lot|My friend is very talkative.|Moje kamarádka je hodně upovídaná.
+people|@a person who loves parties and meeting new people|My sister is an extrovert.|Moje sestra je společenská.
+people|@the opposite of friendly|The waiter was unfriendly.|Číšník byl nepříjemný.
+people|@the opposite of clever|That was a stupid idea.|To byl hloupý nápad.
+people|@a person who is nervous with people he doesn't know|My son is shy at school.|Můj syn je ve škole stydlivý.
+`;
+
+</script>
+<script>
 const SOON = [];
-const GROUPS = [["Základy", ["verbs","numbers","pronouns","prepositions","articles","plurals","adjectives","quantity","there"]], ["Časy a způsobová slovesa", ["present","past","future","modals"]], ["Slovíčka do života", ["time","family","people","food"]]];
-const KIND = {"Slovíčka":"Přelož do angličtiny","Slovní spojení a fráze":"Vyber správné spojení","Otázky":"Vyber správnou otázku","Zápory":"Vyber správný zápor","Být, moct, smět":"Vyber správný tvar","Běžné věty":"Přelož celou větu","Slož větu":"Poskládej větu","Vzhled":"Přelož do angličtiny","Povaha a opaky":"Přelož do angličtiny","Rozhovor":"Vyber správnou odpověď"};
+const GROUPS = [["Začínáme", ["greet","qwords","havegot"]], ["Základy", ["verbs","numbers","pronouns","prepositions","articles","plurals","adjectives","quantity","there"]], ["Časy a způsobová slovesa", ["present","past","future","modals"]], ["Slovíčka do života", ["time","family","people","daily","hobbies","food"]]];
+const KIND = {"Slovíčka":"Přelož do angličtiny","Slovní spojení a fráze":"Vyber správné spojení","Otázky":"Vyber správnou otázku","Zápory":"Vyber správný zápor","Být, moct, smět":"Vyber správný tvar","Běžné věty":"Přelož celou větu","Slož větu":"Poskládej větu","Vzhled":"Přelož do angličtiny","Povaha a opaky":"Přelož do angličtiny","Rozhovor":"Vyber správnou odpověď","Jak často":"Vyber správnou odpověď","Krátké odpovědi":"Přiřaď dvojice","Přetvoř větu":"Poskládej větu"};
 
 const CZ = h => String(h).replace(/\{\{(.*?)\}\}/g, "<span class='cz'>($1)</span>");
 const TOPICS = (window.TOPICS || []).map(t => ({...t, summary: CZ(t.summary), theory: t.theory.map(([h, b]) => [h, CZ(b)]), subs: t.subs.map(([name, text], si) => ({
   name, key: t.id + "-" + si,
   items: text.trim().split("\n").map(l => { const p = l.split("|").map(s => s.trim());
-    if (p[0] === "#") return { tid: t.id, type: "order", full: "#" + p[1], main: p[2], note: "", a: p[1], w: [], words: p[1].replace(/[.?!]$/, "").split(/\s+/), cz: "", why: p[3] || "", part: name };
+    if (p[0] === "#") {
+      const ans = p[1].replace(/[.?!]$/, "").split(/\s+/), extra = p[4] && p[4] !== "-" ? p[4].split(/\s+/) : [], src = p[5] && p[5] !== "-" ? p[5] : "";
+      return { tid: t.id, type: "order", full: "#" + p[1] + (src ? "|" + src : ""), main: src || p[2], src, task: p[6] || "", note: "", a: p[1], w: [], words: ans.concat(extra), nAns: ans.length, extra: extra.length, cz: src ? p[2] : "", why: p[3] || "", part: name };
+    }
+    if (p[0] === "%") return { tid: t.id, type: "anagram", full: "%" + p[2] + "|" + p[1], main: p[1], note: "", a: p[2], alts: [p[2]], letters: p[2].toUpperCase().split(""), w: [], cz: "", why: p[3] || "", part: name };
+    if (p[0] === ">") {
+      const bins = p[2].split(";").map(b => { const i = b.indexOf("~"); return { lab: b.slice(0, i).trim(), words: b.slice(i + 1).split(",").map(x => x.trim()) }; });
+      const its = []; bins.forEach((b, bi) => b.words.forEach(w => its.push({ w, bi })));
+      return { tid: t.id, type: "sort", full: ">" + p[2], main: p[1], note: "", bins, its, a: bins.map(b => b.lab + ": " + b.words.join(", ")).join(" · "), w: [], cz: "", why: p[3] || "", part: name };
+    }
+    if (p[0] === "?") {
+      const st = p[3].split(";").map(x => { const i = x.lastIndexOf("~"); return { s: x.slice(0, i).trim(), v: x.slice(i + 1).trim().toUpperCase() === "T" }; });
+      return { tid: t.id, type: "tf", full: "?" + p[2], main: p[1], note: "", text: p[2], st, a: st.map(x => x.s + " → " + (x.v ? "pravda" : "nepravda")).join(" · "), w: [], cz: p[4] === "-" ? "" : p[4], why: p[5] || "", part: name };
+    }
+    if (p[0] === "!") {
+      const toks = []; let wi = -1, right = "";
+      p[1].split(/\s+/).forEach(tok => { const m = tok.match(/^(.*)\[([^>\]]+)>([^\]]*)\](.*)$/); if (m) { wi = toks.length; right = (m[1] + m[3] + m[4]).replace(/_/g, " "); toks.push((m[1] + m[2] + m[4]).replace(/_/g, " ")); } else toks.push(tok); });
+      return { tid: t.id, type: "error", full: "!" + p[1], main: toks.join(" "), note: "", toks, wi, right, a: toks.map((x, i) => i === wi ? right : x).join(" "), w: [], cz: p[2] === "-" ? "" : p[2], why: p[3] || "", part: name };
+    }
+    if (p[0] === "@") { const alts = p[2].split("/").map(x => x.trim()); return { tid: t.id, type: "write", full: "@" + p[1], main: p[1], note: "", hint: p[3], a: alts[0], alts, w: [], cz: p[4] === "-" ? "" : p[4], why: p[5] || "", part: name }; }
+    if (p[0] === "=") { const pairs = p[2].split(";").map(x => x.split("~").map(y => y.trim())); return { tid: t.id, type: "match", full: "=" + p[2], main: p[1], note: "", pairs, a: pairs.map(x => x[0] + " – " + x[1]).join(" · "), w: [], cz: "", why: p[3] || "", part: name }; }
+    if (p[0] === "_") {
+      const segs = [], gaps = [];
+      p[2].split(/(\{[^}]*\})/).forEach(x => { if (/^\{.*\}$/.test(x)) { gaps.push(x.slice(1, -1).split("/")); segs.push({ g: gaps.length - 1 }); } else if (x) segs.push({ t: x }); });
+      const extra = p[3] && p[3] !== "-" ? p[3].split(/\s+/) : [];
+      return { tid: t.id, type: "cloze", full: "_" + p[2], main: p[1], note: "", segs, gaps, bank: gaps.map(g => g[0]).concat(extra), a: segs.map(x => x.t != null ? x.t : gaps[x.g][0]).join(""), w: [], cz: p[4] === "-" ? "" : p[4], why: p[5] || "", part: name };
+    }
     const m = p[0].match(/^(.*?)\s*(?:\(([^)]*)\))?$/);
     return { tid: t.id, full: p[0], main: m[1], note: m[2] || "", a: p[1], w: p.slice(2, 5), cz: p[5] === "-" ? "" : p[5], why: p[6] || "", part: name }; })
 }))}));
@@ -3136,7 +3892,18 @@ function startSet(items, retry){
   Q = { list, i: 0, score: 0, answered: false, chosen: null, typed: "", showTr: false, wrong: [], done: false, retry: !!retry };
   if (list.length) nextOpts();
 }
-function nextOpts(){ const it = Q.list[Q.i]; if (it.type === "order") { let o; do { o = shuffle(it.words.map((_, i) => i)); } while (it.words.length > 2 && o.every((v, i) => v === i)); Q.order = o; Q.picked = []; } Q.opts = it.type === "order" ? [] : shuffle([it.a, ...shuffle(it.w).slice(0, 2)]); Q.answered = false; Q.chosen = null; Q.typed = ""; Q.showTr = false; }
+function nextOpts(){
+  const it = Q.list[Q.i];
+  Q.answered = false; Q.chosen = null; Q.typed = ""; Q.showTr = false; Q.opts = []; Q.lastOk = false;
+  if (it.type === "order") { let o; do { o = shuffle(it.words.map((_, i) => i)); } while (it.words.length > 2 && o.every((v, i) => v === i)); Q.order = o; Q.picked = []; }
+  else if (it.type === "match") { Q.right = shuffle(it.pairs.map((_, i) => i)); Q.matched = []; Q.selL = null; Q.selR = null; Q.err = 0; Q.flash = null; }
+  else if (it.type === "cloze") { Q.bankOrder = shuffle(it.bank.map((_, i) => i)); Q.fill = it.gaps.map(() => null); Q.typedGaps = it.gaps.map(() => ""); Q.res = null; Q.cok = null; }
+  else if (it.type === "anagram") { let o; do { o = shuffle(it.letters.map((_, i) => i)); } while (it.letters.length > 2 && o.every((v, i) => it.letters[v] === it.letters[i])); Q.order = o; Q.picked = []; }
+  else if (it.type === "sort") { Q.sortOrder = shuffle(it.its.map((_, i) => i)); Q.place = it.its.map(() => null); Q.selW = null; }
+  else if (it.type === "tf") Q.tfa = it.st.map(() => null);
+  else if (it.type === "error") Q.tap = null;
+  else if (!it.type) Q.opts = shuffle([it.a, ...shuffle(it.w).slice(0, 2)]);
+}
 
 function render(){
   const modeSeg = `<div class="seg" role="group" aria-label="Způsob odpovídání">
@@ -3163,32 +3930,34 @@ function render(){
     <span class="top-r"><button class="back" data-act="home">← Zpět na výběr témat</button>${installBtn()}</span></div>${installHTML()}${head}${body}`;
   document.getElementById("theory")?.addEventListener("toggle", e => { T.theoryOpen = e.target.open; });
   if (Q.answered && !Q.done) document.getElementById("next")?.focus({preventScroll: true});
-  else if (!Q.done && MODE === "type") document.getElementById("ans")?.focus({preventScroll: true});
+  else if (!Q.done && Q.list.length && (MODE === "type" || Q.list[Q.i].type === "write")) (document.getElementById("ans") || document.getElementById("g0"))?.focus({preventScroll: true});
 }
 
 function questionHTML(){
+  if (["write", "match", "cloze", "anagram", "sort", "tf", "error"].includes(Q.list[Q.i].type)) return specialHTML();
   const it = Q.list[Q.i], n = Q.list.length, isEN = !!it.cz, isGap = it.main.includes("___");
   const k = keyOf(it), inM = k in MIST;
   let prompt;
   if (isEN) { const p = phon(it.main); prompt = `${esc(it.main)}${p ? ` <span class="ph">(${esc(p)})</span>` : ""}${sayBtn(it.main)}`; }
   else prompt = esc(it.main);
   const note = it.note ? `<div class="note">Nápověda: <b>${esc(it.note)}</b></div>` : "";
-  const tr = isEN ? `<button class="tr-btn" data-act="tr">${Q.showTr ? "Skrýt český překlad" : "Ukázat český překlad"}</button>${Q.showTr ? `<div class="tr">${esc(it.cz)}</div>` : ""}` : "";
+  const trLabel = it.src ? (Q.showTr ? "Skrýt, co má vyjít" : "Ukázat česky, co má vyjít") : (Q.showTr ? "Skrýt český překlad" : "Ukázat český překlad");
+  const tr = isEN ? `<button class="tr-btn" data-act="tr">${trLabel}</button>${Q.showTr ? `<div class="tr">${esc(it.cz)}</div>` : ""}` : "";
   const right = Q.answered && Q.chosen === it.a;
   let answerArea, ask;
   if (MODE === "type") {
-    ask = isGap ? "Napiš slovo, které chybí." : "Napiš anglicky.";
+    ask = it.task ? it.task + " Napiš celou větu." : isGap ? "Napiš slovo, které chybí." : "Napiš anglicky.";
     answerArea = `<form class="typer" id="typer" autocomplete="off">
       <input id="ans" class="type-in ${Q.answered ? (right ? "ok" : "bad") : ""}" type="text" value="${esc(Q.typed)}" placeholder="${isGap ? "chybějící slovo…" : "anglicky…"}"
         autocapitalize="off" autocorrect="off" spellcheck="false" ${Q.answered ? "disabled" : ""} aria-label="Tvoje odpověď">
       ${Q.answered ? "" : `<div class="actions"><button class="primary" type="submit">Zkontrolovat</button><button class="ghost" type="button" data-act="dunno">Nevím</button></div>`}
     </form>`;
   } else if (it.type === "order") {
-    ask = "Poskládej větu. Klepni na slova ve správném pořadí.";
+    ask = (it.task ? it.task + " " : "Poskládej větu. ") + "Klepni na slova ve správném pořadí." + (it.extra ? " Pozor, některá slova jsou navíc." : "");
     const built = Q.picked.map((wi, j) => `<button class="w on" data-act="unpick" data-j="${j}" ${Q.answered ? "disabled" : ""}>${esc(it.words[wi])}</button>`).join("");
     const pool = Q.order.map(wi => Q.picked.includes(wi) ? `<span class="w ghost-w" aria-hidden="true">${esc(it.words[wi])}</span>` : `<button class="w" data-act="wpick" data-w="${wi}">${esc(it.words[wi])}</button>`).join("");
     answerArea = `<div class="built ${Q.answered ? (right ? "ok" : "bad") : ""}">${built || '<span class="hint">Sem se skládá věta…</span>'}</div>
-      ${Q.answered ? "" : `<div class="pool">${pool}</div><div class="actions"><button class="primary" data-act="ocheck" ${Q.picked.length === it.words.length ? "" : "disabled"}>Zkontrolovat</button><button class="ghost" data-act="oclear">Začít znovu</button><button class="ghost" data-act="dunno">Nevím</button></div>`}`;
+      ${Q.answered ? "" : `<div class="pool">${pool}</div><div class="actions"><button class="primary" data-act="ocheck" ${Q.picked.length >= it.nAns ? "" : "disabled"}>Zkontrolovat</button><button class="ghost" data-act="oclear">Začít znovu</button><button class="ghost" data-act="dunno">Nevím</button></div>`}`;
   } else {
     ask = "Vyber správnou možnost.";
     answerArea = `<div class="opts">${Q.opts.map((o, i) => {
@@ -3200,18 +3969,19 @@ function questionHTML(){
   if (Q.answered) {
     const full = isGap ? it.main.replace("___", it.a) : it.a;
     const cz = isEN ? it.cz : it.main + (it.note ? ` (${it.note})` : "");
+    const srcLine = it.src ? `<p>Původní věta: ${enSay(it.src)}</p>` : "";
     const ex = EX[k];
     const streak = MIST[k];
     const mnote = !right ? `<p class="hint">Úkol se uložil do „Moje chyby“.</p>`
       : streak != null ? `<p class="hint">Opakování: správně ${streak} ze 3 za sebou.</p>` : (inM ? `<p class="hint">Hotovo, úkol zmizel z „Moje chyby“.</p>` : "");
     fb = `<div class="fb ${right ? "ok" : "bad"}" role="status"><strong>${right ? "Správně!" : "Tohle není správně."}</strong>
       ${right ? "" : `<p>Správná odpověď: ${enSay(it.a)}</p>`}
-      <p>Anglicky: ${enSay(full)}</p><p>${isEN ? "Překlad" : "Česky"}: ${esc(cz)}</p>
+      ${srcLine}<p>${it.src ? "Výsledek" : "Anglicky"}: ${enSay(full)}</p><p>${isEN ? "Překlad" : "Česky"}: ${esc(cz)}</p>
       ${ex ? `<p class="ex"><span class="ex-l">Příklad ve větě:</span> ${enSay(ex[0])}<br><span class="ex-cz">${esc(ex[1])}</span></p>` : ""}
       <p class="why"><b>Proč:</b> ${esc(it.why)}</p>${mnote}</div>
       <div class="actions"><button class="primary" id="next" data-act="next">${Q.i + 1 < n ? "Další úloha →" : "Zobrazit výsledek"}</button></div>`;
   }
-  const label = (T.review ? esc(TCZ[it.tid]) + " · " : "") + esc(it.part) + " · " + (isGap ? "Doplň do věty" : esc(KIND[it.part] || (isEN ? "Vyber správnou odpověď" : "Přelož do angličtiny")));
+  const label = (T.review ? esc(TCZ[it.tid]) + " · " : "") + esc(it.part) + " · " + (it.task ? "Přetvoř větu" : isGap ? "Doplň do věty" : esc(KIND[it.part] || (isEN ? "Vyber správnou odpověď" : "Přelož do angličtiny")));
   return `<div class="status"><span>${Q.retry ? "Opakování chyb · " : ""}Úloha ${Q.i + 1} z ${n}</span><span>Body: ${Q.score}</span></div>
   <div class="prog"><i style="width:${(Q.i + (Q.answered ? 1 : 0)) / n * 100}%"></i></div>
   <div class="card"><div class="kind">${label}${inM && !Q.answered ? ` <span class="badge">opakuješ</span>` : ""}</div>
@@ -3219,6 +3989,179 @@ function questionHTML(){
   ${answerArea}${fb}</div>
   <div class="hint">${it.type === "order" && MODE !== "type" ? "Tip: klepnutím na slovo ve větě ho vrátíš zpátky." : MODE === "type" ? "Tip: Enter = zkontrolovat a pak pokračovat. Velká písmena a tečky nevadí, „don't“ i „do not“ platí obojí." : "Tip: odpovídat můžeš klávesami 1–3, Enterem pokračuješ."}</div>`;
 }
+
+/* ---------- nové typy úloh: napiš slovo, přiřaď dvojice, doplň text ---------- */
+const mnoteHTML = (it, right) => { const st = MIST[keyOf(it)]; return !right ? `<p class="hint">Úkol se uložil do „Moje chyby“.</p>` : st != null ? `<p class="hint">Opakování: správně ${st} ze 3 za sebou.</p>` : ""; };
+const nextBtn = n => `<div class="actions"><button class="primary" id="next" data-act="next">${Q.i + 1 < n ? "Další úloha →" : "Zobrazit výsledek"}</button></div>`;
+function hintPattern(it){
+  if (it.hint === "" || it.hint == null || it.hint === "-") return "";
+  const n = +it.hint;
+  return it.a.split(/(\s+|-)/).map(part => part === "-" ? "-" : /^\s+$/.test(part) ? "<span class='pgap'></span>" : part.split("").map((c, i) => i < n ? esc(c) : "_").join(" ")).join("");
+}
+function specialHTML(){
+  const it = Q.list[Q.i], n = Q.list.length, k = keyOf(it), inM = k in MIST;
+  const isEN = !!it.cz;
+  const right = Q.answered && Q.lastOk;
+  const tr = isEN ? `<button class="tr-btn" data-act="tr">${Q.showTr ? "Skrýt český překlad" : "Ukázat český překlad"}</button>${Q.showTr ? `<div class="tr">${esc(it.cz)}</div>` : ""}` : "";
+  let kind, prompt, ask, area = "", fb = "";
+  if (it.type === "write") {
+    kind = "Napiš slovo";
+    prompt = isEN ? `${esc(it.main)}${phon(it.main) ? ` <span class="ph">(${esc(phon(it.main))})</span>` : ""}${sayBtn(it.main)}` : esc(it.main);
+    const pat = hintPattern(it);
+    ask = pat ? "Napiš anglické slovo. Nápověda ukazuje první písmeno a počet písmen." : "Napiš anglické slovo.";
+    area = `${pat ? `<div class="pattern" aria-label="Nápověda">${pat}</div>` : ""}
+      <form class="typer" id="typer" autocomplete="off"><input id="ans" class="type-in ${Q.answered ? (right ? "ok" : "bad") : ""}" type="text" value="${esc(Q.typed)}" placeholder="anglicky…"
+      autocapitalize="off" autocorrect="off" spellcheck="false" ${Q.answered ? "disabled" : ""} aria-label="Tvoje odpověď">
+      ${Q.answered ? "" : `<div class="actions"><button class="primary" type="submit">Zkontrolovat</button><button class="ghost" type="button" data-act="dunno">Nevím</button></div>`}</form>`;
+    if (Q.answered) {
+      const ex = EX[k];
+      fb = `<div class="fb ${right ? "ok" : "bad"}" role="status"><strong>${right ? "Správně!" : "Tohle není správně."}</strong>
+        <p>Správně: ${enSay(it.a)}${it.alts.length > 1 ? ` <span class="hint">(platí i: ${esc(it.alts.slice(1).join(", "))})</span>` : ""}</p>
+        ${isEN ? `<p>Překlad: ${esc(it.cz)}</p>` : ""}
+        ${ex ? `<p class="ex"><span class="ex-l">Příklad ve větě:</span> ${enSay(ex[0])}<br><span class="ex-cz">${esc(ex[1])}</span></p>` : ""}
+        <p class="why"><b>Proč:</b> ${esc(it.why)}</p>${mnoteHTML(it, right)}</div>${nextBtn(n)}`;
+    }
+  } else if (it.type === "match") {
+    kind = "Přiřaď dvojice";
+    prompt = esc(it.main);
+    ask = Q.answered ? "" : "Klepni na položku vlevo a pak na tu, která k ní patří vpravo.";
+    const fl = Q.flash || [];
+    const L = it.pairs.map((pr, i) => { const d = Q.matched.includes(i); return `<button class="m ${d ? "ok" : ""} ${Q.selL === i ? "sel" : ""} ${fl[0] === i ? "bad" : ""}" data-act="ml" data-i="${i}" ${d || Q.answered ? "disabled" : ""}>${esc(pr[0])}</button>`; }).join("");
+    const R = Q.right.map(i => { const d = Q.matched.includes(i); return `<button class="m ${d ? "ok" : ""} ${Q.selR === i ? "sel" : ""} ${fl[1] === i ? "bad" : ""}" data-act="mr" data-i="${i}" ${d || Q.answered ? "disabled" : ""}>${esc(it.pairs[i][1])}</button>`; }).join("");
+    area = `<div class="mgrid"><div class="mcol">${L}</div><div class="mcol">${R}</div></div>
+      ${Q.answered ? "" : `<div class="hint">Spárováno ${Q.matched.length} z ${it.pairs.length}${Q.err ? ` · chyby: ${Q.err}` : ""}</div><div class="actions"><button class="ghost" data-act="dunno">Nevím, ukaž řešení</button></div>`}`;
+    if (Q.answered) {
+      const side = s => phon(s) ? enSay(s) : esc(s);
+      fb = `<div class="fb ${right ? "ok" : "bad"}" role="status"><strong>${right ? "Správně, bez jediné chyby!" : Q.err ? `Hotovo, ale s chybami (${Q.err}).` : "Tady je řešení."}</strong>
+        <ul class="pairs">${it.pairs.map(pr => `<li>${side(pr[0])} <span class="arrow">→</span> ${side(pr[1])}</li>`).join("")}</ul>
+        <p class="why"><b>Proč:</b> ${esc(it.why)}</p>${mnoteHTML(it, right)}</div>${nextBtn(n)}`;
+    }
+  } else if (it.type === "anagram") {
+    kind = "Přesmyčky";
+    prompt = esc(it.main);
+    const typeMode = MODE === "type";
+    ask = Q.answered ? "" : typeMode ? "Napiš anglické slovo z těchto písmen." : "Poskládej anglické slovo. Klepni na písmena ve správném pořadí.";
+    if (typeMode) {
+      area = `<div class="pattern">${Q.order.map(i => esc(it.letters[i])).join(" ")}</div>
+        <form class="typer" id="typer" autocomplete="off"><input id="ans" class="type-in ${Q.answered ? (right ? "ok" : "bad") : ""}" type="text" value="${esc(Q.typed)}" placeholder="anglicky…" autocapitalize="off" autocorrect="off" spellcheck="false" ${Q.answered ? "disabled" : ""} aria-label="Tvoje odpověď">
+        ${Q.answered ? "" : `<div class="actions"><button class="primary" type="submit">Zkontrolovat</button><button class="ghost" type="button" data-act="dunno">Nevím</button></div>`}</form>`;
+    } else {
+      const built = Q.picked.map((li, j) => `<button class="w l on" data-act="unpick" data-j="${j}" ${Q.answered ? "disabled" : ""}>${esc(it.letters[li])}</button>`).join("");
+      const pool = Q.order.map(li => Q.picked.includes(li) ? `<span class="w l ghost-w" aria-hidden="true">${esc(it.letters[li])}</span>` : `<button class="w l" data-act="wpick" data-w="${li}">${esc(it.letters[li])}</button>`).join("");
+      area = `<div class="built ${Q.answered ? (right ? "ok" : "bad") : ""}">${built || '<span class="hint">Sem se skládá slovo…</span>'}</div>
+        ${Q.answered ? "" : `<div class="pool">${pool}</div><div class="actions"><button class="primary" data-act="acheck" ${Q.picked.length === it.letters.length ? "" : "disabled"}>Zkontrolovat</button><button class="ghost" data-act="oclear">Začít znovu</button><button class="ghost" data-act="dunno">Nevím</button></div>`}`;
+    }
+    if (Q.answered) {
+      const ex = EX[k];
+      fb = `<div class="fb ${right ? "ok" : "bad"}" role="status"><strong>${right ? "Správně!" : "Tohle není správně."}</strong>
+        <p>Správně: ${enSay(it.a)}</p>
+        ${ex ? `<p class="ex"><span class="ex-l">Příklad ve větě:</span> ${enSay(ex[0])}<br><span class="ex-cz">${esc(ex[1])}</span></p>` : ""}
+        <p class="why"><b>Proč:</b> ${esc(it.why)}</p>${mnoteHTML(it, right)}</div>${nextBtn(n)}`;
+    }
+  } else if (it.type === "sort") {
+    kind = "Roztřiď";
+    prompt = esc(it.main);
+    ask = Q.answered ? "" : "Klepni na slovo a pak na skupinu, kam patří. Klepnutím na zařazené slovo ho vrátíš.";
+    const left = Q.sortOrder.filter(i => Q.place[i] == null);
+    const pool = left.map(i => `<button class="w ${Q.selW === i ? "on" : ""}" data-act="swsel" data-i="${i}">${esc(it.its[i].w)}</button>`).join("");
+    const bins = it.bins.map((b, bi) => {
+      const inBin = Q.sortOrder.filter(i => Q.place[i] === bi).map(i => {
+        if (Q.answered) { const ok = it.its[i].bi === bi; return `<span class="gap-f ${ok ? "ok" : "bad"}">${esc(it.its[i].w)}${ok ? "" : ` <small>→ ${esc(it.bins[it.its[i].bi].lab)}</small>`}</span>`; }
+        return `<button class="gap-f on" data-act="sunplace" data-i="${i}">${esc(it.its[i].w)}</button>`;
+      }).join("");
+      return `<div class="bin ${Q.selW != null && !Q.answered ? "ready" : ""}"><button class="bin-h" data-act="sbin" data-b="${bi}" ${Q.answered ? "disabled" : ""}>${esc(b.lab)}</button><div class="bin-w">${inBin || '<span class="hint">…</span>'}</div></div>`;
+    }).join("");
+    area = `${Q.answered ? "" : `<div class="pool">${pool || '<span class="hint">Všechna slova jsou zařazená.</span>'}</div>`}<div class="bins">${bins}</div>
+      ${Q.answered ? "" : `<div class="actions"><button class="primary" data-act="scheck" ${left.length ? "disabled" : ""}>Zkontrolovat</button><button class="ghost" data-act="sclear">Začít znovu</button><button class="ghost" data-act="dunno">Nevím</button></div>`}`;
+    if (Q.answered) {
+      fb = `<div class="fb ${right ? "ok" : "bad"}" role="status"><strong>${right ? "Správně, všechno sedí!" : "Některá slova patří jinam."}</strong>
+        <ul class="pairs">${it.bins.map(b => `<li><b>${esc(b.lab)}:</b> ${b.words.map(w => phon(w) ? enSay(w) : esc(w)).join(", ")}</li>`).join("")}</ul>
+        <p class="why"><b>Proč:</b> ${esc(it.why)}</p>${mnoteHTML(it, right)}</div>${nextBtn(n)}`;
+    }
+  } else if (it.type === "tf") {
+    kind = "Pravda, nebo nepravda?";
+    prompt = esc(it.main);
+    ask = Q.answered ? "" : "Přečti si text a u každé věty rozhodni.";
+    const rows = it.st.map((x, i) => {
+      const cls = v => { if (!Q.answered) return Q.tfa[i] === v ? "on" : ""; if (x.v === v) return "ok"; return Q.tfa[i] === v ? "bad" : "dim"; };
+      return `<div class="tf"><span class="tf-s">${esc(x.s)}${sayBtn(x.s)}</span><span class="tf-b">
+        <button class="tfb ${cls(true)}" data-act="tfset" data-i="${i}" data-v="1" ${Q.answered ? "disabled" : ""}>Pravda</button>
+        <button class="tfb ${cls(false)}" data-act="tfset" data-i="${i}" data-v="0" ${Q.answered ? "disabled" : ""}>Nepravda</button></span></div>`;
+    }).join("");
+    const txt = esc(it.text).replace(/ (?=(?:Mr |Mrs |Ms )?[A-Z][a-z]+(?: [A-Z][a-z]+)?: )/g, "<br>");
+    area = `<div class="ctext">${txt}${sayBtn(it.text)}</div><div class="tfs">${rows}</div>
+      ${Q.answered ? "" : `<div class="actions"><button class="primary" data-act="tfcheck" ${Q.tfa.includes(null) ? "disabled" : ""}>Zkontrolovat</button><button class="ghost" data-act="dunno">Nevím</button></div>`}`;
+    if (Q.answered) {
+      fb = `<div class="fb ${right ? "ok" : "bad"}" role="status"><strong>${right ? "Správně, všechno sedí!" : "Některé odpovědi nesedí. Správné jsou zvýrazněné zeleně."}</strong>
+        ${it.cz ? `<p>Překlad textu: ${esc(it.cz)}</p>` : ""}<p class="why"><b>Proč:</b> ${esc(it.why)}</p>${mnoteHTML(it, right)}</div>${nextBtn(n)}`;
+    }
+  } else if (it.type === "error") {
+    kind = "Najdi chybu";
+    prompt = "Ve větě je jedna chyba.";
+    ask = Q.answered ? "" : "Klepni na slovo, které je špatně.";
+    const toks = it.toks.map((tk, i) => {
+      if (!Q.answered) return `<button class="tok" data-act="etap" data-i="${i}">${esc(tk)}</button>`;
+      if (i === it.wi) return `<span class="gap-f ${Q.tap === i ? "ok" : "bad"}"><s>${esc(tk)}</s> ${esc(it.right)}</span>`;
+      if (i === Q.tap) return `<span class="gap-f bad">${esc(tk)}</span>`;
+      return `<span class="tok-t">${esc(tk)}</span>`;
+    }).join(" ");
+    area = `<div class="ctext">${toks}</div>${Q.answered ? "" : `<div class="actions"><button class="ghost" data-act="dunno">Nevím</button></div>`}`;
+    if (Q.answered) {
+      fb = `<div class="fb ${right ? "ok" : "bad"}" role="status"><strong>${right ? "Správně, tohle je ta chyba!" : "Chyba je jinde."}</strong>
+        <p>Správně: ${enSay(it.a)}</p>${it.cz ? `<p>Překlad: ${esc(it.cz)}</p>` : ""}
+        <p class="why"><b>Proč:</b> ${esc(it.why)}</p>${mnoteHTML(it, right)}</div>${nextBtn(n)}`;
+    }
+  } else {
+    kind = "Doplň text";
+    prompt = esc(it.main);
+    const typeMode = MODE === "type";
+    ask = Q.answered ? "" : typeMode ? "Napiš do každé mezery správné slovo." : "Klepni na slova dole. Doplní se postupně do mezer. Klepnutím na doplněné slovo ho vrátíš.";
+    const gap = g => {
+      if (Q.answered) { const u = Q.res[g], ok = Q.cok[g]; return ok ? `<span class="gap-f ok">${esc(it.gaps[g][0])}</span>` : `<span class="gap-f bad">${u ? `<s>${esc(u)}</s> ` : ""}${esc(it.gaps[g][0])}</span>`; }
+      if (typeMode) return `<input class="gap-in" id="g${g}" data-g="${g}" value="${esc(Q.typedGaps[g])}" size="${Math.max(5, it.gaps[g][0].length + 2)}" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Mezera ${g + 1}">`;
+      const f = Q.fill[g];
+      return f != null ? `<button class="gap-f on" data-act="cunfill" data-g="${g}">${esc(it.bank[f])}</button>` : `<span class="gap-e">${g + 1}</span>`;
+    };
+    const text = it.segs.map(x => x.t != null ? esc(x.t) : gap(x.g)).join("");
+    const bank = Q.bankOrder.map(bi => Q.fill.includes(bi) ? `<span class="w ghost-w" aria-hidden="true">${esc(it.bank[bi])}</span>` : `<button class="w" data-act="cfill" data-b="${bi}">${esc(it.bank[bi])}</button>`).join("");
+    const full = !Q.fill.includes(null);
+    area = typeMode && !Q.answered
+      ? `<form id="clozef" autocomplete="off"><div class="ctext">${text}</div><div class="actions"><button class="primary" type="submit">Zkontrolovat</button><button class="ghost" type="button" data-act="dunno">Nevím</button></div></form>`
+      : `<div class="ctext">${text}</div>${Q.answered ? "" : `<div class="pool">${bank}</div><div class="actions"><button class="primary" data-act="ccheck" ${full ? "" : "disabled"}>Zkontrolovat</button><button class="ghost" data-act="cclear">Začít znovu</button><button class="ghost" data-act="dunno">Nevím</button></div>`}`;
+    if (Q.answered) {
+      fb = `<div class="fb ${right ? "ok" : "bad"}" role="status"><strong>${right ? "Správně!" : "Některé mezery nejsou správně."}</strong>
+        <p>Celý text: ${enSay(it.a)}</p>${it.cz ? `<p>Překlad: ${esc(it.cz)}</p>` : ""}
+        <p class="why"><b>Proč:</b> ${esc(it.why)}</p>${mnoteHTML(it, right)}</div>${nextBtn(n)}`;
+    }
+  }
+  const label = (T.review ? esc(TCZ[it.tid]) + " · " : "") + (kind.startsWith(it.part) ? esc(kind) : it.part.startsWith(kind) ? esc(it.part) : esc(it.part) + " · " + esc(kind));
+  return `<div class="status"><span>${Q.retry ? "Opakování chyb · " : ""}Úloha ${Q.i + 1} z ${n}</span><span>Body: ${Q.score}</span></div>
+  <div class="prog"><i style="width:${(Q.i + (Q.answered ? 1 : 0)) / n * 100}%"></i></div>
+  <div class="card"><div class="kind">${label}${inM && !Q.answered ? ` <span class="badge">opakuješ</span>` : ""}</div>
+  <div class="prompt">${prompt}</div>${ask ? `<div class="ask">${ask}</div>` : ""}${tr}
+  ${area}${fb}</div>`;
+}
+function finish(it, ok, yours){
+  Q.lastOk = ok; Q.chosen = ok ? it.a : yours; Q.answered = true;
+  if (ok) Q.score++; else Q.wrong.push({...it, yours});
+  record(it, ok);
+  render();
+}
+function matchTry(){
+  const it = Q.list[Q.i];
+  if (Q.selL == null || Q.selR == null) { render(); return; }
+  if (Q.selL === Q.selR) Q.matched.push(Q.selL);
+  else { Q.err++; Q.flash = [Q.selL, Q.selR]; setTimeout(() => { Q.flash = null; if (!Q.answered) render(); }, 650); }
+  Q.selL = null; Q.selR = null;
+  if (Q.matched.length === it.pairs.length) finish(it, Q.err === 0, `chyby: ${Q.err}`);
+  else render();
+}
+function clozeCheck(users){
+  const it = Q.list[Q.i];
+  Q.res = users; Q.cok = it.gaps.map((v, g) => v.some(x => norm(x) === norm(users[g] || "")));
+  finish(it, Q.cok.every(Boolean), users.map(u => u || "…").join(" / "));
+}
+const saveGapInputs = () => { if (Q && Q.typedGaps) document.querySelectorAll(".gap-in").forEach(el => { Q.typedGaps[+el.dataset.g] = el.value; }); };
 
 function resultHTML(){
   const n = Q.list.length, s = Q.score, pct = s / n;
@@ -3242,12 +4185,9 @@ function record(it, ok){
 function answer(chosen, typed){
   if (!Q || Q.answered || Q.done) return;
   const it = Q.list[Q.i];
-  const ok = typed != null ? norm(typed) === norm(it.a) : chosen === it.a;
-  Q.chosen = ok ? it.a : (typed != null ? (typed.trim() || "(nevím)") : chosen);
-  Q.typed = typed || ""; Q.answered = true;
-  if (ok) Q.score++; else Q.wrong.push({...it, yours: Q.chosen});
-  record(it, ok);
-  render();
+  const ok = typed != null ? (it.alts || [it.a]).some(v => norm(typed) === norm(v)) : chosen === it.a;
+  Q.typed = typed || "";
+  finish(it, ok, typed != null ? (typed.trim() || "(nevím)") : chosen);
 }
 function next(){
   if (Q.i + 1 < Q.list.length) { Q.i++; nextOpts(); render(); return; }
@@ -3260,7 +4200,7 @@ function next(){
   render(); (document.querySelector(".status") || document.querySelector(".card"))?.scrollIntoView({block: "start"});
 }
 
-app.addEventListener("submit", e => { e.preventDefault(); const v = document.getElementById("ans")?.value || ""; if (v.trim()) answer(null, v); });
+app.addEventListener("submit", e => { e.preventDefault(); if (e.target.id === "clozef") { saveGapInputs(); clozeCheck(Q.typedGaps.slice()); return; } const v = document.getElementById("ans")?.value || ""; if (v.trim()) answer(null, v); });
 app.addEventListener("click", e => {
   const b = e.target.closest("[data-act]"); if (!b) return;
   const a = b.dataset.act;
@@ -3271,16 +4211,37 @@ app.addEventListener("click", e => {
   else if (a === "open") openTopicPage(+b.dataset.t, b.dataset.s);
   else if (a === "review") openReview();
   else if (a === "chip") { T.si = b.dataset.s; startSet(topicItems(T.ti, T.si)); render(); }
-  else if (a === "mode") { MODE = b.dataset.m; try { localStorage.setItem("ek2-mode", MODE); } catch(e) {} render(); }
+  else if (a === "mode") { saveGapInputs(); MODE = b.dataset.m; try { localStorage.setItem("ek2-mode", MODE); } catch(e) {} render(); }
   else if (a === "say") say(b.dataset.t);
   else if (a === "pick") answer(Q.opts[+b.dataset.k], null);
-  else if (a === "dunno") answer(null, "");
+  else if (a === "dunno") { const it = Q.list[Q.i];
+    if (it.type === "cloze") clozeCheck(it.gaps.map(() => ""));
+    else if (it.type === "match") { Q.matched = it.pairs.map((_, i) => i); finish(it, false, "(nevím)"); }
+    else if (it.type === "sort") { Q.place = it.its.map(x => x.bi); finish(it, false, "(nevím)"); }
+    else if (it.type === "tf") { Q.tfa = it.st.map(x => x.v); finish(it, false, "(nevím)"); }
+    else if (it.type === "error") { Q.tap = it.wi; finish(it, false, "(nevím)"); }
+    else answer(null, ""); }
+  else if (a === "acheck") { const it = Q.list[Q.i]; answer(null, Q.picked.map(i => it.letters[i]).join("")); }
+  else if (a === "swsel") { const i = +b.dataset.i; Q.selW = Q.selW === i ? null : i; render(); }
+  else if (a === "sbin") { if (Q.selW != null) { Q.place[Q.selW] = +b.dataset.b; Q.selW = null; render(); } }
+  else if (a === "sunplace") { Q.place[+b.dataset.i] = null; render(); }
+  else if (a === "sclear") { Q.place = Q.place.map(() => null); Q.selW = null; render(); }
+  else if (a === "scheck") { const it = Q.list[Q.i]; const bad = it.its.filter((x, i) => Q.place[i] !== x.bi).map(x => x.w); finish(it, !bad.length, bad.length ? "špatně: " + bad.join(", ") : ""); }
+  else if (a === "tfset") { Q.tfa[+b.dataset.i] = b.dataset.v === "1"; render(); }
+  else if (a === "tfcheck") { const it = Q.list[Q.i]; const n = it.st.filter((x, i) => Q.tfa[i] !== x.v).length; finish(it, !n, n ? `špatně: ${n}` : ""); }
+  else if (a === "etap") { const it = Q.list[Q.i]; Q.tap = +b.dataset.i; finish(it, Q.tap === it.wi, it.toks[Q.tap]); }
+  else if (a === "ml") { Q.selL = +b.dataset.i; matchTry(); }
+  else if (a === "mr") { Q.selR = +b.dataset.i; matchTry(); }
+  else if (a === "cfill") { const g = Q.fill.indexOf(null); if (g >= 0) { Q.fill[g] = +b.dataset.b; render(); } }
+  else if (a === "cunfill") { Q.fill[+b.dataset.g] = null; render(); }
+  else if (a === "cclear") { Q.fill = Q.fill.map(() => null); render(); }
+  else if (a === "ccheck") { const it = Q.list[Q.i]; clozeCheck(Q.fill.map(f => f == null ? "" : it.bank[f])); }
   else if (a === "wpick") { Q.picked.push(+b.dataset.w); render(); }
   else if (a === "unpick") { Q.picked.splice(+b.dataset.j, 1); render(); }
   else if (a === "oclear") { Q.picked = []; render(); }
   else if (a === "ocheck") { const it = Q.list[Q.i]; answer(null, Q.picked.map(i => it.words[i]).join(" ")); }
   else if (a === "closeth") { T.theoryOpen = false; const d = document.getElementById("theory"); d.open = false; d.scrollIntoView({block: "nearest"}); }
-  else if (a === "tr") { if (MODE === "type" && !Q.answered) Q.typed = document.getElementById("ans")?.value || ""; Q.showTr = !Q.showTr; render(); }
+  else if (a === "tr") { saveGapInputs(); if (!Q.answered && document.getElementById("ans")) Q.typed = document.getElementById("ans").value; Q.showTr = !Q.showTr; render(); }
   else if (a === "next") next();
   else if (a === "again") { startSet(T.review ? reviewItems() : topicItems(T.ti, T.si)); render(); }
   else if (a === "retry") { startSet(Q.wrong.map(({yours, ...r}) => r), true); render(); }
@@ -3288,7 +4249,7 @@ app.addEventListener("click", e => {
 document.addEventListener("keydown", e => {
   if (view !== "topic" || !Q || Q.done || !Q.list.length) return;
   if (e.target.closest && e.target.closest("summary, input")) return;
-  if (!Q.answered && MODE === "click" && Q.list[Q.i].type !== "order" && ["1","2","3"].includes(e.key)) answer(Q.opts[+e.key - 1], null);
+  if (!Q.answered && MODE === "click" && !Q.list[Q.i].type && ["1","2","3"].includes(e.key)) answer(Q.opts[+e.key - 1], null);
   else if (Q.answered && e.key === "Enter") { e.preventDefault(); next(); }
 });
 renderHome();
