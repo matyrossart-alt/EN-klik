@@ -3781,7 +3781,24 @@ function speakOnce(t, opts, onFail){
   u.onerror = e => { const code = (e && e.error) || "neznámá"; if (code !== "interrupted" && code !== "canceled") onFail(code); };
   synth.speak(u);
 }
+/* nahrané zvuky (v aplikaci): soubor a/<hash>.mp3, jinak čtení přes prohlížeč */
+const fnv = str => { let h = 0x811c9dc5; for (const b of new TextEncoder().encode(str)) { h = (h ^ b) >>> 0; h = Math.imul(h, 0x01000193) >>> 0; } return h.toString(16).padStart(8, "0"); };
+let curAudio = null;
 function say(t){
+  if (window.KLIK_AUDIO) {
+    let done = false;
+    const fb = () => { if (!done) { done = true; speakTTS(t); } };
+    try {
+      if (curAudio) { curAudio.pause(); curAudio = null; }
+      const a = new Audio("a/" + fnv(t) + ".mp3");
+      curAudio = a; a.onerror = () => { if (curAudio === a) fb(); };
+      const pr = a.play(); if (pr && pr.catch) pr.then(() => { done = true; }).catch(e => { if (e && e.name === "AbortError") { done = true; return; } fb(); });
+      return;
+    } catch(e) { fb(); return; }
+  }
+  speakTTS(t);
+}
+function speakTTS(t){
   if (!canSay) { sayFallback(t, "bez podpory"); return; }
   const text = t.replace(/_{3}/g, "…");
   try {
@@ -4255,6 +4272,7 @@ document.addEventListener("keydown", e => {
 renderHome();
 </script>
 
+<script>window.KLIK_AUDIO = true;</script>
 <script>if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) navigator.serviceWorker.register("sw.js").catch(() => {});</script>
 </body>
 </html>
